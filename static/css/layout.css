@@ -1,0 +1,149 @@
+/* DroneCATS layout layer. Loaded after palette.css; overrides style.css and v2.css. */
+
+/* heading scale: section title > subsection > figure label */
+h2, .sec-head h2 { font-size: 38px; line-height: 1.15; letter-spacing: -0.02em; }
+h3 { font-size: 20px; line-height: 1.3; letter-spacing: -0.01em; margin: 56px 0 16px; color: var(--text-1); }
+@media (max-width: 640px) {
+  h2, .sec-head h2 { font-size: 28px; }
+  h3 { font-size: 18px; margin-top: 44px; }
+}
+
+/* hero: rounded frame over the aerial video, aurora tint along the top */
+.vhero { margin: -52px 12px 0; height: calc(100vh - 24px); border-radius: 24px; isolation: isolate; background: var(--bg-1); }
+.vhero-bg { filter: saturate(0.85) brightness(0.9); }
+.vhero-shade { background:
+  linear-gradient(90deg, rgba(4, 6, 14, 0.96) 0%, rgba(4, 6, 14, 0.86) 24%, rgba(4, 6, 14, 0.6) 44%, rgba(4, 6, 14, 0.12) 78%, rgba(4, 6, 14, 0.04) 100%),
+  linear-gradient(0deg, rgba(4, 6, 14, 0.9) 0%, rgba(4, 6, 14, 0) 46%); }
+.hero-aurora {
+  position: absolute; inset: -10% -10% 30% -10%; pointer-events: none; mix-blend-mode: screen;
+  background:
+    radial-gradient(28% 18% at 78% 6%,  #E2557A26, transparent 70%),
+    radial-gradient(55% 34% at 32% 18%, #03C75A3D, transparent 70%),
+    radial-gradient(40% 26% at 58% 12%, #2EF2A02B, transparent 70%),
+    radial-gradient(38% 26% at 72% 30%, #7B61FF30, transparent 70%);
+  filter: blur(24px);
+  animation: aurora-drift 60s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift { from { transform: translateX(-2%); } to { transform: translateX(2%) scale(1.04); } }
+.vhero-in { color: var(--text-1); }
+.vtitle { color: var(--text-1); }
+.vsub { color: var(--text-2); }
+.vhero .authors { color: var(--text-1); }
+.vhero .authors sup { color: var(--green-300); }
+.vhero .note { color: var(--text-3); }
+.vhero .note sup { color: var(--green-300); }
+.vhero .logo { height: 20px; margin: 18px 0 0; }
+.vhero-cap { color: var(--text-3); right: 28px; bottom: 22px; }
+
+/* hero buttons: glass pills, one green primary */
+.vhero .buttons { gap: 12px; }
+.vhero .btn { gap: 9px; padding: 10px 20px; font-weight: 500; background: rgba(10, 16, 36, 0.35); border: 1px solid rgba(238, 243, 250, 0.22); color: var(--text-1); transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.vhero .btn:hover { background: rgba(18, 26, 51, 0.7); border-color: rgba(238, 243, 250, 0.45); }
+.vhero .btn:first-child { font-weight: 700; }
+.vhero .btn:first-child:active { background: var(--green-700); border-color: var(--green-700); }
+.vhero .btn i, .vhero .btn .hf { font-size: 15px; }
+.vhero .btn .arr { margin-left: 2px; transition: transform 0.2s; }
+.vhero .btn:hover .arr { transform: translateX(3px); }
+.vhero .btn.disabled { opacity: 1; color: var(--text-3); border-color: rgba(238, 243, 250, 0.12); }
+.vhero .btn.disabled:hover { background: rgba(10, 16, 36, 0.35); border-color: rgba(238, 243, 250, 0.12); }
+.vhero .btn .soon { font-family: var(--font-mono, 'JetBrains Mono', monospace); font-size: 11px; letter-spacing: 0.04em; color: var(--text-4); }
+@media (max-width: 640px) {
+  .vhero { margin: -56px 8px 0; height: auto; min-height: 620px; border-radius: 18px; }
+  .vhero-shade { background: linear-gradient(0deg, rgba(4, 6, 14, 0.96) 0%, rgba(4, 6, 14, 0.72) 60%, rgba(4, 6, 14, 0.38) 100%); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-aurora { animation: none; } }
+
+/* nav: floating glass bar, brand with a green dot, paper button on the right */
+.toc .inner { max-width: 1180px; height: 56px; padding: 0 10px 0 22px; gap: 28px; background: rgba(10, 16, 36, 0.55); backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%); border: 1px solid rgba(238, 243, 250, 0.07); transition: background 0.3s, border-color 0.3s; }
+.toc.scrolled .inner { background: rgba(10, 16, 36, 0.86); border-color: var(--border); }
+.toc .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--text-1); font-size: 18px; flex: none; }
+.toc .brand:hover { text-decoration: none; }
+.toc .brand .led { width: 7px; height: 7px; border-radius: 50%; background: var(--green-500); }
+.toc .links { gap: 26px; margin: 0 auto; }
+.toc .links a { color: var(--text-2); font-size: 14px; transition: color 0.2s; }
+.toc .links a:hover, .toc .links a.on { color: var(--text-1); }
+.toc .cta { flex: none; padding: 7px 16px; font-size: 13.5px; font-weight: 700; background: var(--green-500); color: var(--on-bright); border: 1px solid var(--green-500); }
+.toc .cta:hover { background: var(--green-300); border-color: var(--green-300); }
+@media (max-width: 640px) {
+  .toc .inner { padding: 0 14px; gap: 18px; }
+  .toc .links { margin: 0; }
+  .toc .cta { display: none; }
+}
+
+/* tables: booktabs rules, mono figures, model names in the display face */
+.table-wrap { margin: 0; }
+table.res { width: 100%; margin: 0; font-size: 14.5px; }
+table.res thead { border-top: 1px solid var(--text-3); }
+table.res tbody { border-bottom: 1px solid var(--text-3); }
+table.res th, table.res td { padding: 11px 14px; text-align: right; }
+table.res th { font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-3); border-bottom: 1px solid var(--border-strong); }
+table.res thead tr:first-child th { border-bottom: 1px solid var(--border-strong); }
+table.res td { color: var(--text-2); font-family: 'JetBrains Mono', monospace; font-size: 13.5px; border-bottom: 1px solid rgba(30, 42, 74, 0.6); }
+table.res td.l { font-family: 'Google Sans', 'Noto Sans', sans-serif; font-size: 15px; color: var(--text-1); }
+table.res .l { text-align: left; }
+table.res tr.sep td { border-top: 1px solid var(--border-strong); }
+table.res b { font-weight: 600; }
+.legend-row { display: flex; gap: 20px; flex-wrap: wrap; font-size: 12.5px; color: var(--text-3); margin-top: 14px; }
+.legend-row span { display: inline-flex; align-items: center; gap: 7px; }
+.legend-row .sw { width: 9px; height: 9px; border-radius: 2px; }
+
+/* multi-drone levels: gradient cards */
+.levels { max-width: none; margin: 0; gap: 16px; }
+.level { padding: 24px; background: linear-gradient(180deg, rgba(18, 26, 51, 0.72), rgba(10, 16, 36, 0.55)); border: 1px solid var(--border); border-radius: 16px; }
+.level h4 { color: var(--text-1); }
+.level p { color: var(--text-2); }
+
+/* closing band, citation, footer columns */
+.closing { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; padding: 0 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+.closing h2 { font-size: 30px; margin: 0; }
+.closing p { color: var(--text-2); margin: 8px 0 0; }
+.closing .btn.primary { gap: 9px; padding: 10px 20px; font-size: 14.5px; font-weight: 700; background: var(--green-500); color: var(--on-bright); border: 1px solid var(--green-500); }
+.closing .btn.primary:hover { background: var(--green-300); border-color: var(--green-300); text-decoration: none; }
+.closing .btn .arr { transition: transform 0.2s; }
+.closing .btn:hover .arr { transform: translateX(3px); }
+#bibtex .eyebrow { display: block; color: var(--green-300); margin: 0 0 14px; }
+.bib pre { background: linear-gradient(180deg, rgba(18, 26, 51, 0.72), rgba(10, 16, 36, 0.55)); border: 1px solid var(--border); border-radius: 16px; padding: 24px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.65; color: var(--text-2); }
+.copy { top: 14px; right: 14px; border: 1px solid var(--border-strong); background: var(--bg-1); border-radius: 999px; padding: 5px 14px; font-size: 12.5px; color: var(--text-1); font-family: 'Google Sans', 'Noto Sans', sans-serif; }
+.copy:hover { border-color: var(--text-4); }
+.footer { text-align: left; padding: 56px 24px 40px; border-top: none; color: var(--text-3); }
+.footer .wrap { max-width: 1180px; border-top: 1px solid var(--border); padding-top: 48px; }
+.foot-grid { display: grid; grid-template-columns: minmax(0, 2fr) repeat(3, minmax(0, 1fr)); gap: 32px; }
+.foot-brand { font-family: 'Google Sans', 'Noto Sans', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-1); margin-bottom: 10px; }
+.foot-grid p { color: var(--text-3); font-size: 13.5px; margin: 0; max-width: 300px; }
+.foot-col h5 { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-4); margin: 4px 0 14px; }
+.foot-col a, .foot-col span { display: block; color: var(--text-2); font-size: 14px; margin-bottom: 9px; font-family: 'Google Sans', 'Noto Sans', sans-serif; }
+.foot-col span { color: var(--text-4); }
+.foot-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--text-4); }
+.foot-bottom a { color: var(--text-3); }
+@media (max-width: 1080px) { .foot-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .foot-grid { grid-template-columns: minmax(0, 1fr); } .footer { padding: 40px 16px 32px; } }
+.closing h2, #bibtex .eyebrow { text-align: left; }
+#bibtex { padding-bottom: 24px; }
+.footer { padding-top: 32px; }
+
+/* paper title: clearly above the section titles */
+/* three lines in meaning units; Vision-Language-Action never breaks at its hyphens */
+.vtitle { font-size: clamp(30px, 4.15vw, 60px); line-height: 1.06; letter-spacing: -0.03em; max-width: none; margin-bottom: 20px; }
+.vtitle .nw { white-space: nowrap; }
+@media (max-width: 640px) { .vtitle { font-size: clamp(22px, 7.2vw, 30px); line-height: 1.1; text-wrap: balance; } .vtitle .vt-br { display: none; } }
+
+/* phone widths */
+@media (max-width: 640px) {
+  .lead, .sec-head .lead { font-size: 16px; line-height: 1.7; }
+  table.res th, table.res td { padding: 9px 8px; }
+  table.res td { font-size: 12.5px; }
+  table.res td.l { font-size: 13.5px; }
+  table.res th.l, table.res td.l { position: sticky; left: 0; z-index: 1; background: var(--bg-0); box-shadow: 1px 0 0 var(--border); }
+  html[data-theme="dark"] .table-wrap table.res tr.ours td.l { background: #04170F; }
+  .vcard figcaption { font-size: 12px; }
+  .db-row { grid-template-columns: 132px minmax(0, 1fr); }
+  .db-name { font-size: 11px; padding-right: 10px; }
+  .bib pre { font-size: 11.5px; padding: 18px 16px; }
+  .closing h2 { font-size: 26px; }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .foot-grid > div:first-child { grid-column: 1 / -1; }
+}
+.db-val.l.in { transform: translate(10px, -50%); background: var(--bg-0); padding: 0 3px; border-radius: 3px; }
+
+/* wide screens: two lines, "… Generalist / Vision-Language-Action Agents for Drone Control" */
+@media (min-width: 1240px) { .vtitle { font-size: 50px; letter-spacing: -0.03em; } .vtitle .vt-br3 { display: none; } }

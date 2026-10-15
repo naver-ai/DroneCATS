@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DroneCATS: Evaluating Multimodal LLMs as Generalist VLA Agents for Drone Control</title>
+  <meta name="description" content="DroneCATS: a benchmark in which a multimodal LLM alone controls one or several drones through four actions, in simulation and on real drones.">
+  <meta property="og:title" content="DroneCATS: Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control">
+  <meta property="og:description" content="Commanding, Approaching, Tracking and Searching with drones, where the MLLM is the sole decision maker. Ten MLLMs, multi-drone and commander + sub-agents suites, and real flights.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://naver-ai.github.io/DroneCATS/">
+  <meta property="og:image" content="https://naver-ai.github.io/DroneCATS/assets/fig/og_card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="DroneCATS: Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents for Drone Control">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="DroneCATS, drone, UAV, MLLM, VLM, vision-language-action, embodied agent, benchmark, multi-drone, real drone">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/style.css?v=19">
+  <link rel="stylesheet" href="static/css/v2.css?v=6">
+  <link rel="stylesheet" href="static/css/palette.css?v=3">
+  <link rel="stylesheet" href="static/css/layout.css?v=12">
+  <link rel="stylesheet" href="static/css/figures.css?v=9">
+  <meta name="theme-color" content="#04060E">
+</head>
+<body>
+
+<nav class="toc" aria-label="Sections">
+  <div class="inner">
+    <a href="#" class="brand"><span class="led"></span><span>DroneCATS</span></a>
+    <div class="links">
+      <a href="#overview">Overview</a>
+      <a href="#agent">Agent</a>
+      <a href="#tasks">Task axis</a>
+      <a href="#org">Organisational axis</a>
+      <a href="#findings">Findings</a>
+      <a href="#bibtex">BibTeX</a>
+    </div>
+    <a class="btn cta" href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener">Read the paper</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="vhero">
+  <video class="vhero-bg" data-src="assets/videos/hero_bg.mp4" data-src-small="assets/videos/hero_bg_m.mp4" poster="assets/videos/hero_bg.jpg" fetchpriority="high" autoplay muted loop playsinline></video>
+  <div class="vhero-shade"></div>
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <div class="vhero-in">
+    <p class="mono-tag">arXiv 2609.01404 &nbsp;/&nbsp; NAVER Cloud</p>
+    <h1 class="vtitle">Evaluating Multimodal LLMs as <span class="nw">Generalist</span><br class="vt-br"> <span class="nw">Vision-Language-Action</span> Agents<br class="vt-br vt-br3"> for <span class="nw">Drone Control</span></h1>
+    <p class="vsub"><b>DroneCATS</b>: <b>C</b>ommanding, <b>A</b>pproaching, <b>T</b>racking and <b>S</b>earching</p>
+    <div class="authors" id="authors">
+    <span>Jaewoo Park<sup>*</sup>,</span>
+    <span>Minyoung Lee<sup>*</sup>,</span>
+    <span>Sukmin Seo<sup>*</sup>,</span>
+    <span>Moonbin Yim,</span>
+    <span>Hyunwook Yoon,</span>
+    <span>Dohoon Ryu,</span>
+    <span>Daehee Kim,</span>
+    <span>Myungseo Song,</span>
+    <span>Jihyuk Byun,</span>
+    <span>Seunggyu Chang,</span>
+    <span>Taeho Kil,</span>
+    <span>Jiseob Kim,</span>
+    <span>Bado Lee,</span>
+    <span>Geewook Kim<sup>&dagger;</sup></span>
+  </div>
+    <div class="affil">Drone AI Team, NAVER Cloud</div>
+    <div class="note"><sup>*</sup>Equal contribution &nbsp;&nbsp; <sup>&dagger;</sup>Corresponding author</div>
+    <img class="logo" src="assets/fig/navercloud_logo_dark.png" alt="NAVER Cloud">
+    <div class="buttons">
+    <a class="btn" href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i><span>Paper</span></a>
+    <a class="btn" href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener"><span class="hf">&#129303;</span><span>Hugging Face</span><span class="arr">&rarr;</span></a>
+    <a class="btn disabled" aria-disabled="true"><i class="fab fa-github"></i><span>Code</span><span class="soon">coming soon</span></a>
+    <a class="btn" href="#bibtex"><i class="fas fa-quote-right"></i><span>BibTeX</span></a>
+  </div>
+  </div>
+  <p class="vhero-cap">Background: four simulated episodes seen from above. Blue is the drone, orange the target and its 5 m arrival radius.</p>
+</header>
+
+<!-- ================= OVERVIEW ================= -->
+<section class="section" id="overview">
+  <div class="wrap narrow">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Overview</p>
+    <h2>A benchmark where the MLLM flies the drone</h2>
+</div><div class="sec-r">    <p class="lead">
+      Multimodal LLMs are being asked to make decisions for drones, but most tests stay in simulation, use a single drone, and give it a target that is in view and standing still.
+      In DroneCATS the model is the only decision maker. Targets can start out of view or move, several drones can share one instruction, and the same agent flies real drones.
+    </p>
+</div></div>    <details class="abstract">
+      <summary>Read the abstract</summary>
+    <div class="prose">
+      <p>
+        Multimodal large language models (MLLMs) are increasingly used to make decisions for drones, but existing evaluations are mostly limited to simulation, to a single drone, and to targets that are visible from the start and do not move.
+        We present <b class="acc">DroneCATS</b>, a benchmark in which the MLLM alone controls the drone through four actions, and evaluate ten MLLMs from frontier models to small open models.
+        The benchmark varies target visibility, target motion, scene and simulator, and extends to real drones.
+        Beyond a single drone, it adds a multi-drone suite, where one model drives multiple drones, and a commander + sub-agents suite, where a commander model directs one sub-agent for each of the drones.
+      </p>
+      <p>
+        Across these settings, we find that frontier models achieve the highest success rates, but their latency causes them to lose moving targets, while small open models often do not declare arrival even when they reach the target.
+        Guided by this failure analysis, we fine-tune a 2B model on drone action data synthesized from public RGB-D images; its success rate rises from 0% to 31% in simulation and outperforms the frontier models in real flight.
+        With multiple drones, we find that every zero-shot model succeeds more often as the commander of one sub-agent per drone than when it drives all of them from one context, and that commanding success follows general VLM ability.
+        On real drones, we observe that the results broadly follow those in simulation, while latency and hardware limits matter more.
+      </p>
+    </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================= AGENT ================= -->
+<section class="section" id="agent">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">The agent</p>
+    <h2>Four actions, one model in charge</h2>
+</div><div class="sec-r">    <p class="lead">
+      At every step the model gets the instruction, the current camera frame and its last five actions, and answers with one of four actions in JSON.
+      A rule-based controller turns the action into a flight command, so nothing in the loop is tuned to a particular model.
+      An episode counts only if the model says <code>finished</code> while it is near the target and can see it.
+    </p>
+</div></div>    <div class="anim-fig" id="agentfig">
+      <p class="swipe-hint">Swipe to see the whole loop &rarr;</p>
+      <div class="af-scroll"><svg class="af" viewBox="0 0 1200 430" role="img" aria-label="One step of the DroneCATS Agent loop: frame, prompt, MLLM, JSON action, controller, flight stack, next frame">
+        <defs>
+          <marker id="af-arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="af-head"/></marker>
+          <marker id="af-arr-on" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="af-head on"/></marker>
+          <clipPath id="af-clip"><rect x="20" y="148" width="232" height="130" rx="6"/></clipPath>
+          <filter id="af-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- next-frame loop -->
+        <path id="af-loop" class="af-edge" d="M1070 176 V50 Q1070 34 1054 34 H151 Q135 34 135 50 V144" marker-end="url(#af-arr)"/>
+        <text class="af-ttl" id="af-next" x="602" y="22" text-anchor="middle">Next frame</text>
+
+        <!-- frame -->
+        <g id="af-frame">
+          <g clip-path="url(#af-clip)"><image id="af-img" href="assets/fig/system_frame.jpg" x="20" y="148" width="232" height="130" preserveAspectRatio="xMidYMid slice"/></g>
+          <rect class="af-frame" x="20" y="148" width="232" height="130" rx="6"/>
+          <circle id="af-pt" class="af-pt" cx="122" cy="210" r="7"/>
+        </g>
+        <text class="af-ttl" x="136" y="316" text-anchor="middle">Frame <tspan class="af-it">I</tspan><tspan class="af-it" font-size="16" dy="5">t</tspan></text>
+        <text class="af-sub" x="136" y="342" text-anchor="middle">returned point in red</text>
+
+        <!-- model with prompt and reply -->
+        <path id="af-e1" class="af-edge" d="M254 213 H368" marker-end="url(#af-arr)"/>
+        <path id="af-ep" class="af-line" d="M470 128 V170"/>
+        <path id="af-ej" class="af-line" d="M470 258 V298"/>
+        <g id="af-prompt" class="af-node prompt"><rect x="320" y="64" width="300" height="64" rx="16"/>
+          <text class="af-bt" x="470" y="92" text-anchor="middle">Prompt <tspan class="af-it">P</tspan><tspan class="af-it" font-size="13" dy="4">t</tspan></text>
+          <text class="af-st" x="470" y="115" text-anchor="middle">instruction · history · the four actions</text></g>
+        <g id="af-mllm" class="af-node mllm"><rect x="372" y="172" width="196" height="86" rx="14"/>
+          <text class="af-big" x="470" y="226" text-anchor="middle">MLLM</text></g>
+        <g id="af-json" class="af-node json"><rect x="276" y="298" width="388" height="46" rx="23"/>
+          <text id="af-jt" class="af-mono" x="470" y="327" text-anchor="middle"></text></g>
+        <path id="af-red" class="af-red" d="M276 321 H266 V210 H256"/>
+
+        <!-- the machinery -->
+        <path id="af-e2" class="af-edge" d="M568 214 H684" marker-end="url(#af-arr)"/>
+        <path id="af-e3" class="af-edge" d="M910 214 H954" marker-end="url(#af-arr)"/>
+        <g id="af-ctrl" class="af-node mach"><rect x="690" y="176" width="220" height="76" rx="16"/>
+          <text class="af-bt lg" x="800" y="208" text-anchor="middle">Controller</text>
+          <text class="af-st" x="800" y="232" text-anchor="middle">action → setpoint</text></g>
+        <g id="af-fly" class="af-node mach"><rect x="960" y="176" width="220" height="76" rx="16"/>
+          <text class="af-bt lg" x="1070" y="208" text-anchor="middle">Flight stack</text>
+          <text class="af-st" x="1070" y="232" text-anchor="middle">setpoint → rotors</text></g>
+        <path class="af-brace" d="M692 268 Q692 282 706 282 H921 Q935 282 935 294 Q935 282 949 282 H1164 Q1178 282 1178 268"/>
+        <text class="af-ttl" x="935" y="326" text-anchor="middle">Standard machinery</text>
+        <text class="af-sub" x="935" y="352" text-anchor="middle">nothing model-specific</text>
+
+        <circle id="af-pulse" class="af-pulse" r="7" filter="url(#af-glow)"/>
+      </svg></div>
+      <p class="fig-note"><b>One step of the loop.</b> The MLLM gets the current frame and a prompt with the instruction and its last five actions, and replies with one action in JSON. A <code>go</code> reply carries a point (<i>x</i>, <i>y</i>) in the frame, drawn in red, and a distance <i>d</i> in metres. The controller and the flight stack turn the action into motion and are the same for every model.</p>
+
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="dc-drone" viewBox="-22 -22 44 44">
+          <path d="M-12 -12 L12 12 M-12 12 L12 -12" class="dr-arm"/>
+          <circle cx="-12" cy="-12" r="6.5" class="dr-rotor"/><circle cx="12" cy="-12" r="6.5" class="dr-rotor"/>
+          <circle cx="-12" cy="12" r="6.5" class="dr-rotor"/><circle cx="12" cy="12" r="6.5" class="dr-rotor"/>
+          <rect x="-4.5" y="-4.5" width="9" height="9" rx="1.5" class="dr-body"/>
+        </symbol>
+      </svg>
+
+      <div class="tg-title acts-title">The four actions</div>
+      <div class="acts">
+        <div class="act go">
+          <span class="chip">go</span>
+          <svg viewBox="0 0 300 96" aria-hidden="true">
+            <line class="act-line" x1="86" y1="50" x2="228" y2="50" marker-end="url(#af-arr)"/>
+            <text class="act-lbl" x="150" y="36" text-anchor="middle"><tspan font-style="italic">d</tspan> metres</text>
+            <circle class="act-tgt" cx="252" cy="50" r="10"/>
+            <text class="act-lbl" x="252" y="26" text-anchor="middle">(<tspan font-style="italic">x</tspan>, <tspan font-style="italic">y</tspan>)</text>
+            <g class="mv-go"><use href="#dc-drone" x="28" y="28" width="44" height="44"/></g>
+          </svg>
+          <p>fly <i>d</i> metres toward the point (<i>x</i>, <i>y</i>)</p>
+        </div>
+        <div class="act rotate">
+          <span class="chip">rotate</span>
+          <svg viewBox="0 0 300 96" aria-hidden="true">
+            <path class="act-line" d="M110 78 A36 36 0 1 0 66 74" marker-end="url(#af-arr)"/>
+            <g class="mv-rot"><use href="#dc-drone" x="65" y="25" width="50" height="50"/></g>
+            <text class="act-lbl" x="170" y="44">yaw <tspan font-style="italic">θ</tspan> in place</text>
+            <text class="act-lbl" x="170" y="66">|<tspan font-style="italic">θ</tspan>| ≤ 90°</text>
+          </svg>
+          <p>turn by <i>θ</i> to look for what is not in frame</p>
+        </div>
+        <div class="act think">
+          <span class="chip">think</span>
+          <svg viewBox="0 0 300 96" aria-hidden="true">
+            <g class="mv-ring"><circle class="act-dash" cx="90" cy="50" r="38"/></g>
+            <use href="#dc-drone" x="65" y="25" width="50" height="50"/>
+            <g class="mv-dots"><circle cx="160" cy="40" r="3.6"/><circle cx="174" cy="40" r="3.6"/><circle cx="188" cy="40" r="3.6"/></g>
+            <text class="act-lbl" x="170" y="70">hold in place</text>
+          </svg>
+          <p>next reply is a plan schema</p>
+        </div>
+        <div class="act finished">
+          <span class="chip">finished</span>
+          <svg viewBox="0 0 300 96" aria-hidden="true">
+            <use href="#dc-drone" x="40" y="25" width="50" height="50"/>
+            <circle class="act-ring" cx="118" cy="50" r="10"/>
+            <circle class="act-tgt" cx="118" cy="50" r="9"/>
+            <g class="mv-chk1"><path class="act-chk" d="M160 38 l6 7 l12 -14"/><text class="act-lbl" x="186" y="44">within <tspan font-style="italic">δ</tspan></text></g>
+            <g class="mv-chk2"><path class="act-chk" d="M160 64 l6 7 l12 -14"/><text class="act-lbl" x="186" y="70">target in view</text></g>
+          </svg>
+          <p>declare arrival; the verifier scores it</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TASKS ================= -->
+<section class="section" id="tasks">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Task axis</p>
+    <h2>Is the target in view, and does it move?</h2>
+</div><div class="sec-r">    <p class="lead">
+      Crossing these two questions gives four single-drone tasks: approach, search, track, and search + track.
+      In every task the drone must reach the target and declare arrival.
+      Episodes are flown in AirSim and Isaac Sim, and on a DJI Tello.
+    </p>
+</div></div>    <div class="anim-fig tg" id="taskfig">
+      <div class="tg-left">
+        <div class="tg-title">Four single-drone tasks</div>
+        <div class="tg-cards">
+          <div class="tcard approach">
+            <svg viewBox="0 0 200 130" aria-hidden="true">
+              <g class="mv-near"><polygon class="cone" points="62,65 172,28 172,102"/><use href="#dc-drone" x="22" y="43" width="44" height="44"/></g>
+              <circle class="tgt" cx="146" cy="65" r="9"/>
+            </svg>
+            <b>Approach</b><span>in view, still</span>
+          </div>
+          <div class="tcard track">
+            <svg viewBox="0 0 200 130" aria-hidden="true">
+              <g class="mv-follow"><polygon class="cone" points="62,65 172,28 172,102"/><use href="#dc-drone" x="22" y="43" width="44" height="44"/></g>
+              <g class="mv-move"><circle class="tgt" cx="130" cy="65" r="9"/><path class="mv-arrow" d="M144 65 H164" marker-end="url(#af-arr)"/></g>
+            </svg>
+            <b>Track</b><span>in view, moving</span>
+          </div>
+          <div class="tcard search">
+            <svg viewBox="0 0 200 130" aria-hidden="true">
+              <g class="mv-sweep"><polygon class="cone" points="58,96 140,68 140,124"/></g>
+              <use href="#dc-drone" x="18" y="74" width="44" height="44"/>
+              <circle class="tgt mv-found" cx="158" cy="96" r="9"/>
+              <g class="mv-q"><circle class="q" cx="158" cy="96" r="11"/><text class="qt" x="158" y="101" text-anchor="middle">?</text></g>
+            </svg>
+            <b>Search</b><span>out of view, still</span>
+          </div>
+          <div class="tcard both">
+            <svg viewBox="0 0 200 130" aria-hidden="true">
+              <g class="mv-sweep2"><polygon class="cone" points="58,96 140,68 140,124"/></g>
+              <use href="#dc-drone" x="18" y="74" width="44" height="44"/>
+              <g class="mv-found2"><circle class="tgt" cx="150" cy="96" r="9"/></g>
+              <g class="mv-q2"><circle class="q" cx="150" cy="96" r="11"/><text class="qt" x="150" y="101" text-anchor="middle">?</text><path class="mv-arrow" d="M164 96 H182" marker-end="url(#af-arr)"/></g>
+            </svg>
+            <b>Search + track</b><span>out of view, moving</span>
+          </div>
+        </div>
+      </div>
+      <p class="fig-note"><b>Two questions set the task.</b> Is the target in view at the start, and does it move? A target out of view must first be found; a moving target must be followed.</p>
+    </div>
+    <h3>The four tasks in simulation</h3>
+    <div class="hero-grid">
+      <div class="vcard big"><video data-src="assets/videos/route_approach.mp4" poster="assets/videos/route_approach.jpg" autoplay muted loop playsinline></video></div>
+      <div class="vcard big"><video data-src="assets/videos/route_search.mp4" poster="assets/videos/route_search.jpg" autoplay muted loop playsinline></video></div>
+      <div class="vcard big"><video data-src="assets/videos/route_track.mp4" poster="assets/videos/route_track.jpg" autoplay muted loop playsinline></video></div>
+      <div class="vcard big"><video data-src="assets/videos/route_searchtrack.mp4" poster="assets/videos/route_searchtrack.jpg" autoplay muted loop playsinline></video></div>
+    </div>
+    <h3>The four tasks on a real drone</h3>
+    <div class="teaser-grid">
+      <figure class="vcard"><video data-src="assets/videos/real_approach.mp4" poster="assets/videos/real_approach.jpg" autoplay muted loop playsinline preload="none"></video><figcaption><b>Approach</b> &middot; Gemini 3.7 Flash</figcaption></figure>
+      <figure class="vcard"><video data-src="assets/videos/real_search.mp4" poster="assets/videos/real_search.jpg" autoplay muted loop playsinline preload="none"></video><figcaption><b>Search</b> &middot; Gemini 3.7 Flash</figcaption></figure>
+      <figure class="vcard"><video data-src="assets/videos/real_track.mp4" poster="assets/videos/real_track.jpg" autoplay muted loop playsinline preload="none"></video><figcaption><b>Track</b> &middot; Cosmos3-Edge-2B (FT)</figcaption></figure>
+      <figure class="vcard"><video data-src="assets/videos/real_searchtrack.mp4" poster="assets/videos/real_searchtrack.jpg" autoplay muted loop playsinline preload="none"></video><figcaption><b>Search + Track</b> &middot; Claude Opus 5</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ORGANISATIONAL AXIS ================= -->
+<section class="section" id="org">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Organisational axis</p>
+    <h2>Several drones on one instruction</h2>
+</div><div class="sec-r">    <p class="lead">
+      DroneCATS goes beyond a single drone. Four drones share one instruction that none of them can finish alone.
+      Either one MLLM drives all four from one prompt, or a commander splits the instruction into one command per drone for four single-drone sub-agents.
+      Both structures fly the same multi-drone tasks, at three levels of difficulty.
+    </p>
+</div></div>    <div class="anim-fig tg" id="orgfig">
+      <div class="tg-right">
+        <div class="tg-title">Who decides for each drone</div>
+        <div class="orows">
+        <div class="orow">
+          <svg viewBox="0 0 300 170" aria-hidden="true">
+            <image href="assets/fig/system_frame.jpg" x="10" y="52" width="70" height="40" preserveAspectRatio="xMidYMid slice"/>
+            <rect class="ofr d1" x="10" y="52" width="70" height="40" rx="4"/>
+            <text class="olbl" x="45" y="108" text-anchor="middle">its own frame</text>
+            <path class="oedge" d="M82 72 H100" marker-end="url(#af-arr)"/>
+            <rect class="mchip" x="104" y="56" width="62" height="32" rx="8"/><text class="mtxt lg" x="135" y="77" text-anchor="middle">MLLM</text>
+            <path class="oedge" d="M168 72 H184" marker-end="url(#af-arr)"/>
+            <g class="acycle">
+              <g><rect class="achip go" x="188" y="60" width="54" height="24" rx="12"/><text class="atxt go" x="215" y="76" text-anchor="middle">go</text></g>
+              <g><rect class="achip rotate" x="188" y="60" width="54" height="24" rx="12"/><text class="atxt rotate" x="215" y="76" text-anchor="middle">rotate</text></g>
+              <g><rect class="achip think" x="188" y="60" width="54" height="24" rx="12"/><text class="atxt think" x="215" y="76" text-anchor="middle">think</text></g>
+              <g><rect class="achip fin" x="188" y="60" width="54" height="24" rx="12"/><text class="atxt fin" x="215" y="76" text-anchor="middle">finished</text></g>
+            </g>
+            <text class="olbl" x="215" y="102" text-anchor="middle">one action</text>
+            <path class="oedge" d="M244 72 H254" marker-end="url(#af-arr)"/>
+            <g class="ostep"><use href="#dc-drone" x="256" y="58" width="28" height="28" style="color:var(--d1)"/></g>
+            <path class="oloop" d="M270 92 V140 Q270 150 260 150 H55 Q45 150 45 140 V116" marker-end="url(#af-arr)"/>
+            <text class="olbl dim" x="158" y="164" text-anchor="middle">next frame, every step</text>
+          </svg>
+          <b>Single-drone</b>
+          <span>One MLLM sees its own frame and returns one action per step.</span>
+        </div>
+        <div class="orow">
+          <svg viewBox="0 0 300 170" aria-hidden="true">
+            <rect class="ofr d1" x="10" y="16" width="46" height="26" rx="3"/><text class="ofn" x="33" y="33" text-anchor="middle">D1</text>
+            <rect class="ofr d2" x="10" y="50" width="46" height="26" rx="3"/><text class="ofn" x="33" y="67" text-anchor="middle">D2</text>
+            <rect class="ofr d3" x="10" y="84" width="46" height="26" rx="3"/><text class="ofn" x="33" y="101" text-anchor="middle">D3</text>
+            <rect class="ofr d4" x="10" y="118" width="46" height="26" rx="3"/><text class="ofn" x="33" y="135" text-anchor="middle">D4</text>
+            <path class="oedge thin" d="M58 29 C76 29 78 80 92 80"/><path class="oedge thin" d="M58 63 C74 63 78 80 92 80"/>
+            <path class="oedge thin" d="M58 97 C74 97 78 80 92 80"/><path class="oedge thin" d="M58 131 C76 131 78 80 92 80" marker-end="url(#af-arr)"/>
+            <text class="olbl" x="33" y="160" text-anchor="middle">N frames, one prompt</text>
+            <g class="obeat"><rect class="mchip" x="96" y="64" width="62" height="32" rx="8"/><text class="mtxt lg" x="127" y="85" text-anchor="middle">MLLM</text></g>
+            <text class="olbl" x="127" y="112" text-anchor="middle">one call</text>
+            <path class="oedge" d="M160 80 H172" marker-end="url(#af-arr)"/>
+            <rect class="arr4" x="176" y="66" width="56" height="28" rx="8"/><text class="atxt mono" x="204" y="84" text-anchor="middle">[a₁…a₄]</text>
+            <text class="olbl" x="204" y="112" text-anchor="middle">N actions</text>
+            <path class="oedge thin" d="M234 80 C246 80 246 29 256 29"/><path class="oedge thin" d="M234 80 C248 80 248 63 256 63"/>
+            <path class="oedge thin" d="M234 80 C248 80 248 97 256 97"/><path class="oedge thin" d="M234 80 C246 80 246 131 256 131"/>
+            <g class="olock"><use href="#dc-drone" x="258" y="17" width="24" height="24" style="color:var(--d1)"/><use href="#dc-drone" x="258" y="51" width="24" height="24" style="color:var(--d2)"/>
+            <use href="#dc-drone" x="258" y="85" width="24" height="24" style="color:var(--d3)"/><use href="#dc-drone" x="258" y="119" width="24" height="24" style="color:var(--d4)"/></g>
+            <text class="olbl" x="270" y="160" text-anchor="middle">all move together</text>
+          </svg>
+          <b>Multi-drone</b>
+          <span>The N frames go into one prompt; one call returns N actions and moves every drone one step.</span>
+        </div>
+        <div class="orow">
+          <svg viewBox="0 0 300 170" aria-hidden="true">
+            <rect class="ofr d1 sm" x="40" y="6" width="16" height="11" rx="2"/><rect class="ofr d2 sm" x="58" y="6" width="16" height="11" rx="2"/>
+            <rect class="ofr d3 sm" x="40" y="19" width="16" height="11" rx="2"/><rect class="ofr d4 sm" x="58" y="19" width="16" height="11" rx="2"/>
+            <text class="olbl" x="57" y="42" text-anchor="middle">N views</text>
+            <g class="omap"><rect x="228" y="6" width="32" height="24" rx="3"/><path d="M233 25 L242 14 L249 21 L255 11"/></g>
+            <text class="olbl" x="244" y="42" text-anchor="middle">top-down map</text>
+            <path class="oedge thin" d="M76 18 H104" marker-end="url(#af-arr)"/><path class="oedge thin" d="M226 18 H198" marker-end="url(#af-arr)"/>
+            <g class="obeat slow"><rect class="mchip cmd" x="106" y="4" width="88" height="30" rx="8"/><text class="mtxt lg" x="150" y="24" text-anchor="middle">Commander</text></g>
+            <path id="oc1" class="ocmd" d="M150 36 C150 52 33 50 33 74"/><path id="oc2" class="ocmd" d="M150 36 C150 54 111 52 111 74"/>
+            <path id="oc3" class="ocmd" d="M150 36 C150 54 189 52 189 74"/><path id="oc4" class="ocmd" d="M150 36 C150 52 267 50 267 74"/>
+            <path class="ocmd hot h1" d="M150 36 C150 52 33 50 33 74"/><path class="ocmd hot h2" d="M150 36 C150 54 111 52 111 74"/>
+            <path class="ocmd hot h3" d="M150 36 C150 54 189 52 189 74"/><path class="ocmd hot h4" d="M150 36 C150 52 267 50 267 74"/>
+            <text class="olbl ital" x="150" y="62" text-anchor="middle">“go to the sign on the far left …”</text>
+            <g><rect class="sag d1" x="6" y="76" width="54" height="22" rx="7"/><text class="stxt" x="33" y="91" text-anchor="middle">sub-agent</text></g>
+            <g><rect class="sag d2" x="84" y="76" width="54" height="22" rx="7"/><text class="stxt" x="111" y="91" text-anchor="middle">sub-agent</text></g>
+            <g><rect class="sag d3" x="162" y="76" width="54" height="22" rx="7"/><text class="stxt" x="189" y="91" text-anchor="middle">sub-agent</text></g>
+            <g><rect class="sag d4" x="240" y="76" width="54" height="22" rx="7"/><text class="stxt" x="267" y="91" text-anchor="middle">sub-agent</text></g>
+            <g class="spin s1"><circle class="sloop" cx="33" cy="124" r="15"/></g><use href="#dc-drone" x="22" y="113" width="22" height="22" style="color:var(--d1)"/>
+            <g class="spin s2"><circle class="sloop" cx="111" cy="124" r="15"/></g><use href="#dc-drone" x="100" y="113" width="22" height="22" style="color:var(--d2)"/>
+            <g class="spin s3"><circle class="sloop" cx="189" cy="124" r="15"/></g><use href="#dc-drone" x="178" y="113" width="22" height="22" style="color:var(--d3)"/>
+            <g class="spin s4"><circle class="sloop" cx="267" cy="124" r="15"/></g><use href="#dc-drone" x="256" y="113" width="22" height="22" style="color:var(--d4)"/>
+            <text class="olbl" x="150" y="160" text-anchor="middle">each sub-agent flies its own drone, at its own pace</text>
+          </svg>
+          <b>Commander + sub-agents</b>
+          <span>N+1 MLLMs. The commander turns the instruction into one command per drone; each sub-agent is the single-drone agent.</span>
+        </div>
+        </div>
+      </div>
+    </div>
+    <p class="fig-note levels-note"><b>Multi-drone tasks.</b> Both structures fly the same tasks, at three levels for the commander.
+      <span class="lv easy">Easy</span>, license plate matching: one of four cars carries the named plate, and each drone reads one car up close.
+      <span class="lv med">Medium</span>, sign matching: four corridors each end in a sign, and the commander has to divide the corridors.
+      <span class="lv hard">Hard</span>, three-sign sum: the drones read three red signs, add them, and fly into the corridor whose sign shows the sum.</p>
+  </div>
+</section>
+
+<!-- ================= FINDING 1 ================= -->
+<section class="section" id="findings">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Finding 1</p>
+    <h2>Frontier models lead, but slow ones lose moving targets</h2>
+</div><div class="sec-r">    <p class="lead">
+      We ran ten MLLMs, from frontier API models down to 2B open models.
+      Gemini 3.7 Flash has the highest mean success, yet the best model changes with the task.
+      Every frontier model recognises the target, so on moving targets the outcome comes down to how fast the next action arrives, and the quicker GPT-5 and Gemini Robotics-ER 2 come out ahead.
+    </p>
+</div></div>    <div class="table-wrap">
+      <table class="res compact" id="tab-main">
+        <thead>
+          <tr><th class="l">Success rate (%)</th><th>Approach</th><th>Search</th><th>Track</th><th>Search + Track</th><th>Mean</th><th>Real drone</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="l">Gemini 3.7 Flash</td><td><b>87.5</b></td><td><b>67.5</b></td><td>55</td><td>47.5</td><td><b>64.4</b></td><td>45</td></tr>
+          <tr><td class="l">Claude Opus 5</td><td>57.5</td><td>47.5</td><td>40</td><td>40</td><td>46.2</td><td>30</td></tr>
+          <tr><td class="l">Gemini Robotics-ER 2</td><td>62.5</td><td>47.5</td><td><b>70</b></td><td>50</td><td>57.5</td><td>&ndash;</td></tr>
+          <tr><td class="l">GPT-5</td><td>55</td><td>37.5</td><td>62.5</td><td><b>65</b></td><td>55</td><td>&ndash;</td></tr>
+          <tr class="sep"><td class="l">Qwen3.5-27B</td><td>60</td><td>45</td><td>25</td><td>27.5</td><td>39.4</td><td>&ndash;</td></tr>
+          <tr><td class="l">Qwen3.5-9B</td><td>32.5</td><td>15</td><td>32.5</td><td>5</td><td>21.2</td><td>10</td></tr>
+          <tr><td class="l">Qwen3.5-4B</td><td>12.5</td><td>5</td><td>7.5</td><td>0</td><td>6.2</td><td>&ndash;</td></tr>
+          <tr><td class="l">Qwen3.5-2B</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>&ndash;</td></tr>
+          <tr><td class="l">Cosmos3-Edge-2B</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr class="sep ours"><td class="l">Cosmos3-Edge-2B (FT, ours)</td><td>35</td><td>35</td><td>27.5</td><td>27.5</td><td>31.2</td><td><b>55</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="legend-row"><span><i class="sw" style="background:var(--polaris)"></i>best per column</span><span><i class="sw" style="background:var(--green-500)"></i>ours</span></div>
+    <p class="caption center">Single drone. Simulation: 20 episodes per task, each flown twice. Real drone: mean over the four tasks, 5 episodes each.</p>
+  </div>
+</section>
+
+<!-- ================= FINDING 2 ================= -->
+<section class="section" id="finding2">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Finding 2</p>
+    <h2>Small models reach the target and fly on</h2>
+</div><div class="sec-r">    <p class="lead">
+      Open models of 9B and below turn less than half of the episodes in which they reach the target into a success. The smallest ones keep going, pass the target and end far from it.
+      How well a model keeps to its system prompt over a long conversation predicts this much better than how often it reaches the target.
+    </p>
+</div></div>    <div class="pair">
+      <figure class="vcard"><video data-src="assets/videos/fail_declare.mp4" poster="assets/videos/fail_declare.jpg" autoplay muted loop playsinline preload="none"></video><figcaption><b>Gemini 3.7 Flash</b> &middot; flies in and declares <code>finished</code> 2 m from the cyclist</figcaption></figure>
+      <figure class="vcard"><video data-src="assets/videos/fail_reach.mp4" poster="assets/videos/fail_reach.jpg" autoplay muted loop playsinline preload="none"></video><figcaption><b>Qwen3.5-2B</b> &middot; comes within 1.7 m, never declares, ends 11 m away at the cap</figcaption></figure>
+    </div>
+    <p class="caption center">The same Approach episode. The readout turns green inside the 5 m arrival radius; only a <code>finished</code> declared there counts.</p>
+  </div>
+</section>
+
+<!-- ================= FINDING 3 ================= -->
+<section class="section" id="finding3">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Finding 3</p>
+    <h2>A fine-tuned 2B model is the best real pilot</h2>
+</div><div class="sec-r">    <p class="lead">
+      Cosmos3-Edge-2B is the fastest model we tested, but it never declared arrival.
+      We fine-tuned it on drone actions synthesised from public RGB-D images, with no benchmark frame in the data.
+      Its success rate went from 0% to 31% in simulation, and on a real drone it beat both frontier models we flew.
+    </p>
+</div></div>    <div class="row3">
+      <figure class="vcard"><video data-src="assets/videos/real_ft_approach.mp4" poster="assets/videos/real_ft_approach.jpg" autoplay muted loop playsinline preload="none"></video><figcaption>&ldquo;go to the egg&rdquo;</figcaption></figure>
+      <figure class="vcard"><video data-src="assets/videos/real_ft_search_umbrella.mp4" poster="assets/videos/real_ft_search_umbrella.jpg" autoplay muted loop playsinline preload="none"></video><figcaption>&ldquo;go to the white umbrella&rdquo;</figcaption></figure>
+      <figure class="vcard"><video data-src="assets/videos/real_ft_searchtrack.mp4" poster="assets/videos/real_ft_searchtrack.jpg" autoplay muted loop playsinline preload="none"></video><figcaption>&ldquo;go to the toy plane&rdquo;</figcaption></figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FINDING 4 ================= -->
+<section class="section" id="multi">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Finding 4</p>
+    <h2>With several drones, commanding beats driving</h2>
+</div><div class="sec-r">    <p class="lead">
+      Every zero-shot model does better as a commander, writing one order per drone for single-drone sub-agents, than when it returns all four actions itself.
+      The replay below follows a commander through Three-sign sum, the hardest level.
+    </p>
+</div></div>    <h3>Replay: Three-sign sum</h3>
+    <div class="replay" id="replay">
+      <div class="rp-mission"><b>Instruction</b> Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers.</div>
+      <div class="rp-main">
+        <div class="rp-left">
+          <div class="rp-map"></div>
+          <div class="rp-log"><div class="rp-lh">Key moments <span>newest first</span></div><ol></ol></div>
+        </div>
+        <div class="rp-right">
+          <div class="rp-cmd"></div>
+          <div class="rp-wirebox"><svg class="rp-wires"></svg><span class="rp-wl down">&#9660; orders</span><span class="rp-wl up">reports &#9650;</span></div>
+          <div class="rp-agents"></div>
+        </div>
+      </div>
+      <div class="rp-strip"></div>
+      <div class="rp-ctrl"></div>
+      <div class="rp-chapters"></div>
+    </div>
+    <p class="caption center">Gemini 3.7 Flash commanding four Gemini Robotics-ER 2 sub-agents, replayed from the run's logs. Map: drone paths, red signs, entrance signs, and the goal with its 5 m radius; &times; is a rejected declaration, the star the accepted one.</p>
+
+    <h3>Same episode, same model, two structures</h3>
+    <p class="lead">Flown both ways, the commander has Drone 4 at the goal while the four drones of the single model are still near the start.</p>
+    <div class="replay" id="compare"></div>
+    <p class="caption center">Gemini 3.7 Flash on the same Three-sign sum episode, cut at the 300 s cap.</p>
+
+    <h3>Same model, two roles</h3>
+    <p class="lead">The gain holds from the strongest model to the weakest. Between commanders the gap widens with difficulty, and on Three-sign sum only Gemini 3.7 Flash and Claude Opus 5 succeed in most episodes.</p>
+    <div class="dumbbell" id="dumbbell"></div>
+    <p class="caption center">Success rate (%) over 30 episodes per model, driving all four drones itself vs. commanding four sub-agents.</p>
+  </div>
+</section>
+
+<!-- ================= FINDING 5 ================= -->
+<section class="section" id="real">
+  <div class="wrap">
+<div class="sec-head"><div class="sec-l">    <p class="eyebrow">Finding 5</p>
+    <h2>Real flights follow simulation, and latency matters more</h2>
+</div><div class="sec-r">    <p class="lead">
+      We flew the single-drone and commander suites on DJI Tellos. The ranking of models broadly carries over.
+      The video and command links slow every step, though, so the frontier models that tracked well in simulation lose moving targets in the real room.
+    </p>
+</div></div>    <div class="table-wrap">
+      <table class="res compact">
+        <thead>
+          <tr><th class="l">Real drone, SR (%)</th><th>Approach</th><th>Search</th><th>Track</th><th>Search + Track</th><th>Mean</th><th>Sim mean</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="l">Gemini 3.7 Flash</td><td><b>100</b></td><td><b>80</b></td><td>0</td><td>0</td><td>45</td><td><b>64.4</b></td></tr>
+          <tr><td class="l">Claude Opus 5</td><td>40</td><td>40</td><td>20</td><td>20</td><td>30</td><td>46.2</td></tr>
+          <tr class="sep"><td class="l">Qwen3.5-9B</td><td>40</td><td>0</td><td>0</td><td>0</td><td>10</td><td>21.2</td></tr>
+          <tr><td class="l">Cosmos3-Edge-2B</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr class="sep ours"><td class="l">Cosmos3-Edge-2B (FT, ours)</td><td>60</td><td>60</td><td><b>60</b></td><td><b>40</b></td><td><b>55</b></td><td>31.2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption center">100 real episodes, 5 per cell.</p>
+
+    <h3>Two real drones under a commander</h3>
+    <p class="lead">Two Tellos still solve Three-sign sum. Gemini 3.7 Flash, the best commander in simulation, is also the best one here.</p>
+    <div class="replay" id="real2"></div>
+    <p class="caption center">Drone 2 reads 20 and 35, Drone 1 reads 5 and finds the chairs, and the commander sends Drone 1 from chair 58 on to chair 60. Frames are the drones' own views, about one every two seconds; &#9650; a drone reporting arrival, the star the accepted one. The map is approximate: layout from the setup sheet, paths from the go and turn commands each drone executed.</p>
+  </div>
+</section>
+
+<!-- ================= BIBTEX ================= -->
+<section class="section" id="bibtex">
+  <div class="wrap narrow">
+    <div class="closing">
+      <div>
+        <h2>Read the paper.</h2>
+        <p>Benchmark, agent and results in full, with the appendix.</p>
+      </div>
+      <a class="btn primary" href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i><span>arXiv 2609.01404</span><span class="arr">&rarr;</span></a>
+    </div>
+    <p class="eyebrow">Citation</p>
+    <div class="bib">
+      <button class="copy" id="copy-bib" type="button"><i class="far fa-copy"></i> Copy</button>
+<pre id="bib-text">@article{park2026dronecats,
+  title   = {Evaluating Multimodal LLMs as Generalist Vision-Language-Action Agents
+             for Drone Control: Commanding, Approaching, Tracking and Searching},
+  author  = {Park, Jaewoo and Lee, Minyoung and Seo, Sukmin and Yim, Moonbin and
+             Yoon, Hyunwook and Ryu, Dohoon and Kim, Daehee and Song, Myungseo and
+             Byun, Jihyuk and Chang, Seunggyu and Kil, Taeho and Kim, Jiseob and
+             Lee, Bado and Kim, Geewook},
+  journal = {arXiv preprint arXiv:2609.01404},
+  year    = {2026}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">DroneCATS</div>
+        <p>A benchmark for multimodal LLMs as the sole decision maker of one or several drones, in simulation and on real drones.</p>
+      </div>
+      <div class="foot-col"><h5>Paper</h5><a href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener">arXiv</a><a href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener">Hugging Face</a><a href="#bibtex">BibTeX</a></div>
+      <div class="foot-col"><h5>Resources</h5><span>Code (coming soon)</span><span>Benchmark (coming soon)</span></div>
+      <div class="foot-col"><h5>Team</h5><a href="#authors">Authors</a><span>Drone AI Team, NAVER Cloud</span></div>
+    </div>
+    <div class="foot-bottom"><span>&copy; 2026 Drone AI Team, NAVER Cloud</span><span>Page layout inspired by <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.</span></div>
+  </div>
+</footer>
+
+<script src="static/js/main.js?v=19"></script>
+<script src="static/js/replay.js?v=18"></script>
+<script src="static/js/compare.js?v=4"></script>
+<script src="static/js/real2.js?v=11"></script>
+<script src="static/js/figures.js?v=3"></script>
+</body>
+</html>

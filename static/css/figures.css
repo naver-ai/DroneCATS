@@ -1,0 +1,184 @@
+/* Animated figures: the Agent loop (#agentfig), the task axis (#taskfig) and the organisational axis (#orgfig). Dark only.
+   Loaded after palette.css; figures.js drives the Agent loop, the rest is CSS. */
+
+.anim-fig { --radius: 16px; --font-display: 'Google Sans', 'Noto Sans', system-ui, sans-serif; --font-mono: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; margin: 28px 0 8px; }
+.anim-fig { --c-go: var(--ice); --c-rot: var(--teal); --c-think: #A797FF; --c-fin: var(--green-300); }
+.anim-fig svg text { font-family: var(--font-display); }
+.af { display: block; width: 100%; height: auto; padding: 18px 10px 4px; background: linear-gradient(180deg, rgba(18, 26, 51, 0.55), rgba(10, 16, 36, 0.35)); border: 1px solid var(--border); border-radius: var(--radius); }
+.af-edge, .af-line { fill: none; stroke: var(--text-2); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.3s; }
+.af-edge.on, .af-line.on { stroke: var(--green-300); }
+.af-head { fill: var(--text-2); }
+.af-frame { fill: none; stroke: var(--text-2); stroke-width: 2.2; transition: stroke 0.3s, stroke-width 0.3s; }
+.af-frame.on { stroke: var(--ice); stroke-width: 3.4; }
+#af-img { transform-box: fill-box; transform-origin: center; transition: transform 0.9s ease; }
+#af-img.shift { transform: scale(1.06) translate(-2%, 1%); }
+.af-pt { fill: var(--crimson); stroke: var(--bg-1); stroke-width: 2; transform-box: fill-box; transform-origin: center; transform: scale(0); transition: transform 0.35s cubic-bezier(.3,1.6,.5,1); }
+.af-pt.on { transform: scale(1); }
+.af-red { fill: none; stroke: var(--crimson); stroke-width: 2; stroke-dasharray: 6 5; opacity: 0; transition: opacity 0.3s; }
+.af-red.on { opacity: 1; }
+.af-node rect { stroke: var(--text-2); stroke-width: 2.2; transition: stroke 0.3s, filter 0.3s; }
+.af-node.on rect { stroke: var(--green-300); filter: drop-shadow(0 0 10px rgba(46, 242, 160, 0.35)); }
+.af-node.prompt rect { fill: #2A2618; }
+.af-node.mllm rect { fill: #13304C; }
+.af-node.json rect { fill: var(--bg-1); }
+.af-node.mach rect { fill: var(--bg-2); }
+.af-node.mllm.think rect { animation: mllm-think 0.9s ease-in-out infinite alternate; }
+@keyframes mllm-think { from { fill: #13304C; } to { fill: #1A4466; } }
+.af-bt { font-size: 19px; font-weight: 700; fill: var(--text-1); }
+.af-bt.lg { font-size: 22px; }
+.af-big { font-size: 30px; font-weight: 700; fill: var(--text-1); letter-spacing: 0.02em; }
+.af-st { font-size: 14px; fill: var(--text-2); }
+.af-ttl { font-size: 22px; font-weight: 700; fill: var(--text-1); transition: fill 0.3s; }
+.af-ttl.on { fill: var(--green-300); }
+.af-sub { font-size: 17px; fill: var(--text-3); }
+.af-it { font-family: 'Times New Roman', serif; font-style: italic; }
+.af-mono { font-family: var(--font-mono) !important; font-size: 12.5px; font-weight: 500; fill: var(--text-1); }
+.af-brace { fill: none; stroke: var(--text-3); stroke-width: 2; }
+.af-pulse { fill: var(--green-300); opacity: 0; }
+
+.dr-arm { stroke: var(--text-1); stroke-width: 2.6; stroke-linecap: round; }
+.dr-rotor { fill: var(--bg-1); stroke: var(--text-1); stroke-width: 2.2; }
+.dr-body { fill: currentColor; stroke: var(--text-1); stroke-width: 1.6; }
+
+.acts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.act { --c: var(--text-2); position: relative; border: 1px solid color-mix(in srgb, var(--c) 30%, transparent); background: color-mix(in srgb, var(--c) 7%, var(--bg-1)); border-radius: 14px; padding: 14px 14px 12px; color: var(--c); }
+.act.go { --c: var(--c-go); } .act.rotate { --c: var(--c-rot); } .act.think { --c: var(--c-think); } .act.finished { --c: var(--c-fin); }
+.act .chip { display: inline-block; font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--c); border: 1.5px solid var(--c); border-radius: 999px; padding: 1px 12px; }
+.act svg { display: block; width: 100%; height: auto; margin: 6px 0 2px; overflow: visible; }
+.act p { margin: 0; font-size: 13px; color: var(--text-2); font-style: italic; }
+.act-line { fill: none; stroke: var(--text-1); stroke-width: 2.2; stroke-linecap: round; }
+.act-lbl { font-size: 15px; fill: var(--text-1); }
+.act-tgt { fill: var(--crimson); }
+.act-ring { fill: none; stroke: var(--crimson); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: ring 2.4s ease-out infinite; }
+.act-dash { fill: none; stroke: var(--text-1); stroke-width: 2; stroke-dasharray: 6 6; }
+.act-chk { fill: none; stroke: var(--c-fin); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.mv-go { animation: go-fly 2.8s cubic-bezier(.5,0,.3,1) infinite; }
+@keyframes go-fly { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 70% { transform: translateX(150px); opacity: 1; } 88%, 100% { transform: translateX(150px); opacity: 0; } }
+.mv-rot { transform-box: fill-box; transform-origin: center; animation: yaw 3.2s ease-in-out infinite; }
+@keyframes yaw { 0%, 12% { transform: rotate(0deg); } 50%, 62% { transform: rotate(-90deg); } 100% { transform: rotate(0deg); } }
+.mv-ring { transform-box: fill-box; transform-origin: center; animation: spin 9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.mv-dots circle { fill: var(--text-1); animation: blink 1.4s ease-in-out infinite; }
+.mv-dots circle:nth-child(2) { animation-delay: 0.2s; } .mv-dots circle:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 100% { opacity: 0.2; } 40% { opacity: 1; } }
+@keyframes ring { 0% { transform: scale(1); opacity: 0.9; } 100% { transform: scale(2.6); opacity: 0; } }
+.mv-chk1, .mv-chk2 { animation: chk 3.2s ease infinite; }
+.mv-chk2 { animation-delay: 0.45s; }
+@keyframes chk { 0%, 10% { opacity: 0; transform: translateX(-4px); } 25%, 85% { opacity: 1; transform: none; } 100% { opacity: 0; } }
+
+/* short notes between the figure parts */
+.fig-note { max-width: 860px; margin: 20px 0 30px; font-size: 15px; line-height: 1.65; color: var(--text-2); }
+.fig-note b { color: var(--text-1); font-weight: 700; }
+.fig-note code { font-family: var(--font-mono); font-size: 0.85em; background: var(--green-900); color: var(--green-100); padding: 1px 6px; border-radius: 5px; }
+.acts-title { margin-bottom: 0; }
+.levels-note { margin-top: 26px; margin-bottom: 0; }
+.lv { font-weight: 700; }
+.lv.easy { color: var(--green-300); } .lv.med { color: var(--teal); } .lv.hard { color: #A797FF; }
+.swipe-hint { display: none; }
+
+/* task axes */
+.tg { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; }
+.tg-title { font-family: var(--font-mono); font-weight: 500; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 12px; }
+.tg-left { display: flex; flex-direction: column; }
+.tg-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; flex: 1; }
+.tcard { display: flex; flex-direction: column; justify-content: center; padding-top: 16px !important; --c: var(--ice); border: 1px solid color-mix(in srgb, var(--c) 32%, transparent); background: color-mix(in srgb, var(--c) 9%, var(--bg-1)); border-radius: 14px; padding: 10px 10px 14px; text-align: center; color: var(--c); }
+.tcard.approach { --c: var(--ice); } .tcard.track { --c: var(--teal); } .tcard.search { --c: #A797FF; } .tcard.both { --c: var(--green-100); }
+.tcard svg { display: block; width: 100%; max-width: 230px; margin: 4px auto 6px; height: auto; overflow: hidden; border-radius: 10px; }
+.tcard b { display: block; font-family: var(--font-display); font-size: 16px; color: var(--text-1); margin-top: 4px; }
+.tcard span { display: block; font-size: 12.5px; color: var(--text-3); margin-top: 2px; }
+.tcard .cone { fill: var(--c); fill-opacity: 0.22; stroke: var(--c); stroke-width: 1.6; stroke-linejoin: round; }
+.tcard .tgt { fill: var(--c); stroke: var(--bg-1); stroke-width: 2.5; }
+.tcard .q { fill: var(--bg-1); stroke: var(--text-2); stroke-width: 1.8; }
+.tcard .qt { font-size: 15px; font-weight: 700; fill: var(--text-1); }
+.tcard .mv-arrow { fill: none; stroke: var(--text-1); stroke-width: 2.2; stroke-linecap: round; }
+.mv-near { animation: near 3.4s ease-in-out infinite alternate; }
+@keyframes near { from { transform: translateX(0); } to { transform: translateX(18px); } }
+.mv-move { animation: tmove 3.6s ease-in-out infinite; }
+.mv-follow { animation: tfollow 3.6s ease-in-out infinite; }
+@keyframes tmove { 0% { transform: translateX(-12px); } 100% { transform: translateX(22px); } }
+@keyframes tfollow { 0% { transform: translateX(-10px); } 100% { transform: translateX(18px); } }
+.mv-sweep, .mv-sweep2 { transform-box: view-box; transform-origin: 40px 96px; animation: sweep 4.4s ease-in-out infinite; }
+@keyframes sweep { 0%, 8% { transform: rotate(-90deg); } 55%, 92% { transform: rotate(0deg); } 100% { transform: rotate(-90deg); } }
+.mv-found { animation: found 4.4s ease infinite; }
+.mv-q { animation: qfade 4.4s ease infinite; }
+@keyframes found { 0%, 48% { opacity: 0; } 56%, 92% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes qfade { 0%, 46% { opacity: 1; } 54%, 94% { opacity: 0; } 100% { opacity: 1; } }
+.mv-found2 { animation: found2 4.4s ease infinite; }
+.mv-q2 { animation: qfade 4.4s ease infinite; }
+@keyframes found2 { 0%, 48% { opacity: 0; transform: translateX(0); } 56% { opacity: 1; transform: translateX(0); } 92% { opacity: 1; transform: translateX(22px); } 100% { opacity: 0; transform: translateX(22px); } }
+
+.tg-right { display: flex; flex-direction: column; }
+.orows { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.orow { display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--border); background: var(--bg-1); border-radius: 14px; padding: 18px 16px 16px; color: var(--text-2); }
+.orow svg { width: 100%; max-width: 230px; height: auto; overflow: visible; margin-bottom: 10px; }
+.orow b { display: block; font-family: var(--font-display); font-size: 16px; color: var(--text-1); }
+.orow span { display: block; font-size: 12.5px; color: var(--text-3); }
+.mchip { fill: var(--bg-2); stroke: var(--text-1); stroke-width: 1.6; }
+.mtxt { font-family: var(--font-mono) !important; font-size: 10.5px; font-weight: 600; fill: var(--text-1); }
+.flow { fill: none; stroke: var(--green-300); stroke-width: 1.6; stroke-dasharray: 3 4; animation: flow 1.1s linear infinite; }
+.flow.sub { stroke: var(--ice); }
+@keyframes flow { to { stroke-dashoffset: -14; } }
+.orow .cone.sm { fill: var(--ice); fill-opacity: 0.22; stroke: var(--ice); stroke-width: 1.4; }
+.agent { fill: var(--bg-2); stroke: var(--ice); stroke-width: 1.6; }
+
+
+/* organisational axis: detailed cards */
+.orow svg { max-width: 330px !important; }
+.orow span { max-width: 330px; line-height: 1.5; margin-top: 4px; }
+.ofr { fill: none; stroke-width: 2; }
+.ofr.sm { stroke-width: 1.4; fill: var(--bg-2); }
+.ofr.d1 { stroke: var(--d1); } .ofr.d2 { stroke: var(--d2); } .ofr.d3 { stroke: var(--d3); } .ofr.d4 { stroke: var(--d4); }
+.ofn { font-family: var(--font-mono) !important; font-size: 10px; font-weight: 600; fill: var(--text-2); }
+.olbl { font-size: 10.5px; fill: var(--text-3); }
+.olbl.dim { fill: var(--text-4); }
+.olbl.ital { font-style: italic; fill: var(--text-2); font-size: 10px; }
+.oedge { fill: none; stroke: var(--text-2); stroke-width: 1.8; stroke-linecap: round; }
+.oedge.thin { stroke-width: 1.3; }
+.oloop { fill: none; stroke: var(--text-4); stroke-width: 1.4; stroke-dasharray: 3 4; animation: flow 1.1s linear infinite; }
+.mtxt.lg { font-size: 12px; }
+.mchip.cmd { fill: #13304C; }
+.achip { fill: var(--bg-1); stroke-width: 1.6; }
+.achip.go { stroke: var(--c-go); } .achip.rotate { stroke: var(--c-rot); } .achip.think { stroke: var(--c-think); } .achip.fin { stroke: var(--c-fin); }
+.atxt { font-family: var(--font-mono) !important; font-size: 11px; font-weight: 600; }
+.atxt.go { fill: var(--c-go); } .atxt.rotate { fill: var(--c-rot); } .atxt.think { fill: var(--c-think); } .atxt.fin { fill: var(--c-fin); }
+.atxt.mono { fill: var(--text-1); font-size: 10.5px; }
+.arr4 { fill: var(--bg-1); stroke: var(--text-2); stroke-width: 1.6; }
+.acycle > g { opacity: 0; animation: acyc 6s steps(1) infinite; }
+.acycle > g:nth-child(2) { animation-delay: 1.5s; } .acycle > g:nth-child(3) { animation-delay: 3s; } .acycle > g:nth-child(4) { animation-delay: 4.5s; }
+@keyframes acyc { 0% { opacity: 1; } 25%, 100% { opacity: 0; } }
+.ostep { animation: ostep 1.5s ease-in-out infinite; }
+@keyframes ostep { 0%, 40% { transform: translateX(0); } 70%, 100% { transform: translateX(6px); } }
+.obeat rect { animation: beat 2.4s ease-in-out infinite; }
+.obeat.slow rect { animation-duration: 4.8s; }
+@keyframes beat { 0%, 60%, 100% { stroke: var(--text-1); } 70%, 85% { stroke: var(--green-300); } }
+.olock { animation: lock 2.4s ease-in-out infinite; }
+@keyframes lock { 0%, 78% { transform: translateX(0); } 90%, 100% { transform: translateX(7px); } }
+.omap rect { fill: var(--bg-2); stroke: var(--text-2); stroke-width: 1.4; }
+.omap path { fill: none; stroke: var(--ice); stroke-width: 1.4; stroke-linejoin: round; }
+.ocmd { fill: none; stroke: var(--border-strong); stroke-width: 1.5; }
+.ocmd.hot { stroke: var(--green-300); stroke-width: 2.2; stroke-dasharray: 18 300; stroke-dashoffset: 18; animation: cmdgo 4.8s ease-in infinite; }
+.ocmd.hot.h2 { animation-delay: 0.15s; } .ocmd.hot.h3 { animation-delay: 0.3s; } .ocmd.hot.h4 { animation-delay: 0.45s; }
+@keyframes cmdgo { 0%, 64% { stroke-dashoffset: 18; opacity: 0; } 66% { opacity: 1; } 84% { stroke-dashoffset: -150; opacity: 1; } 86%, 100% { stroke-dashoffset: -150; opacity: 0; } }
+.sag { fill: var(--bg-2); stroke-width: 1.6; }
+.sag.d1 { stroke: var(--d1); } .sag.d2 { stroke: var(--d2); } .sag.d3 { stroke: var(--d3); } .sag.d4 { stroke: var(--d4); }
+.stxt { font-family: var(--font-mono) !important; font-size: 8.5px; font-weight: 600; fill: var(--text-1); }
+.sloop { fill: none; stroke: var(--text-3); stroke-width: 1.4; stroke-dasharray: 22 72; stroke-linecap: round; }
+.spin { transform-box: fill-box; transform-origin: center; animation: spin 1.4s linear infinite; }
+.spin.s2 { animation-duration: 1.9s; } .spin.s3 { animation-duration: 1.1s; } .spin.s4 { animation-duration: 2.3s; }
+
+@media (max-width: 980px) {
+  .acts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .swipe-hint { display: block; margin: 0 0 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; color: var(--text-3); text-align: right; }
+  .orow { padding: 18px 26px 16px; }
+  .fig-note { font-size: 14.5px; }
+  .tg-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .orows { grid-template-columns: minmax(0, 1fr); }
+  .acts { grid-template-columns: minmax(0, 1fr); }
+  .af-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: var(--radius); }
+  .af-scroll .af { min-width: 820px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .anim-fig *, .anim-fig *::before { animation: none !important; transition: none !important; }
+}

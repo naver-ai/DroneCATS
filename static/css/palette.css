@@ -1,0 +1,112 @@
+/* DroneCATS palette: "Aurora Night". Dark only. Loaded after style.css and v2.css.
+   Naver green is for the main call to action, our model and key numbers; Polaris marks the best
+   result; Crimson marks failure; Ice blue is for paths, lines and secondary links. */
+
+:root, html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* night sky */
+  --bg-0: #04060E;          /* Polar night */
+  --bg-1: #0A1024;          /* Arctic navy */
+  --bg-2: #121A33;          /* Ice shelf */
+  --border: #1E2A4A;        /* Frost line */
+  --border-strong: #2C3B66; /* Horizon */
+  --ground: #0B2A22;        /* Taiga */
+
+  /* green */
+  --green-900: #0D4A36;     /* Deep curtain */
+  --green-700: #028A40;     /* Deep green */
+  --green-500: #03C75A;     /* Naver green */
+  --green-300: #2EF2A0;     /* Aurora */
+  --green-100: #A6FFD6;     /* Mint haze */
+
+  /* aurora spectrum and starlight */
+  --crimson: #E2557A;       /* Crimson veil */
+  --teal: #19D3C5;          /* Teal drift */
+  --violet: #7B61FF;        /* Nitrogen violet */
+  --ice: #7FD8FF;           /* Ice blue */
+  --polaris: #F5B946;       /* Polaris */
+
+  /* text */
+  --text-1: #EEF3FA;        /* Snow */
+  --text-2: #AFC0D6;        /* Glacier */
+  --text-3: #7488A6;        /* Frost */
+  --text-4: #4A5672;        /* Dim star */
+  --on-bright: #04060E;     /* text on a bright fill */
+
+  /* the page's own theme variables, mapped onto the palette */
+  --ink: var(--text-1);
+  --text: var(--text-2);
+  --sub: var(--text-3);
+  --faint: var(--border);
+  --faint2: var(--bg-2);
+  --line2: var(--border-strong);
+  --bg: var(--bg-0);
+  --panel: var(--bg-1);
+  --card: var(--bg-2);
+  --acc: var(--green-500);
+  --acc-soft: rgba(3, 199, 90, 0.08);
+  --acc-soft2: rgba(3, 199, 90, 0.12);
+  --acc-line: var(--green-900);
+  --ok-soft: rgba(46, 242, 160, 0.08);
+  --ok-line: var(--green-900);
+  --green: var(--green-500);
+  --go: var(--ice);
+  --rotate: var(--teal);
+  --think: var(--violet);
+  --finished: var(--green-300);
+  --nav-bg: rgba(4, 6, 14, 0.72);
+  --btn: var(--bg-2);
+  --btn-h: var(--border);
+  --map-bg: var(--bg-1);
+  --shadow: rgba(0, 0, 0, 0.5);
+
+  /* drones in the replays (read by main.js) */
+  --d1: var(--ice);
+  --d2: var(--teal);
+  --d3: var(--violet);
+  --d4: var(--text-1);
+}
+
+body { background: var(--bg-0); color: var(--text-2); }
+a { color: var(--green-300); }
+::selection { background: var(--green-900); color: var(--green-100); }
+
+/* header */
+.mono-tag { color: var(--green-300); }
+.vsub b { color: var(--green-500); }   /* DroneCATS and its initials in one green */
+.vhero .btn:first-child { background: var(--green-500); border-color: var(--green-500); color: #04210F; font-weight: 600; }
+.vhero .btn:first-child:hover { background: var(--green-300); border-color: var(--green-300); color: #04261A; }
+
+/* section labels */
+.sec-head .eyebrow { color: var(--green-300); }
+.sec-head .eyebrow::before { background: var(--green-300); }
+
+/* tables: best per column in Polaris, our row in green */
+table.res b { color: var(--polaris); }
+table.res tr.ours td, html[data-theme="dark"] .table-wrap table.res tr.ours td { background: var(--acc-soft); color: var(--green-100); }
+table.res tr.ours td.l { color: var(--green-500); font-weight: 700; }
+
+/* difficulty tags: mono labels, no fill */
+.tag { background: transparent !important; padding: 0; border-radius: 0; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
+.tag.easy { color: var(--green-300); }
+.tag.med { color: var(--teal); }
+.tag.hard { color: #A797FF; }
+
+/* text on bright fills */
+.btn.primary, .tab.on, .rp-btn.on, .rp-sent { color: var(--on-bright); }
+.rp-tag, .rp-act, .r2-ic, .cp-badge.ok { color: var(--on-bright); }
+.rp-num, .rp-tok, .r2-mn { fill: var(--on-bright); }
+.cp-badge.bad, .rp-log li.m.bad .r2-ic, .r2-mark.rejected { background: var(--crimson); color: var(--on-bright); }
+html[data-theme="dark"] .rp-log li.m.bad .rp-msg, .rp-log li.m.bad .rp-msg { color: var(--crimson); }
+.rp-sent.off { color: var(--text-4); }
+.db-dot.multi { border-color: var(--text-3); }
+.db-dot.cmd { border-color: var(--bg-0); }
+.vcard video, .rp-cam { background: var(--bg-1); }
+@keyframes rpflash { from { box-shadow: 0 0 0 3px rgba(46, 242, 160, 0.45); } to { box-shadow: 0 0 0 0 rgba(46, 242, 160, 0); } }
+
+/* map labels */
+.rp-lbl.red, .r2-ml.red { fill: var(--crimson); }
+.rp-lbl.blue, .r2-ml.blue { fill: var(--ice); }
+.r2-ml.goal { fill: var(--green-300); }
+.r2-ml, .r2-note { fill: var(--text-3); }
