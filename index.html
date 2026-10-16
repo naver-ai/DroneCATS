@@ -74,8 +74,8 @@
     <img class="logo" src="assets/fig/navercloud_logo_dark.png" alt="NAVER Cloud">
     <div class="buttons">
     <a class="btn" href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener"><i class="ai ai-arxiv"></i><span>Paper</span></a>
-    <a class="btn" href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener"><span class="hf">&#129303;</span><span>Hugging Face</span><span class="arr">&rarr;</span></a>
-    <a class="btn disabled" aria-disabled="true"><i class="fab fa-github"></i><span>Code</span><span class="soon">coming soon</span></a>
+    <a class="btn disabled" aria-disabled="true"><span class="hf">&#129303;</span><span>Model</span><span class="soon">coming soon</span></a>
+    <a class="btn" href="https://github.com/naver-ai/DroneCATS" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>Code</span><span class="soon">coming soon</span></a>
     <a class="btn" href="#bibtex"><i class="fas fa-quote-right"></i><span>BibTeX</span></a>
   </div>
   </div>
@@ -426,7 +426,7 @@
       </table>
     </div>
     <div class="legend-row"><span><i class="sw" style="background:var(--polaris)"></i>best per column</span><span><i class="sw" style="background:var(--green-500)"></i>ours</span></div>
-    <p class="caption center">Single drone. Simulation: 20 episodes per task, each flown twice. Real drone: mean over the four tasks, 5 episodes each.</p>
+    <p class="caption center">Single drone. Simulation: 20 episodes per task, each flown twice. Real drone: mean over the four tasks, 5 episodes each, so one episode moves a real cell by 20 points.</p>
   </div>
 </section>
 
@@ -515,6 +515,7 @@
 </div><div class="sec-r">    <p class="lead">
       We flew the single-drone and commander suites on DJI Tellos. The ranking of models broadly carries over.
       The video and command links slow every step, though, so the frontier models that tracked well in simulation lose moving targets in the real room.
+      In simulation a step costs little more than the model call; on the Tello the link delay comes on top of it. This is why the fine-tuned 2B, at 0.6 s per call, is the one model that does better on the real drone than in simulation.
     </p>
 </div></div>    <div class="table-wrap">
       <table class="res compact">
@@ -573,8 +574,8 @@
         <div class="foot-brand">DroneCATS</div>
         <p>A benchmark for multimodal LLMs as the sole decision maker of one or several drones, in simulation and on real drones.</p>
       </div>
-      <div class="foot-col"><h5>Paper</h5><a href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener">arXiv</a><a href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener">Hugging Face</a><a href="#bibtex">BibTeX</a></div>
-      <div class="foot-col"><h5>Resources</h5><span>Code (coming soon)</span><span>Benchmark (coming soon)</span></div>
+      <div class="foot-col"><h5>Paper</h5><a href="https://arxiv.org/abs/2609.01404" target="_blank" rel="noopener">arXiv</a><a href="https://huggingface.co/papers/2609.01404" target="_blank" rel="noopener">HF Papers</a><a href="#bibtex">BibTeX</a></div>
+      <div class="foot-col"><h5>Resources</h5><a href="https://github.com/naver-ai/DroneCATS" target="_blank" rel="noopener">Code (coming soon)</a><span>Model weights (coming soon)</span><span>Benchmark (coming soon)</span></div>
       <div class="foot-col"><h5>Team</h5><a href="#authors">Authors</a><span>Drone AI Team, NAVER Cloud</span></div>
     </div>
     <div class="foot-bottom"><span>&copy; 2026 Drone AI Team, NAVER Cloud</span><span>Page layout inspired by <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.</span></div>
