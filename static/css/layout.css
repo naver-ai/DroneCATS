@@ -30,6 +30,8 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -0.01em; margin: 56px 0 
 .vsub { color: var(--text-2); }
 .vhero .authors { color: var(--text-1); }
 .vhero .authors sup { color: var(--green-300); }
+.vhero .authors a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+.vhero .authors a:hover { border-bottom-color: var(--green-300); }
 .vhero .note { color: var(--text-3); }
 .vhero .note sup { color: var(--green-300); }
 .vhero .logo { height: 20px; margin: 18px 0 0; }
