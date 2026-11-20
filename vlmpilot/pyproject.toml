@@ -1,0 +1,38 @@
+[project]
+name = "vlmpilot"
+version = "0.1.0"
+description = "VLM-driven closed-loop drone navigation on AirSim, Isaac Sim (Pegasus + PX4) and a real DJI Tello"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "airsim>=1.8.1",
+    "backports-ssl-match-hostname>=3.7.0.1",
+    "google-genai>=1.35.0",
+    "numpy>=2.3.3",
+    "openai>=1.107.0",
+    "opencv-python-headless>=4.11.0.86",
+    "pillow>=11.3.0",
+    "python-dotenv>=1.1.1",
+    "pyyaml>=6.0.2",
+]
+
+
+[project.optional-dependencies]
+# Real-drone only — MIT license. The airsim path works without this group.
+tello = ["djitellopy>=2.5"]
+# Isaac Sim + PX4 SITL backend (pegasus mode). Leaves the default dependencies alone, so
+# `uv sync` for airsim users is unchanged.  Install: uv sync --extra pegasus
+# Capped below 4.x: closed-loop flight was validated on mavsdk 3.17.x only.
+pegasus = ["mavsdk>=3.17,<4"]
+
+[tool.uv]
+package = true
+# airsim pulls in opencv-contrib-python (Qt-linked), which overwrites headless cv2 — on headless servers
+# `import cv2` then crashes on libQt5Core. Exclude contrib from resolution (our code uses no contrib modules).
+override-dependencies = ["opencv-contrib-python; python_version < '3'"]
+
+[tool.uv.extra-build-dependencies]
+airsim = ["numpy", "msgpack-rpc-python", "backports.ssl_match_hostname"]
+
+[project.scripts]
+vlmpilot = "vlmpilot.cli:main"

@@ -1,0 +1,66 @@
+# AirSim + Anthropic Claude Opus 5 (via OpenRouter, OpenAI-compatible)
+#   Run:  uv run python -m vlmpilot airsim --config configs/airsim/single-drone/airsim_claude.yaml
+#   Requires OPENROUTER_API_KEY in .env
+#
+#   Why OpenRouter: the VLM backend has only the OpenAI-compatible path, so
+#   requests go to OpenRouter's OpenAI-compatible endpoint instead of adding the Anthropic SDK.
+#   It uses the same prompt, image encoding, and parser as the other baselines, so
+#   the comparison is "only the model changed". OpenRouter normalizes max_tokens/temperature
+#   to each vendor's spec, so there is no need to touch token_param/sampling as in the gpt config.
+
+# Simulator connection
+camera_name: "0"
+airsim_rpc_port: 41451            # multi-user: change to your own slot port
+
+# Wind disturbance (NED, m/s)
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+
+# Model endpoint
+api_provider: "openai"
+model_name: "anthropic/claude-opus-5"   # OpenRouter model ID (vendor prefix required)
+gt_depth_log: false               # GT depth capture off — logging only, no effect on flight/judging; saves sim RPCs per step
+
+# --- Frontier models only -------------------------------------------------------
+openai_base_url: "https://openrouter.ai/api/v1"
+api_key_env: "OPENROUTER_API_KEY"
+structured_output: true           # single-drone schema is root=object, so it is accepted (measured: JSON is enforced
+                                  # even with prose instructions). Multi also switched to a drone-keyed object, so it is enabled too
+extra_body:                       # ⚠️ OFF for roster consistency (set true to restore ON)
+  reasoning:
+    enabled: false
+vlm_timeout: 60                   # seconds. With the default 8s every step gets cut off
+# Coordinate order: assumed to follow the [y,x] the prompt asks for.
+# If points look mirrored left/right on the first run, change to "xy".
+point_order: "yx"
+# ---------------------------------------------------------------------------
+
+# Motion limits
+max_step_distance_m: 3.0          # max travel per step (m). If exceeded, keep direction and shorten distance
+step_duration_s: 2.5              # duration of one move command (s). speed = distance / this value
+base_yaw_rate: 60.0               # deg/s
+yaw_deadband_deg: 8.0             # skip rotation at or below this angle (VLM point noise is about ±9°)
+
+# Step loop and depth
+command_loop_delay: 0
+arrival_frames: 1                   # same as default (DEFAULT_ARRIVAL_FRAMES=1); set explicitly
+depth_source: model               # "model" (VLM estimate) | "oracle" (sim GT). Same as default; set explicitly for consistency
+
+adaptive_depth: true              # shorten per-step travel as the target gets closer
+adaptive_depth_bands:             # [[max depth (m), travel multiplier, precise stop], ...]
+  - [2.0, 0.0, true]              # right in front — stop
+  - [5.0, 0.6, false]             # near — 60%
+
+fov_horizontal: 90
+
+vertical_deadband: 0.15
+min_altitude_m: 1.5
+
+auto_record: false               # for large-scale measurement — do not produce raw PNGs (~500MB/episode) or 1fps mp4
+output_root: "outputs"
+
+plan_schema: true
+mm_history: false                # attach past-step views as images with action labels (off by default; ablation only)
+mm_history_scale: 0.5            # past view width = current sent width × scale (0.5 = half; only used when mm_history is on)
+think_action: true               # Include the THINK action in the action list (false = 3-action prompt; ablation only)

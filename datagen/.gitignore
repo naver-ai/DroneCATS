@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+# Data never goes into git: build packages and reconstructions outside the repo.
+/package/
+/dataset/
+*.zip
+*.mat

@@ -1,0 +1,243 @@
+{
+ "scene": "campus",
+ "scenario": "searching",
+ "scenario_spec": {
+  "moving_target": false,
+  "visible_at_start": false,
+  "start_yaw_offset_deg": 180.0,
+  "start_bearing_kind": "diagonal (avoids axis-aligned, at least 15° off axis)",
+  "rng_seed": 20260820,
+  "start_dist_m": "12-30m (varies per target — adopted after checking visibility and forward clearance)",
+  "start_alt_agl_m": "1.2-2.2m (varies per target; some use the default 1.7m)"
+ },
+ "note": "MSBuild2018 campus. Existing map objects are used as targets (no spawning). The start pose is on the ground; flight altitude comes from the runner's takeoff. Start distance 15~30m, bearing at least 15° off axis. | searching: same placement as approaching + start yaw +180° (at +90° the target can still fall within the FOV for episodes not placed head-on).",
+ "episodes": [
+  {
+   "target": "drone",
+   "asset": "Quadrotor1",
+   "color": "white",
+   "paint_texture": "white",
+   "target_xyz": [
+    -127.1,
+    0.04,
+    -2.5
+   ],
+   "target_yaw_deg": 56.1,
+   "start": {
+    "x": -114.22,
+    "y": 10.06,
+    "z": 1.9,
+    "yaw_deg": 56.1,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.3,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the white drone",
+   "yaw_to_target_deg": 161.8
+  },
+  {
+   "target": "Mesh_bench_14",
+   "target_xyz": [
+    -63.31,
+    -20.75,
+    2.483
+   ],
+   "target_yaw_deg": 169.3,
+   "start": {
+    "x": -48.77,
+    "y": -16.97,
+    "z": 2.1,
+    "yaw_deg": 343.4,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.0,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the bench beside the trash can on the west side of the field",
+   "yaw_to_target_deg": -148.8
+  },
+  {
+   "target": "Mesh_busStop_8",
+   "target_xyz": [
+    17.66,
+    -34.85,
+    3.016
+   ],
+   "target_yaw_deg": -4.6,
+   "start": {
+    "x": 9.38,
+    "y": -49.6,
+    "z": 2.8,
+    "yaw_deg": 230.2,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.9,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the bus stop shelter at the roadside",
+   "yaw_to_target_deg": -169.5
+  },
+  {
+   "target": "Mesh_cover_16",
+   "target_xyz": [
+    35.68,
+    39.84,
+    1.663
+   ],
+   "start": {
+    "x": 29.04,
+    "y": 21.96,
+    "z": 1.58,
+    "yaw_deg": 216.7,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 19.1,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the white canopy shelter next to the benches",
+   "yaw_to_target_deg": -147.1
+  },
+  {
+   "target": "greendrone",
+   "asset": "Quadrotor1",
+   "color": "green",
+   "paint_texture": "green",
+   "target_xyz": [
+    -30.59,
+    44.93,
+    -5.7
+   ],
+   "target_yaw_deg": -94.6,
+   "start": {
+    "x": -28.14,
+    "y": 29.28,
+    "z": 1.6,
+    "yaw_deg": 258.4,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.8,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the green drone",
+   "yaw_to_target_deg": -159.5
+  },
+  {
+   "target": "trashbin",
+   "asset": "Mesh_garbageA",
+   "target_xyz": [
+    -31.75,
+    -40.79,
+    3.134
+   ],
+   "target_yaw_deg": -150.5,
+   "start": {
+    "x": -46.34,
+    "y": -47.32,
+    "z": 2.38,
+    "yaw_deg": 177.5,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.0,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the trash bin on the line by the roadside",
+   "yaw_to_target_deg": -153.4
+  },
+  {
+   "target": "Mesh_powerBox_2",
+   "target_xyz": [
+    7.6,
+    49.1,
+    1.92
+   ],
+   "start": {
+    "x": -3.96,
+    "y": 58.83,
+    "z": 1.24,
+    "yaw_deg": 124.4,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.1,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the grey utility box standing alone on the grass",
+   "yaw_to_target_deg": -164.5
+  },
+  {
+   "target": "Mesh_sign_24",
+   "target_xyz": [
+    51.13,
+    -43.54,
+    3.409
+   ],
+   "target_yaw_deg": -9.8,
+   "start": {
+    "x": 37.67,
+    "y": -28.68,
+    "z": 2.5,
+    "yaw_deg": 148.2,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 20.0,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the sign post by the road",
+   "yaw_to_target_deg": 164.0
+  },
+  {
+   "target": "reddrone",
+   "asset": "Quadrotor1",
+   "color": "red",
+   "paint_texture": "red",
+   "target_xyz": [
+    61.2,
+    -40.39,
+    -3.16
+   ],
+   "target_yaw_deg": 0.0,
+   "start": {
+    "x": 70.83,
+    "y": -24.08,
+    "z": 2.84,
+    "yaw_deg": 87.3,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 18.9,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the red drone",
+   "yaw_to_target_deg": 152.1
+  },
+  {
+   "target": "Mesh_garbageB2",
+   "target_xyz": [
+    50.45,
+    -15.59,
+    1.92
+   ],
+   "start": {
+    "x": 58.13,
+    "y": -1.08,
+    "z": 1.71,
+    "yaw_deg": 46.3,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.4,
+   "scenario": "searching",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the grey trash bin on the grass near the volleyball net",
+   "yaw_to_target_deg": -164.2
+  }
+ ]
+}

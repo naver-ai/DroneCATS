@@ -1,0 +1,2776 @@
+{
+ "version": "editor-v2",
+ "map": "blocks",
+ "authored_by": "human",
+ "defaults": {
+  "arrival_radius_m": 5,
+  "max_steps": 60,
+  "end_on": "any",
+  "oracle_arrival": true,
+  "spawn_yaw_deg": 90,
+  "drones": 4,
+  "ground_z_ned": 1.02
+ },
+ "tasks": [
+  {
+   "id": "E-01",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 4.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-01",
+    "asset": "Cube",
+    "xy": [
+     24.65,
+     288.33
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 359.1,
+    "heading_deg": 359.1,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "magenta",
+    "pivot": "ctr",
+    "label": "sign that says GATE 4",
+    "text": "GATE 4",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S1",
+     "asset": "Cube",
+     "xy": [
+      21.77,
+      279.41
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "ctr",
+     "label": "sign that says GATE 2",
+     "text": "GATE 2",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S1_POST",
+     "asset": "Cube",
+     "xy": [
+      21.77,
+      279.41
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S2",
+     "asset": "Cube",
+     "xy": [
+      23.34,
+      301.18
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "ctr",
+     "label": "sign that says GATE 1",
+     "text": "GATE 1",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S2_POST",
+     "asset": "Cube",
+     "xy": [
+      23.34,
+      301.18
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S3",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      271.28
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "ctr",
+     "label": "sign that says GATE 6",
+     "text": "GATE 6",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S3_POST",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      271.28
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      24.65,
+      288.33
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 359.1,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W1",
+     "from": [
+      3.15,
+      279.94
+     ],
+     "to": [
+      47.99,
+      269.97
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      4.72,
+      287.28
+     ],
+     "to": [
+      54.02,
+      280.2
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      4.98,
+      295.67
+     ],
+     "to": [
+      56.64,
+      295.15
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -25.84,
+     "y": 289.24,
+     "yaw_deg": 354.9,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -25.84,
+     "y": 294.24,
+     "yaw_deg": 354.9,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -20.84,
+     "y": 289.24,
+     "yaw_deg": 354.9,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -20.84,
+     "y": 294.24,
+     "yaw_deg": 354.9,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 50.5,
+    "bearing_deg": 359,
+    "yaw_deg": 354.9,
+    "rel_bearing_deg": 4,
+    "target_label": "magenta signboard",
+    "target_color": "magenta",
+    "target_size": null,
+    "paint_texture": "magenta",
+    "start_xy": [
+     -25.84,
+     289.24
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 4",
+    "decoy_texts": [
+     "GATE 2",
+     "GATE 1",
+     "GATE 6"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-02",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 51.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-02",
+    "asset": "Cube",
+    "xy": [
+     18.36,
+     293.05
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "magenta",
+    "pivot": "ctr",
+    "label": "sign that says GATE 51",
+    "text": "GATE 51",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S7",
+     "asset": "Cube",
+     "xy": [
+      18.36,
+      302.75
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "ctr",
+     "label": "sign that says GATE 55",
+     "text": "GATE 55",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S7_POST",
+     "asset": "Cube",
+     "xy": [
+      18.36,
+      302.75
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S8",
+     "asset": "Cube",
+     "xy": [
+      18.36,
+      310.36
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "ctr",
+     "label": "sign that says GATE 53",
+     "text": "GATE 53",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S8_POST",
+     "asset": "Cube",
+     "xy": [
+      18.36,
+      310.36
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S9",
+     "asset": "Cube",
+     "xy": [
+      18.62,
+      320.06
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "ctr",
+     "label": "sign that says GATE 52",
+     "text": "GATE 52",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S9_POST",
+     "asset": "Cube",
+     "xy": [
+      18.62,
+      320.06
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      18.36,
+      293.05
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W8",
+     "from": [
+      2.88,
+      302.23
+     ],
+     "to": [
+      52.71,
+      290.69
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W10",
+     "from": [
+      7.08,
+      307.74
+     ],
+     "to": [
+      55.86,
+      304.59
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W11",
+     "from": [
+      4.46,
+      314.29
+     ],
+     "to": [
+      56.64,
+      316.91
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -17.71,
+     "y": 308.91,
+     "yaw_deg": 355.9,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -17.71,
+     "y": 313.91,
+     "yaw_deg": 355.9,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -12.71,
+     "y": 308.91,
+     "yaw_deg": 355.9,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -12.71,
+     "y": 313.91,
+     "yaw_deg": 355.9,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 39.4,
+    "bearing_deg": 336.3,
+    "yaw_deg": 355.9,
+    "rel_bearing_deg": 19.6,
+    "target_label": "magenta signboard",
+    "target_color": "magenta",
+    "target_size": null,
+    "paint_texture": "magenta",
+    "start_xy": [
+     -17.71,
+     308.91
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 51",
+    "decoy_texts": [
+     "GATE 55",
+     "GATE 53",
+     "GATE 52"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-03",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 31.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-03",
+    "asset": "Cube",
+    "xy": [
+     11.8,
+     285.18
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "green",
+    "pivot": "ctr",
+    "label": "sign that says GATE 31",
+    "text": "GATE 31",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S10",
+     "asset": "Cube",
+     "xy": [
+      10.23,
+      274.69
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "green",
+     "pivot": "ctr",
+     "label": "sign that says GATE 33",
+     "text": "GATE 33",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S10_POST",
+     "asset": "Cube",
+     "xy": [
+      10.23,
+      274.69
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S11",
+     "asset": "Cube",
+     "xy": [
+      11.28,
+      295.94
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "green",
+     "pivot": "ctr",
+     "label": "sign that says GATE 36",
+     "text": "GATE 36",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S11_POST",
+     "asset": "Cube",
+     "xy": [
+      11.28,
+      295.94
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S12",
+     "asset": "Cube",
+     "xy": [
+      11.01,
+      303.8
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "green",
+     "pivot": "ctr",
+     "label": "sign that says GATE 39",
+     "text": "GATE 39",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S12_POST",
+     "asset": "Cube",
+     "xy": [
+      11.01,
+      303.8
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      11.8,
+      285.18
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W13",
+     "from": [
+      30.94,
+      275.74
+     ],
+     "to": [
+      -14.16,
+      287.28
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W14",
+     "from": [
+      -9.44,
+      293.31
+     ],
+     "to": [
+      40.12,
+      288.85
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W15",
+     "from": [
+      -10.49,
+      299.08
+     ],
+     "to": [
+      42.48,
+      300.92
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -31.35,
+     "y": 293.44,
+     "yaw_deg": 351.4,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -31.35,
+     "y": 298.44,
+     "yaw_deg": 351.4,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -26.35,
+     "y": 293.44,
+     "yaw_deg": 351.4,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -26.35,
+     "y": 298.44,
+     "yaw_deg": 351.4,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 43.9,
+    "bearing_deg": 349.2,
+    "yaw_deg": 351.4,
+    "rel_bearing_deg": 2.2,
+    "target_label": "green cube",
+    "target_color": "green",
+    "target_size": null,
+    "paint_texture": "green",
+    "start_xy": [
+     -31.35,
+     293.44
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 31",
+    "decoy_texts": [
+     "GATE 33",
+     "GATE 36",
+     "GATE 39"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-04",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 99.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-04",
+    "asset": "Cube",
+    "xy": [
+     2.1,
+     276.01
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "green",
+    "pivot": "ctr",
+    "label": "sign that says GATE 99",
+    "text": "GATE 99",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S13",
+     "asset": "Cube",
+     "xy": [
+      2.1,
+      288.33
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "green",
+     "pivot": "ctr",
+     "label": "sign that says GATE 91",
+     "text": "GATE 91",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S13_POST",
+     "asset": "Cube",
+     "xy": [
+      2.1,
+      288.33
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S14",
+     "asset": "Cube",
+     "xy": [
+      1.05,
+      263.94
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "green",
+     "pivot": "ctr",
+     "label": "sign that says GATE 93",
+     "text": "GATE 93",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S14_POST",
+     "asset": "Cube",
+     "xy": [
+      1.05,
+      263.94
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S15",
+     "asset": "Cube",
+     "xy": [
+      0.52,
+      256.6
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "green",
+     "pivot": "ctr",
+     "label": "sign that says GATE 96",
+     "text": "GATE 96",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S15_POST",
+     "asset": "Cube",
+     "xy": [
+      0.52,
+      256.6
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      2.1,
+      276.01
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W17",
+     "from": [
+      23.86,
+      265.25
+     ],
+     "to": [
+      -22.03,
+      274.17
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W18",
+     "from": [
+      -23.08,
+      267.35
+     ],
+     "to": [
+      25.44,
+      253.72
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W19",
+     "from": [
+      -21.5,
+      281.77
+     ],
+     "to": [
+      29.9,
+      279.94
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -46.56,
+     "y": 277.18,
+     "yaw_deg": 349,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -46.56,
+     "y": 282.18,
+     "yaw_deg": 349,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -41.56,
+     "y": 277.18,
+     "yaw_deg": 349,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -41.56,
+     "y": 282.18,
+     "yaw_deg": 349,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 48.7,
+    "bearing_deg": 358.6,
+    "yaw_deg": 349,
+    "rel_bearing_deg": 9.6,
+    "target_label": "green cube",
+    "target_color": "green",
+    "target_size": null,
+    "paint_texture": "green",
+    "start_xy": [
+     -46.56,
+     277.18
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 99",
+    "decoy_texts": [
+     "GATE 91",
+     "GATE 93",
+     "GATE 96"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-05",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 11.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-05",
+    "asset": "Cube",
+    "xy": [
+     23.34,
+     278.1
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "white",
+    "pivot": "ctr",
+    "label": "sign that says GATE 11",
+    "text": "GATE 11",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S16",
+     "asset": "Cube",
+     "xy": [
+      23.08,
+      288.59
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "sign that says GATE 12",
+     "text": "GATE 12",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S16_POST",
+     "asset": "Cube",
+     "xy": [
+      23.08,
+      288.59
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S17",
+     "asset": "Cube",
+     "xy": [
+      23.34,
+      298.03
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "sign that says GATE 27",
+     "text": "GATE 27",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S17_POST",
+     "asset": "Cube",
+     "xy": [
+      23.34,
+      298.03
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S18",
+     "asset": "Cube",
+     "xy": [
+      23.86,
+      307.47
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "sign that says GATE 14",
+     "text": "GATE 14",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S18_POST",
+     "asset": "Cube",
+     "xy": [
+      23.86,
+      307.47
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      23.34,
+      278.1
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W21",
+     "from": [
+      48.51,
+      281.51
+     ],
+     "to": [
+      -3.15,
+      288.59
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W22",
+     "from": [
+      -0.52,
+      294.36
+     ],
+     "to": [
+      52.19,
+      292.26
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W23",
+     "from": [
+      1.05,
+      299.87
+     ],
+     "to": [
+      52.97,
+      306.95
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -19.81,
+     "y": 290.81,
+     "yaw_deg": 357,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -19.81,
+     "y": 295.81,
+     "yaw_deg": 357,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -14.81,
+     "y": 290.81,
+     "yaw_deg": 357,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -14.81,
+     "y": 295.81,
+     "yaw_deg": 357,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 45,
+    "bearing_deg": 343.6,
+    "yaw_deg": 357,
+    "rel_bearing_deg": 13.4,
+    "target_label": "white cube",
+    "target_color": "white",
+    "target_size": null,
+    "paint_texture": "white",
+    "start_xy": [
+     -19.81,
+     290.81
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 11",
+    "decoy_texts": [
+     "GATE 12",
+     "GATE 27",
+     "GATE 14"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-06",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 37.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-06",
+    "asset": "Cube",
+    "xy": [
+     21.5,
+     309.83
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "white",
+    "pivot": "ctr",
+    "label": "sign that says GATE 37",
+    "text": "GATE 37",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S19",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      300.39
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "sign that says GATE 29",
+     "text": "GATE 29",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S19_POST",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      300.39
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S20",
+     "asset": "Cube",
+     "xy": [
+      21.77,
+      291.22
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "sign that says GATE 35",
+     "text": "GATE 35",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S20_POST",
+     "asset": "Cube",
+     "xy": [
+      21.77,
+      291.22
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S21",
+     "asset": "Cube",
+     "xy": [
+      20.72,
+      281.77
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "sign that says GATE 34",
+     "text": "GATE 34",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S21_POST",
+     "asset": "Cube",
+     "xy": [
+      20.72,
+      281.77
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      309.83
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W24",
+     "from": [
+      2.36,
+      295.94
+     ],
+     "to": [
+      59.27,
+      296.46
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W25",
+     "from": [
+      2.1,
+      301.97
+     ],
+     "to": [
+      61.36,
+      310.36
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W26",
+     "from": [
+      1.31,
+      291.48
+     ],
+     "to": [
+      59.79,
+      279.94
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -16.4,
+     "y": 294.22,
+     "yaw_deg": 0.3,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -16.4,
+     "y": 299.22,
+     "yaw_deg": 0.3,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -11.4,
+     "y": 294.22,
+     "yaw_deg": 0.3,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -11.4,
+     "y": 299.22,
+     "yaw_deg": 0.3,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 41,
+    "bearing_deg": 22.4,
+    "yaw_deg": 0.3,
+    "rel_bearing_deg": 22,
+    "target_label": "white cube",
+    "target_color": "white",
+    "target_size": null,
+    "paint_texture": "white",
+    "start_xy": [
+     -16.4,
+     294.22
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 37",
+    "decoy_texts": [
+     "GATE 29",
+     "GATE 35",
+     "GATE 34"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-07",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 77.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-07",
+    "asset": "Cube",
+    "xy": [
+     21.5,
+     284.66
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "red",
+    "pivot": "ctr",
+    "label": "sign that says GATE 77",
+    "text": "GATE 77",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S22",
+     "asset": "Cube",
+     "xy": [
+      19.93,
+      275.74
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "red",
+     "pivot": "ctr",
+     "label": "sign that says GATE 76",
+     "text": "GATE 76",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S22_POST",
+     "asset": "Cube",
+     "xy": [
+      19.93,
+      275.74
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S24",
+     "asset": "Cube",
+     "xy": [
+      21.24,
+      294.62
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "red",
+     "pivot": "ctr",
+     "label": "sign that says GATE 78",
+     "text": "GATE 78",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S24_POST",
+     "asset": "Cube",
+     "xy": [
+      21.24,
+      294.62
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S25",
+     "asset": "Cube",
+     "xy": [
+      20.98,
+      302.49
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "red",
+     "pivot": "ctr",
+     "label": "sign that says GATE 79",
+     "text": "GATE 79",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S25_POST",
+     "asset": "Cube",
+     "xy": [
+      20.98,
+      302.49
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      284.66
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W28",
+     "from": [
+      47.73,
+      276.01
+     ],
+     "to": [
+      -3.67,
+      285.45
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W29",
+     "from": [
+      -0.26,
+      291.48
+     ],
+     "to": [
+      54.02,
+      289.12
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W30",
+     "from": [
+      0,
+      298.3
+     ],
+     "to": [
+      55.33,
+      300.66
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -19.28,
+     "y": 289.76,
+     "yaw_deg": 356.1,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -19.28,
+     "y": 294.76,
+     "yaw_deg": 356.1,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -14.28,
+     "y": 289.76,
+     "yaw_deg": 356.1,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -14.28,
+     "y": 294.76,
+     "yaw_deg": 356.1,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 41.1,
+    "bearing_deg": 352.9,
+    "yaw_deg": 356.1,
+    "rel_bearing_deg": 3.2,
+    "target_label": "red cube",
+    "target_color": "red",
+    "target_size": null,
+    "paint_texture": "red",
+    "start_xy": [
+     -19.28,
+     289.76
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 77",
+    "decoy_texts": [
+     "GATE 76",
+     "GATE 78",
+     "GATE 79"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-08",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 41.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-08",
+    "asset": "Cube",
+    "xy": [
+     19.14,
+     271.81
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "red",
+    "pivot": "ctr",
+    "label": "sign that says GATE 41",
+    "text": "GATE 41",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S26",
+     "asset": "Cube",
+     "xy": [
+      18.62,
+      283.09
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "red",
+     "pivot": "ctr",
+     "label": "sign that says GATE 42",
+     "text": "GATE 42",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S26_POST",
+     "asset": "Cube",
+     "xy": [
+      18.62,
+      283.09
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S27",
+     "asset": "Cube",
+     "xy": [
+      19.41,
+      291.48
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "red",
+     "pivot": "ctr",
+     "label": "sign that says GATE 43",
+     "text": "GATE 43",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S27_POST",
+     "asset": "Cube",
+     "xy": [
+      19.41,
+      291.48
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S28",
+     "asset": "Cube",
+     "xy": [
+      19.93,
+      300.66
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "red",
+     "pivot": "ctr",
+     "label": "sign that says GATE 44",
+     "text": "GATE 44",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S28_POST",
+     "asset": "Cube",
+     "xy": [
+      19.93,
+      300.66
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      19.14,
+      271.81
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W31",
+     "from": [
+      -2.36,
+      281.77
+     ],
+     "to": [
+      69.76,
+      269.71
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W32",
+     "from": [
+      -1.31,
+      288.33
+     ],
+     "to": [
+      70.54,
+      286.76
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W33",
+     "from": [
+      -2.1,
+      293.58
+     ],
+     "to": [
+      72.12,
+      301.18
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -15.87,
+     "y": 285.04,
+     "yaw_deg": 355.1,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -15.87,
+     "y": 290.04,
+     "yaw_deg": 355.1,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -10.87,
+     "y": 285.04,
+     "yaw_deg": 355.1,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -10.87,
+     "y": 290.04,
+     "yaw_deg": 355.1,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 37.4,
+    "bearing_deg": 339.3,
+    "yaw_deg": 355.1,
+    "rel_bearing_deg": 15.8,
+    "target_label": "red cube",
+    "target_color": "red",
+    "target_size": null,
+    "paint_texture": "red",
+    "start_xy": [
+     -15.87,
+     285.04
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 41",
+    "decoy_texts": [
+     "GATE 42",
+     "GATE 43",
+     "GATE 44"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-09",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 88.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-09",
+    "asset": "Cube",
+    "xy": [
+     17.83,
+     304.06
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "lime",
+    "pivot": "ctr",
+    "label": "sign that says GATE 88",
+    "text": "GATE 88",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S29",
+     "asset": "Cube",
+     "xy": [
+      17.05,
+      293.05
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "lime",
+     "pivot": "ctr",
+     "label": "sign that says GATE 86",
+     "text": "GATE 86",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S29_POST",
+     "asset": "Cube",
+     "xy": [
+      17.05,
+      293.05
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S30",
+     "asset": "Cube",
+     "xy": [
+      17.05,
+      284.66
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "lime",
+     "pivot": "ctr",
+     "label": "sign that says GATE 84",
+     "text": "GATE 84",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S30_POST",
+     "asset": "Cube",
+     "xy": [
+      17.05,
+      284.66
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S31",
+     "asset": "Cube",
+     "xy": [
+      17.57,
+      313.77
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "lime",
+     "pivot": "ctr",
+     "label": "sign that says GATE 90",
+     "text": "GATE 90",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S31_POST",
+     "asset": "Cube",
+     "xy": [
+      17.57,
+      313.77
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      17.83,
+      304.06
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W34",
+     "from": [
+      -2.62,
+      306.69
+     ],
+     "to": [
+      60.84,
+      315.6
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W35",
+     "from": [
+      0.52,
+      300.39
+     ],
+     "to": [
+      61.89,
+      294.62
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W36",
+     "from": [
+      -2.62,
+      294.1
+     ],
+     "to": [
+      62.15,
+      280.99
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -22.69,
+     "y": 298.16,
+     "yaw_deg": 354.5,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -22.69,
+     "y": 303.16,
+     "yaw_deg": 354.5,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -17.69,
+     "y": 298.16,
+     "yaw_deg": 354.5,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -17.69,
+     "y": 303.16,
+     "yaw_deg": 354.5,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 41,
+    "bearing_deg": 8.3,
+    "yaw_deg": 354.5,
+    "rel_bearing_deg": 13.8,
+    "target_label": "lime cube",
+    "target_color": "lime",
+    "target_size": null,
+    "paint_texture": "lime",
+    "start_xy": [
+     -22.69,
+     298.16
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 88",
+    "decoy_texts": [
+     "GATE 86",
+     "GATE 84",
+     "GATE 90"
+    ],
+    "n_candidates": 4
+   }
+  },
+  {
+   "id": "E-10",
+   "tier": 1,
+   "prompt": "Find the sign that says GATE 13.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-10",
+    "asset": "Cube",
+    "xy": [
+     21.5,
+     285.97
+    ],
+    "z_off_m": 1.91,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 0,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "paint": "lime",
+    "pivot": "ctr",
+    "label": "sign that says GATE 13",
+    "text": "GATE 13",
+    "text_ratio": 0.62,
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "S32",
+     "asset": "Cube",
+     "xy": [
+      25.7,
+      299.08
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "lime",
+     "pivot": "ctr",
+     "label": "sign that says GATE 26",
+     "text": "GATE 26",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S32_POST",
+     "asset": "Cube",
+     "xy": [
+      25.7,
+      299.08
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S33",
+     "asset": "Cube",
+     "xy": [
+      25.96,
+      306.95
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "lime",
+     "pivot": "ctr",
+     "label": "sign that says GATE 15",
+     "text": "GATE 15",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S33_POST",
+     "asset": "Cube",
+     "xy": [
+      25.96,
+      306.95
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "S34",
+     "asset": "Cube",
+     "xy": [
+      26.22,
+      315.08
+     ],
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "paint": "lime",
+     "pivot": "ctr",
+     "label": "sign that says GATE 16",
+     "text": "GATE 16",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "S34_POST",
+     "asset": "Cube",
+     "xy": [
+      26.22,
+      315.08
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "TARGET_POST",
+     "asset": "Cube",
+     "xy": [
+      21.5,
+      285.97
+     ],
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W38",
+     "from": [
+      49.3,
+      292.26
+     ],
+     "to": [
+      1.84,
+      299.87
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W39",
+     "from": [
+      4.46,
+      305.11
+     ],
+     "to": [
+      55.59,
+      301.18
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W40",
+     "from": [
+      5.24,
+      310.36
+     ],
+     "to": [
+      56.12,
+      312.46
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -15.09,
+     "y": 303.4,
+     "yaw_deg": 351.2,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -15.09,
+     "y": 308.4,
+     "yaw_deg": 351.2,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -10.09,
+     "y": 303.4,
+     "yaw_deg": 351.2,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -10.09,
+     "y": 308.4,
+     "yaw_deg": 351.2,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 40.5,
+    "bearing_deg": 334.5,
+    "yaw_deg": 351.2,
+    "rel_bearing_deg": 16.7,
+    "target_label": "lime signboard",
+    "target_color": "lime",
+    "target_size": null,
+    "paint_texture": "lime",
+    "start_xy": [
+     -15.09,
+     303.4
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "target_text": "GATE 13",
+    "decoy_texts": [
+     "GATE 26",
+     "GATE 15",
+     "GATE 16"
+    ],
+    "n_candidates": 4
+   }
+  }
+ ]
+}

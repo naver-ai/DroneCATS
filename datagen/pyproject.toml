@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drone-depth-recon"
+version = "0.1.0"
+description = "Reconstruct and verify a depth-estimation instruction dataset from its annotation package and the official source datasets"
+readme = "README.md"
+# License: the DroneCATS repository license (see "License" in the root README.md).
+requires-python = ">=3.10"
+# Exact pins: byte-identical output depends on the encoders bundled in these wheels.
+dependencies = [
+    "numpy==2.2.6",
+    "pillow==11.3.0",
+    "opencv-python==5.0.0.93",
+    "h5py==3.16.0",
+]
+
+[project.scripts]
+ddr = "drone_depth_recon.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

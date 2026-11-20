@@ -1,0 +1,74 @@
+# AirSim + OpenAI GPT-6 Luna (direct to OpenAI, /v1/chat/completions)
+#   Same values as airsim_gpt.yaml (GPT-5); only model_name and reasoning_effort differ.
+#   Run:  PORT=<slot> MODELS=gpt6-luna vlmpilot/.venv/bin/python -m verifier.airsim.run_testset episodes/airsim/single-drone/<episode>.json
+#   Requires OPENAI_DIRECT_API_KEY in .env (separate from OPENAI_API_KEY)
+#
+#   ⚠️ This is the "frontier model" path. Four differences from a local vLLM model:
+#     1) Structured decoding (json_schema) only accepts root=object schemas — it was off
+#        in the old root=array multi-schema days for this reason. Now single and multi are both root=object, so it is on.
+#     2) max_completion_tokens instead of max_tokens (gpt-5 family rejects the former).
+#     3) temperature is not sent (gpt-5 only allows the default of 1).
+#     4) Generous timeout — reasoning models take seconds to tens of seconds per step.
+
+# Simulator connection
+camera_name: "0"
+airsim_rpc_port: 41451            # multi-user: change to your own slot port
+
+# Wind disturbance (NED, m/s)
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+
+# Model endpoint
+api_provider: "openai"
+model_name: "gpt-6-luna"
+gt_depth_log: false               # GT depth capture off — logging only, no effect on flight/judging; saves sim RPCs per step
+
+# --- Frontier models only -------------------------------------------------------
+openai_base_url: "https://api.openai.com/v1"
+api_key_env: "OPENAI_DIRECT_API_KEY"
+structured_output: true           # single-drone schema is root=object, so it is accepted (measured). Multi has also
+                                  # switched to a drone-keyed object, so it is now enabled too
+token_param: "max_completion_tokens"
+sampling: false                   # do not send temperature
+reasoning_effort: "none"                # luna has no minimal (none|low|medium|high|xhigh|max) — lowest value, equivalent to gpt-5's minimal
+vlm_timeout: 60                   # seconds. With the default 8s every step gets cut off
+# Coordinate order: OpenAI models follow the [y,x] the prompt asks for (same assumption as Gemini).
+# If points look mirrored left/right on the first run, change to "xy".
+point_order: "yx"
+# ---------------------------------------------------------------------------
+
+# Motion limits
+max_step_distance_m: 3.0          # max travel per step (m). If exceeded, keep direction and shorten distance
+step_duration_s: 2.5              # duration of one move command (s). speed = distance / this value
+base_yaw_rate: 60.0               # deg/s
+yaw_deadband_deg: 8.0             # skip rotation at or below this angle (VLM point noise is about ±9°)
+
+# Step loop and depth
+command_loop_delay: 0
+arrival_frames: 1                   # same as default; set explicitly to match other configs
+depth_source: model               # "model" (VLM estimate) | "oracle" (sim GT). Same as default; set explicitly for consistency
+
+adaptive_depth: true              # shorten per-step travel as the target gets closer
+adaptive_depth_bands:             # [[max depth (m), travel multiplier, precise stop], ...]
+  - [2.0, 0.0, true]              # right in front — stop
+  - [5.0, 0.6, false]             # near — 60%
+
+fov_horizontal: 90
+
+# Search mode: when the target is not found (visible:false), scan 45° toward the last observed direction
+
+# Vertical deadband / minimum altitude
+vertical_deadband: 0.15
+min_altitude_m: 1.5
+
+# Continuous control: the longer the decision interval (reasoning models), the more the bridge matters.
+# If a cycle exceeds 10s, raise cycle_bridge_duration too or flight will stall.
+
+auto_record: false               # for large-scale measurement — do not produce raw PNGs (~500MB/episode) or 1fps mp4
+output_root: "outputs"
+
+plan_schema: true
+mm_history: false                # attach past-step views as images with action labels (off by default; ablation only)
+mm_history_scale: 0.5            # past view width = current sent width × scale (0.5 = half; only used when mm_history is on)
+think_action: true               # Include the THINK action in the action list (false = 3-action prompt; ablation only)

@@ -1,0 +1,567 @@
+{
+ "scene": "campus",
+ "scenario": "tracking",
+ "scenario_spec": {
+  "moving_target": true,
+  "visible_at_start": true,
+  "start_yaw_offset_deg": 0.0
+ },
+ "note": "campus tracking, final 10 episodes. Target moves at 0.15 m/s, drone spawn distance 8~12m (varies per episode).",
+ "episodes": [
+  {
+   "target": "E-01",
+   "asset": "Quadrotor1",
+   "color": "green",
+   "paint_texture": "green",
+   "target_xyz": [
+    -111.08,
+    6.86,
+    -2.5
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": -120.24,
+    "y": -5.56,
+    "z": 1.9,
+    "yaw_deg": 43.2,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.4,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the green quadrotor.",
+   "motion": {
+    "waypoints": [
+     [
+      -99.93,
+      -2.65,
+      -2.5
+     ],
+     [
+      -82.86,
+      -5.73,
+      -2.5
+     ],
+     [
+      -68.87,
+      -0.69,
+      -2.5
+     ],
+     [
+      -61.88,
+      14.98,
+      -2.5
+     ],
+     [
+      -63.0,
+      33.16,
+      -2.5
+     ],
+     [
+      -67.9,
+      38.56,
+      -2.5
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 89.5
+   }
+  },
+  {
+   "target": "E-02",
+   "asset": "Cube",
+   "color": "lime",
+   "paint_texture": "lime",
+   "target_xyz": [
+    73.25,
+    -20.43,
+    -1.58
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 1.0,
+   "start": {
+    "x": 62.31,
+    "y": -31.83,
+    "z": 3.24,
+    "yaw_deg": 47.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.8,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the lime cargo box.",
+   "motion": {
+    "waypoints": [
+     [
+      52.14,
+      -6.01,
+      -3.16
+     ],
+     [
+      69.49,
+      9.66,
+      -3.16
+     ],
+     [
+      53.82,
+      26.17,
+      -3.16
+     ],
+     [
+      67.92,
+      38.41,
+      -3.16
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 90.4
+   }
+  },
+  {
+   "target": "E-03",
+   "asset": "Mesh_garbageA",
+   "color": "orange",
+   "paint_texture": "orange",
+   "target_xyz": [
+    86.68,
+    -87.7,
+    -0.86
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.3,
+   "start": {
+    "x": 95.97,
+    "y": -99.65,
+    "z": 3.94,
+    "yaw_deg": 123.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.1,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the orange trash can.",
+   "motion": {
+    "waypoints": [
+     [
+      73.25,
+      -66.72,
+      -3.16
+     ],
+     [
+      51.99,
+      -54.41,
+      -3.16
+     ],
+     [
+      26.81,
+      -46.57,
+      -3.16
+     ],
+     [
+      12.68,
+      -45.84,
+      -3.16
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 90.0
+   }
+  },
+  {
+   "target": "E-04",
+   "asset": "Sphere",
+   "color": "blue",
+   "paint_texture": "blue",
+   "target_xyz": [
+    1.72,
+    31.0,
+    0.82
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 1.0,
+   "start": {
+    "x": 11.72,
+    "y": 16.55,
+    "z": 1.64,
+    "yaw_deg": 139.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 17.6,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the blue ball.",
+   "motion": {
+    "waypoints": [
+     [
+      -41.62,
+      31.56,
+      -5.28
+     ],
+     [
+      -41.34,
+      -13.69,
+      -10.08
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 88.6
+   }
+  },
+  {
+   "target": "E-05",
+   "asset": "Quadrotor1",
+   "color": "yellow",
+   "paint_texture": "yellow",
+   "target_xyz": [
+    43.82,
+    85.38,
+    -0.015
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": 32.8,
+    "y": 75.18,
+    "z": 1.3,
+    "yaw_deg": 66.1,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.0,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the yellow quadrotor.",
+   "motion": {
+    "waypoints": [
+     [
+      31.25,
+      95.88,
+      -0.74
+     ],
+     [
+      13.36,
+      103.15,
+      -0.74
+     ],
+     [
+      4.13,
+      116.85,
+      -0.74
+     ],
+     [
+      12.8,
+      130.83,
+      -0.74
+     ],
+     [
+      30.97,
+      142.02,
+      -1.48
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 90.0
+   }
+  },
+  {
+   "target": "E-06",
+   "asset": "Mesh_sign",
+   "color": "purple",
+   "paint_texture": "purple",
+   "target_xyz": [
+    30.35,
+    -141.8,
+    3.41
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": 14.99,
+    "y": -131.28,
+    "z": 4.13,
+    "yaw_deg": 335.1,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 18.6,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the purple sign board.",
+   "motion": {
+    "waypoints": [
+     [
+      -59.23,
+      -142.92,
+      3.41
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 89.6
+   }
+  },
+  {
+   "target": "E-07",
+   "asset": "Quadrotor1",
+   "color": "white",
+   "paint_texture": "white",
+   "target_xyz": [
+    -157.32,
+    9.47,
+    -2.5
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": -157.62,
+    "y": 26.35,
+    "z": 2.22,
+    "yaw_deg": 271.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.9,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the white quadrotor.",
+   "motion": {
+    "waypoints": [
+     [
+      -158.44,
+      -45.05,
+      -2.5
+     ],
+     [
+      -122.98,
+      -45.43,
+      -2.5
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 90.0
+   }
+  },
+  {
+   "target": "E-08",
+   "asset": "Quadrotor1",
+   "color": "red",
+   "paint_texture": "red",
+   "target_xyz": [
+    -113.19,
+    88.39,
+    -2.5
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": -124.87,
+    "y": 78.31,
+    "z": 1.1,
+    "yaw_deg": 55.4,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.4,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the red quadrotor.",
+   "motion": {
+    "waypoints": [
+     [
+      -116.28,
+      100.35,
+      -2.5
+     ],
+     [
+      -109.97,
+      100.34,
+      -2.5
+     ],
+     [
+      -118.2,
+      122.46,
+      -2.5
+     ],
+     [
+      -105.37,
+      139.5,
+      -2.5
+     ],
+     [
+      -96.42,
+      151.8,
+      -2.5
+     ],
+     [
+      -91.95,
+      142.03,
+      -2.5
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 89.5
+   }
+  },
+  {
+   "target": "E-09",
+   "asset": "Sphere",
+   "color": "yellow",
+   "paint_texture": "yellow",
+   "target_xyz": [
+    79.64,
+    68.79,
+    -1.04
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": 64.87,
+    "y": 65.03,
+    "z": 1.78,
+    "yaw_deg": 27.7,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.2,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the yellow ball.",
+   "motion": {
+    "waypoints": [
+     [
+      78.85,
+      79.94,
+      1.66
+     ],
+     [
+      88.36,
+      91.4,
+      1.66
+     ],
+     [
+      102.34,
+      97.56,
+      1.66
+     ],
+     [
+      116.88,
+      98.95,
+      1.66
+     ],
+     [
+      128.9,
+      84.13,
+      1.66
+     ],
+     [
+      127.89,
+      69.65,
+      1.66
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 89.6
+   }
+  },
+  {
+   "target": "E-10",
+   "asset": "Cylinder",
+   "color": "magenta",
+   "paint_texture": "magenta",
+   "target_xyz": [
+    -122.4,
+    -128.66,
+    2.48
+   ],
+   "target_yaw_deg": 0.0,
+   "asset_yaw_offset_deg": 0.0,
+   "half_len_m": 0.5,
+   "start": {
+    "x": -122.07,
+    "y": -113.6,
+    "z": 2.8,
+    "yaw_deg": 258.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.1,
+   "scenario": "tracking",
+   "weather": "clear",
+   "moving": true,
+   "visible_at_start": true,
+   "instruction": "Find the magenta barrel.",
+   "motion": {
+    "waypoints": [
+     [
+      -135.54,
+      -124.74,
+      1.88
+     ],
+     [
+      -147.29,
+      -118.87,
+      0.98
+     ],
+     [
+      -156.79,
+      -106.85,
+      0.98
+     ],
+     [
+      -157.35,
+      -88.95,
+      0.78
+     ],
+     [
+      -157.6,
+      -59.03,
+      0.08
+     ]
+    ],
+    "speed_mps": 0.3,
+    "hz": 20.0,
+    "oneway": true,
+    "path_len_m": 90.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,106 @@
+# PX4 closed-loop **model evaluation** - gemini37
+#
+#   bash scripts/runpod/isaacsim/run.sh <name> vlmpilot/configs/isaacsim/single-drone/eval_px4_gemini37.yaml
+#
+# ⚠️ **`continuous_control: false` is the key setting.** All 26 AirSim configs use `true`, but
+# the AirSim controller does not read that key (`flight_controller.py:327` is always
+# continuous by its own logic) and **at RTF≈1 commands finish by themselves**. Isaac runs at RTF 0.083~0.110,
+# so the same 2.5 s (sim) command takes 27.8 s wall clock, and if the model answers in 3 s it is **cut at
+# 0.27 s sim time, covering only 0.32 m of a 3.0 m command** (measured: 121 steps -> Failsafe).
+# Worse, distance moved scales with `model latency x RTF`, so **slower models move more**:
+# response speed rather than capability drives SR, making rankings meaningless.
+# With `false` the full duration is awaited, so it is deterministic regardless of model latency.
+#
+# Control parameters are inherited unchanged from `pegasus_oracle.yaml`; conditions must match
+# the oracle rollouts for a "model vs oracle" comparison to hold.
+# Endpoint/key: set via api_key_env below.
+
+api_provider: "gemini"
+model_name: "gemini-3.7-flash"
+vlm_timeout: 60                   # the default 8 s cuts off think steps
+
+# Pegasus + **action oracle** (B-full): computes the correct action from GT.
+#
+#   python3 verifier/isaacsim/run_scripted_episode.py \
+#       --config vlmpilot/configs/isaacsim/single-drone/pegasus_oracle.yaml \
+#       --instruction "go to the orange trash can"
+#
+# Not to be confused with the two other "oracles" in the repo:
+#   depth_source=oracle  - replaces only depth_m with GT (key below; model here)
+#   oracle_arrival       - the verifier's arrival judgement
+#   **action oracle**    - computes the whole action from GT (this config's api_provider)
+#
+# A must be running with `--gt --gt-live <path>`. A writes the camera frame and GT on the same tick
+# (--gt-tick frame, the default), so the GT matches the render B saw.
+#
+# The control parameters below are the same in every vlmpilot/configs/isaacsim/single-drone/*.yaml (only the model block differs);
+# they must match for model runs to be comparable with each other and with the oracle.
+
+# Oracle rules (docs: module docstring of scripts/isaacsim/sim/oracle_backend.py)
+gt_live_path: "/tmp/vlmpilot_pegasus/latest_gt.json"
+                                  # is faster than A and takes several steps on the same frame
+                                  # (measured: 24 of 31 steps saw the same GT)
+
+# Action space: explicit action space (go/rotate/think/finished); the model declares arrival/rotation itself, depth is a float in meters.
+arrival_frames: 1                 # consecutive model "finished" count to confirm arrival (1 = deterministic)
+depth_source: model               # depth for Go moves: "model" (VLM estimate) | "oracle" (sim/sensor GT)
+                                  # ⚠️ pegasus cannot provide oracle yet - fixed to model
+adaptive_depth: true              # shorten per-step distance when closer
+adaptive_depth_bands:             # [[max depth (m), distance multiplier, precise stop], ...]
+  - [2.0, 0.0, true]              # right in front - stop
+  - [5.0, 0.6, false]             # near - 60%
+
+# Step loop and depth
+command_loop_delay: 0
+
+# Movement - kept identical to airsim_gemini.yaml (comparability)
+max_step_distance_m: 3.0          # max distance per step (m); beyond it, keep direction and shorten distance
+step_duration_s: 2.5              # duration of one move command (s); speed = distance / this value
+base_yaw_rate: 60.0               # deg/s
+yaw_deadband_deg: 8.0             # skip rotation below this angle (VLM point noise is about ±9°)
+
+# PX4 connection (MAVSDK)
+#   Check against the PX4 SITL startup banner line
+#   "mode: Onboard, ... on udp port 14580 remote port 14540". Older MAVSDK syntax is udp://:14540.
+mavsdk_address: "udpin://0.0.0.0:14540"
+takeoff_altitude_m: 2.5           # takeoff target altitude (m); PX4 minimum is 2.5.
+                                  # waits until this altitude is reached, then switches to offboard
+land_wait_s: 90.0                 # landing wait limit (s). If the vehicle is stuck on a ceiling/shelf and
+                                  # cannot descend, the link default of 300 s is silently used up; measured:
+                                  # did not finish in over 4 min at 8.9 m altitude
+
+# Frame source - a file that process A (Isaac Sim) replaces atomically
+frame_path: "/tmp/vlmpilot_pegasus/latest.jpg"
+frame_max_age_s: 5.0              # warn if the frame is older than this (detects a stalled A)
+
+# Sim conditions written by process A. The runner reads this to (1) cross-check FOV and
+# (2) copy it into run.json's `sim` key. **Must match A's --info-file**;
+# on mismatch both are silently skipped and the run conditions cannot be recovered later.
+sim_info_path: "/tmp/vlmpilot_pegasus/sim_info.json"
+
+# GT depth sidecar. A starts writing it when launched with --depth.
+# If absent, depth_source=oracle is downgraded to model; flight continues.
+depth_path: "/tmp/vlmpilot_pegasus/latest_depth.npy"
+gt_depth_log: false               # whether to only log depth; ignored (always on) for oracle
+
+fov_horizontal: 90                # camera horizontal FOV (used for back-projection)
+                                  # ⚠️ must match process A's actual camera FOV
+
+point_order: "xy"                 # scripts are written as [x, y]
+
+vertical_deadband: 0.15           # ignore vertical motion when the vertical offset is below this ratio
+# ⚠️ **Must be false** (measured). true assumes RTF ≈ 1.
+#
+# With true, move commands are non-blocking and are cut off when the next command arrives. So a
+# step's actual move time is "until the next action", i.e. the oracle/VLM latency (~3 s
+# wall clock). Brownstone on Isaac runs at RTF 0.11, so 3 s wall clock is 0.33 s sim time:
+# a 3.0 m command moves only 0.24 m. An episode then needs many times more steps, and the
+# sim battery can drain and trigger failsafe.
+#
+# With false, `move_velocity_body` blocks and the link measures the hold in **sim time**
+# (`pegasus_link._hold_sim_time`, `sim_clock=True` by default). So 2.5 s of sim time
+# actually elapses per step and it moves 3.0 m, the same behaviour true gives on
+# AirSim (RTF ≈ 1). false is the setting that makes the protocols match.
+continuous_control: false
+
+output_root: "outputs"            # outputs go to <output_root>/<timestamp>/ per run

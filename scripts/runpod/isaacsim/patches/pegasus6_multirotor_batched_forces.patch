@@ -1,0 +1,58 @@
+diff --git a/extensions/pegasus.simulator/pegasus/simulator/logic/vehicles/multirotor.py b/extensions/pegasus.simulator/pegasus/simulator/logic/vehicles/multirotor.py
+index e80d0dc..63aa1fb 100644
+--- a/extensions/pegasus.simulator/pegasus/simulator/logic/vehicles/multirotor.py
++++ b/extensions/pegasus.simulator/pegasus/simulator/logic/vehicles/multirotor.py
+@@ -104,6 +104,26 @@ class Multirotor(Vehicle):
+         self._articulation = None
+         self._rotor_dof_indices = {}
+ 
++    def _apply_batched(self, forces_z, rolling_moment, drag):
++        import numpy as _np
++        if self._body_rigid_prim is None or not self._body_rigid_prim.is_physics_tensor_entity_valid():
++            return
++        rp = getattr(self, "_rtf_all_rp", None)
++        if rp is None or not rp.is_physics_tensor_entity_valid():
++            from isaacsim.core.experimental.prims import RigidPrim as _RP
++            paths = [self._stage_prefix + "/body"] + [self._stage_prefix + "/rotor" + str(i) for i in range(4)]
++            rp = _RP(paths=paths)
++            self._rtf_all_rp = rp
++            self._rtf_f = _np.zeros((5, 3), dtype=_np.float32)
++            self._rtf_t = _np.zeros((5, 3), dtype=_np.float32)
++            self._rtf_p = _np.zeros((5, 3), dtype=_np.float32)
++        f = self._rtf_f; t = self._rtf_t
++        f[0, 0], f[0, 1], f[0, 2] = drag[0], drag[1], drag[2]
++        for i in range(4):
++            f[1 + i, 2] = forces_z[i]
++        t[0, 2] = rolling_moment
++        rp.apply_forces_and_torques_at_pos(forces=f, torques=t, positions=self._rtf_p, local_frame=True)
++
+     def update(self, dt: float, context=None):
+         """
+         Method that computes and applies the forces to the vehicle in simulation based on the motor speed.
+@@ -126,22 +146,14 @@ class Multirotor(Vehicle):
+         # Get the desired forces to apply to the vehicle
+         forces_z, _, rolling_moment = self._thrusters.update(self._state, dt)
+ 
+-        # Apply force to each rotor
++        # rtf-batch: body drag + rolling moment + 4 rotor thrusts in ONE tensor call (same forces, same
++        # local frames, applied at each body's origin as before)
++        drag = self._drag.update(self._state, dt)
++        self._apply_batched(forces_z, rolling_moment, drag)
+         for i in range(4):
+-
+-            # Apply the force in Z on the rotor frame
+-            self.apply_force([0.0, 0.0, forces_z[i]], body_part="/rotor" + str(i))
+-
+             # Generate the rotating propeller visual effect
+             self.handle_propeller_visual(i, forces_z[i])
+ 
+-        # Apply the torque to the body frame of the vehicle that corresponds to the rolling moment
+-        self.apply_torque([0.0, 0.0, rolling_moment], "/body")
+-
+-        # Compute the total linear drag force to apply to the vehicle's body frame
+-        drag = self._drag.update(self._state, dt)
+-        self.apply_force(drag, body_part="/body")
+-
+         # Call the update methods in all backends
+         for backend in self._backends:
+             backend.update(dt)

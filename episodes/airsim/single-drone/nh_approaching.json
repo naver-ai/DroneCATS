@@ -1,0 +1,250 @@
+{
+ "scene": "nh",
+ "scenario": "approaching",
+ "scenario_spec": {
+  "moving_target": false,
+  "visible_at_start": true,
+  "start_yaw_offset_deg": 0.0
+ },
+ "note": "NH. One asset of each kind not already in the map is spawned to create a unique target (7 outdoor · 3 indoor). Start distance is 15~30m outdoors, 5~10m indoors. Visibility, frontal offset, and ground height were checked for each episode from the sim start view.",
+ "episodes": [
+  {
+   "target": "blacksuv",
+   "asset": "009_SUV_ISM_NewMat",
+   "color": "black",
+   "paint_texture": "black",
+   "target_xyz": [
+    11.5,
+    -125.5,
+    0.2
+   ],
+   "start": {
+    "x": -7.6,
+    "y": -131.95,
+    "z": -0.15,
+    "yaw_deg": 0.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 20.2,
+   "scenario": "approaching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the black SUV"
+  },
+  {
+   "target": "bicycleman",
+   "asset": "BicycleMan",
+   "color": "dark",
+   "target_xyz": [
+    130.66,
+    11.73,
+    0.2
+   ],
+   "target_yaw_deg": 96.0,
+   "start": {
+    "x": 134.68,
+    "y": -7.75,
+    "z": -0.15,
+    "yaw_deg": 128.5,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 19.9,
+   "scenario": "approaching",
+   "weather": "rain",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the cyclist"
+  },
+  {
+   "target": "drone",
+   "asset": "Quadrotor1",
+   "target_xyz": [
+    -127.1,
+    0.0,
+    -2.5
+   ],
+   "target_yaw_deg": 56.1,
+   "start": {
+    "x": -128.0,
+    "y": -16.0,
+    "z": -0.15,
+    "yaw_deg": 86.8,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.0,
+   "scenario": "approaching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the drone",
+   "yaw_to_target_deg": -18.0
+  },
+  {
+   "target": "skateboard",
+   "asset": "Skateboard_01",
+   "target_xyz": [
+    -134.57,
+    -120.73,
+    0.103
+   ],
+   "target_yaw_deg": 38.0,
+   "start": {
+    "x": -134.74,
+    "y": -105.33,
+    "z": -0.14,
+    "yaw_deg": 296.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.4,
+   "scenario": "approaching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the skateboard"
+  },
+  {
+   "target": "bin",
+   "asset": "bin_02",
+   "target_xyz": [
+    -48.04,
+    144.21,
+    0.18
+   ],
+   "start": {
+    "x": -44.08,
+    "y": 115.66,
+    "z": -1.63,
+    "yaw_deg": 112.1,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 28.8,
+   "scenario": "approaching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the trash bin"
+  },
+  {
+   "target": "blacksofa",
+   "asset": "Sofa_01",
+   "color": "black",
+   "paint_texture": "black",
+   "target_xyz": [
+    -37.86,
+    30.9,
+    -1.29
+   ],
+   "target_yaw_deg": -94.0,
+   "start": {
+    "x": -29.01,
+    "y": 26.39,
+    "z": -1.64,
+    "yaw_deg": 122.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 9.9,
+   "scenario": "approaching",
+   "indoor": true,
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the black sofa"
+  },
+  {
+   "target": "blackchair",
+   "asset": "Chair_01",
+   "color": "black",
+   "paint_texture": "black",
+   "target_xyz": [
+    31.5,
+    39.1,
+    0.2
+   ],
+   "target_yaw_deg": 35.0,
+   "start": {
+    "x": 47.5,
+    "y": 36.1,
+    "z": -0.15,
+    "yaw_deg": 194.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.3,
+   "scenario": "approaching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the black chair"
+  },
+  {
+   "target": "paintcan",
+   "asset": "Paint_Can_01",
+   "target_xyz": [
+    -19.6,
+    61.7,
+    -1.32
+   ],
+   "start": {
+    "x": -19.93,
+    "y": 54.03,
+    "z": -1.55,
+    "yaw_deg": 126.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 7.7,
+   "scenario": "approaching",
+   "indoor": true,
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the paint can",
+   "yaw_to_target_deg": -38.5,
+   "target_yaw_deg": 0.0
+  },
+  {
+   "target": "dufflebag",
+   "asset": "Dufflebag_01",
+   "target_xyz": [
+    41.03,
+    131.41,
+    -0.981
+   ],
+   "start": {
+    "x": 24.54,
+    "y": 127.45,
+    "z": -0.15,
+    "yaw_deg": 342.5,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 17.0,
+   "scenario": "approaching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the bag on the car"
+  },
+  {
+   "target": "lamp",
+   "asset": "Lamp_01",
+   "target_xyz": [
+    27.8,
+    -48.5,
+    0.2
+   ],
+   "start": {
+    "x": 25.53,
+    "y": -57.72,
+    "z": 0.05,
+    "yaw_deg": 115.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 9.5,
+   "scenario": "approaching",
+   "indoor": true,
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": true,
+   "instruction": "go to the lamp"
+  }
+ ]
+}

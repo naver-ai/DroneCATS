@@ -1,0 +1,3226 @@
+{
+ "version": "editor-v2",
+ "map": "nh",
+ "authored_by": "human",
+ "defaults": {
+  "arrival_radius_m": 5,
+  "max_steps": 60,
+  "end_on": "any",
+  "oracle_arrival": true,
+  "spawn_yaw_deg": 90,
+  "drones": 4,
+  "ground_z_ned": 0.2
+ },
+ "tasks": [
+  {
+   "id": "E-11",
+   "tier": 1,
+   "prompt": "Fly to the license plate 5217 on the magenta car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-11",
+    "asset": "Car_01",
+    "xy": [
+     12.06,
+     -0.66
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 287.9,
+    "heading_deg": 17.9,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "magenta",
+    "pivot": "base",
+    "label": "magenta car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P1",
+     "asset": "Car_01",
+     "xy": [
+      2.36,
+      8.26
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 356.2,
+     "paint": "magenta",
+     "pivot": "base",
+     "label": "small magenta car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P2",
+     "asset": "Car_01",
+     "xy": [
+      -4.72,
+      1.7
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 67.9,
+     "paint": "magenta",
+     "pivot": "base",
+     "label": "small magenta car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P3",
+     "asset": "Car_01",
+     "xy": [
+      -7.34,
+      -3.8
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "magenta",
+     "pivot": "base",
+     "label": "small magenta car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P1_PL1",
+     "asset": "Cube",
+     "xy": [
+      2.53,
+      10.8
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 356.2,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1024",
+     "text": "1024",
+     "text_ratio": 0.65,
+     "plate_of": "P1",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P1_PL2",
+     "asset": "Cube",
+     "xy": [
+      2.19,
+      5.72
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 356.2,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1024",
+     "text": "1024",
+     "text_ratio": 0.65,
+     "plate_of": "P1",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P2_PL1",
+     "asset": "Cube",
+     "xy": [
+      -7.08,
+      2.66
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 67.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4001",
+     "text": "4001",
+     "text_ratio": 0.65,
+     "plate_of": "P2",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P2_PL2",
+     "asset": "Cube",
+     "xy": [
+      -2.36,
+      0.74
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 67.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4001",
+     "text": "4001",
+     "text_ratio": 0.65,
+     "plate_of": "P2",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P3_PL1",
+     "asset": "Cube",
+     "xy": [
+      -4.79,
+      -3.8
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1000",
+     "text": "1000",
+     "text_ratio": 0.65,
+     "plate_of": "P3",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P3_PL2",
+     "asset": "Cube",
+     "xy": [
+      -9.89,
+      -3.8
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1000",
+     "text": "1000",
+     "text_ratio": 0.65,
+     "plate_of": "P3",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "z_off_m": 0.45,
+     "yaw_deg": 287.9,
+     "paint": "white",
+     "text": "5217",
+     "text_ratio": 0.65,
+     "pivot": "ctr",
+     "xy": [
+      14.49,
+      0.12
+     ],
+     "label": "license plate 5217",
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "z_off_m": 0.45,
+     "yaw_deg": 287.9,
+     "paint": "white",
+     "text": "5217",
+     "text_ratio": 0.65,
+     "pivot": "ctr",
+     "xy": [
+      9.63,
+      -1.44
+     ],
+     "label": "license plate 5217",
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": -0.74,
+     "y": -14.51,
+     "yaw_deg": 77.9,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": -0.74,
+     "y": -12.51,
+     "yaw_deg": 77.9,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 1.26,
+     "y": -14.51,
+     "yaw_deg": 77.9,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 1.26,
+     "y": -12.51,
+     "yaw_deg": 77.9,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 18.9,
+    "bearing_deg": 47.3,
+    "yaw_deg": 77.9,
+    "rel_bearing_deg": 30.7,
+    "target_label": "magenta car",
+    "target_color": "magenta",
+    "target_size": "medium",
+    "paint_texture": "magenta",
+    "start_xy": [
+     -0.74,
+     -14.51
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "5217",
+    "decoy_plates": [
+     "1024",
+     "4001",
+     "1000"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-12",
+   "tier": 1,
+   "prompt": "Fly to the license plate 1048 on the yellow car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-12",
+    "asset": "Car_01",
+    "xy": [
+     0.26,
+     10.36
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 0,
+    "heading_deg": 90,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "yellow",
+    "pivot": "base",
+    "label": "yellow car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P4",
+     "asset": "Car_01",
+     "xy": [
+      9.18,
+      1.18
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "yellow",
+     "pivot": "base",
+     "label": "small yellow car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P5",
+     "asset": "Car_01",
+     "xy": [
+      9.702797202797228,
+      -4.851398601398614
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "yellow",
+     "pivot": "base",
+     "label": "small yellow car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P6",
+     "asset": "Car_01",
+     "xy": [
+      -7.87,
+      -0.13
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 65.4,
+     "paint": "yellow",
+     "pivot": "base",
+     "label": "small yellow car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P4_PL1",
+     "asset": "Cube",
+     "xy": [
+      11.73,
+      1.18
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1581",
+     "text": "1581",
+     "text_ratio": 0.65,
+     "plate_of": "P4",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P4_PL2",
+     "asset": "Cube",
+     "xy": [
+      6.63,
+      1.18
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1581",
+     "text": "1581",
+     "text_ratio": 0.65,
+     "plate_of": "P4",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P5_PL1",
+     "asset": "Cube",
+     "xy": [
+      12.25,
+      -4.85
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 9840",
+     "text": "9840",
+     "text_ratio": 0.65,
+     "plate_of": "P5",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P5_PL2",
+     "asset": "Cube",
+     "xy": [
+      7.15,
+      -4.85
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 9840",
+     "text": "9840",
+     "text_ratio": 0.65,
+     "plate_of": "P5",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P6_PL1",
+     "asset": "Cube",
+     "xy": [
+      -10.19,
+      0.93
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 65.4,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6137",
+     "text": "6137",
+     "text_ratio": 0.65,
+     "plate_of": "P6",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P6_PL2",
+     "asset": "Cube",
+     "xy": [
+      -5.55,
+      -1.19
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 65.4,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6137",
+     "text": "6137",
+     "text_ratio": 0.65,
+     "plate_of": "P6",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      0.26,
+      12.91
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 0.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1048",
+     "text": "1048",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      0.26,
+      7.81
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 0.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1048",
+     "text": "1048",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": -0.74,
+     "y": -15.82,
+     "yaw_deg": 81,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": -0.74,
+     "y": -13.82,
+     "yaw_deg": 81,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 1.26,
+     "y": -15.82,
+     "yaw_deg": 81,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 1.26,
+     "y": -13.82,
+     "yaw_deg": 81,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 26.2,
+    "bearing_deg": 87.8,
+    "yaw_deg": 81,
+    "rel_bearing_deg": 6.8,
+    "target_label": "yellow car",
+    "target_color": "yellow",
+    "target_size": "medium",
+    "paint_texture": "yellow",
+    "start_xy": [
+     -0.74,
+     -15.82
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "1048",
+    "decoy_plates": [
+     "1581",
+     "9840",
+     "6137"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-13",
+   "tier": 1,
+   "prompt": "Fly to the license plate 9123 on the lime car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-13",
+    "asset": "Car_01",
+    "xy": [
+     9.97,
+     -1.97
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 270,
+    "heading_deg": 0,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "lime",
+    "pivot": "base",
+    "label": "lime car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P7",
+     "asset": "Car_01",
+     "xy": [
+      1.31,
+      8.26
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 351.6,
+     "paint": "lime",
+     "pivot": "base",
+     "label": "small lime car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P8",
+     "asset": "Car_01",
+     "xy": [
+      -2.62,
+      18.75
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 8.8,
+     "paint": "lime",
+     "pivot": "base",
+     "label": "small lime car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P9",
+     "asset": "Car_01",
+     "xy": [
+      -9.18,
+      0.39
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 274,
+     "paint": "lime",
+     "pivot": "base",
+     "label": "small lime car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P7_PL1",
+     "asset": "Cube",
+     "xy": [
+      1.68,
+      10.78
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 351.6,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4058",
+     "text": "4058",
+     "text_ratio": 0.65,
+     "plate_of": "P7",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P7_PL2",
+     "asset": "Cube",
+     "xy": [
+      0.94,
+      5.74
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 351.6,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4058",
+     "text": "4058",
+     "text_ratio": 0.65,
+     "plate_of": "P7",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P8_PL1",
+     "asset": "Cube",
+     "xy": [
+      -3.01,
+      21.27
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 8.8,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1320",
+     "text": "1320",
+     "text_ratio": 0.65,
+     "plate_of": "P8",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P8_PL2",
+     "asset": "Cube",
+     "xy": [
+      -2.23,
+      16.23
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 8.8,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1320",
+     "text": "1320",
+     "text_ratio": 0.65,
+     "plate_of": "P8",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P9_PL1",
+     "asset": "Cube",
+     "xy": [
+      -6.64,
+      0.57
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 274.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2783",
+     "text": "2783",
+     "text_ratio": 0.65,
+     "plate_of": "P9",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P9_PL2",
+     "asset": "Cube",
+     "xy": [
+      -11.72,
+      0.21
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 274.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2783",
+     "text": "2783",
+     "text_ratio": 0.65,
+     "plate_of": "P9",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      12.52,
+      -1.97
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 9123",
+     "text": "9123",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      7.42,
+      -1.97
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 9123",
+     "text": "9123",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": -1,
+     "y": -16.34,
+     "yaw_deg": 92.2,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": -1,
+     "y": -14.34,
+     "yaw_deg": 92.2,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 1,
+     "y": -16.34,
+     "yaw_deg": 92.2,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 1,
+     "y": -14.34,
+     "yaw_deg": 92.2,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 18.1,
+    "bearing_deg": 52.7,
+    "yaw_deg": 92.2,
+    "rel_bearing_deg": 39.6,
+    "target_label": "lime car",
+    "target_color": "lime",
+    "target_size": "medium",
+    "paint_texture": "lime",
+    "start_xy": [
+     -1,
+     -16.34
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "9123",
+    "decoy_plates": [
+     "4058",
+     "1320",
+     "2783"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-14",
+   "tier": 1,
+   "prompt": "Fly to the license plate 4017 on the blue car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-14",
+    "asset": "Car_01",
+    "xy": [
+     2.1,
+     -12.46
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 180,
+    "heading_deg": 270,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "blue",
+    "pivot": "base",
+    "label": "blue car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P11",
+     "asset": "Car_01",
+     "xy": [
+      10.49,
+      -4.33
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "blue",
+     "pivot": "base",
+     "label": "small blue car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P12",
+     "asset": "Car_01",
+     "xy": [
+      9.7,
+      3.8
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "blue",
+     "pivot": "base",
+     "label": "small blue car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P13",
+     "asset": "Car_01",
+     "xy": [
+      1.57,
+      8
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "blue",
+     "pivot": "base",
+     "label": "small blue car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P11_PL1",
+     "asset": "Cube",
+     "xy": [
+      13.04,
+      -4.33
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4174",
+     "text": "4174",
+     "text_ratio": 0.65,
+     "plate_of": "P11",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P11_PL2",
+     "asset": "Cube",
+     "xy": [
+      7.94,
+      -4.33
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4174",
+     "text": "4174",
+     "text_ratio": 0.65,
+     "plate_of": "P11",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P12_PL1",
+     "asset": "Cube",
+     "xy": [
+      12.25,
+      3.8
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6596",
+     "text": "6596",
+     "text_ratio": 0.65,
+     "plate_of": "P12",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P12_PL2",
+     "asset": "Cube",
+     "xy": [
+      7.15,
+      3.8
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6596",
+     "text": "6596",
+     "text_ratio": 0.65,
+     "plate_of": "P12",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P13_PL1",
+     "asset": "Cube",
+     "xy": [
+      4.12,
+      8.0
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7063",
+     "text": "7063",
+     "text_ratio": 0.65,
+     "plate_of": "P13",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P13_PL2",
+     "asset": "Cube",
+     "xy": [
+      -0.98,
+      8.0
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7063",
+     "text": "7063",
+     "text_ratio": 0.65,
+     "plate_of": "P13",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      2.1,
+      -15.01
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 180.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4017",
+     "text": "4017",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      2.1,
+      -9.91
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 180.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4017",
+     "text": "4017",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": -12.01,
+     "y": -1.66,
+     "yaw_deg": 359.1,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": -12.01,
+     "y": 0.34,
+     "yaw_deg": 359.1,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": -10.01,
+     "y": -1.66,
+     "yaw_deg": 359.1,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": -10.01,
+     "y": 0.34,
+     "yaw_deg": 359.1,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 17.8,
+    "bearing_deg": 322.6,
+    "yaw_deg": 359.1,
+    "rel_bearing_deg": 36.6,
+    "target_label": "blue car",
+    "target_color": "blue",
+    "target_size": "medium",
+    "paint_texture": "blue",
+    "start_xy": [
+     -12.01,
+     -1.66
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "4017",
+    "decoy_plates": [
+     "4174",
+     "6596",
+     "7063"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-15",
+   "tier": 1,
+   "prompt": "Fly to the license plate 6340 on the blue car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-15",
+    "asset": "Car_01",
+    "xy": [
+     28.32,
+     125.48
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 270,
+    "heading_deg": 0,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "blue",
+    "pivot": "base",
+    "label": "blue car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P14",
+     "asset": "Car_01",
+     "xy": [
+      16.78,
+      136.76
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "blue",
+     "pivot": "base",
+     "label": "small blue car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P15",
+     "asset": "Car_01",
+     "xy": [
+      35.66433566433565,
+      130.46328671328672
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "blue",
+     "pivot": "base",
+     "label": "small blue car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P16",
+     "asset": "Car_01",
+     "xy": [
+      39.33566433566435,
+      123.64510489510491
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "blue",
+     "pivot": "base",
+     "label": "small blue car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P14_PL1",
+     "asset": "Cube",
+     "xy": [
+      19.33,
+      136.76
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 8517",
+     "text": "8517",
+     "text_ratio": 0.65,
+     "plate_of": "P14",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P14_PL2",
+     "asset": "Cube",
+     "xy": [
+      14.23,
+      136.76
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 8517",
+     "text": "8517",
+     "text_ratio": 0.65,
+     "plate_of": "P14",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P15_PL1",
+     "asset": "Cube",
+     "xy": [
+      38.21,
+      130.46
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3218",
+     "text": "3218",
+     "text_ratio": 0.65,
+     "plate_of": "P15",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P15_PL2",
+     "asset": "Cube",
+     "xy": [
+      33.11,
+      130.46
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3218",
+     "text": "3218",
+     "text_ratio": 0.65,
+     "plate_of": "P15",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P16_PL1",
+     "asset": "Cube",
+     "xy": [
+      41.89,
+      123.65
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5892",
+     "text": "5892",
+     "text_ratio": 0.65,
+     "plate_of": "P16",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P16_PL2",
+     "asset": "Cube",
+     "xy": [
+      36.79,
+      123.65
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5892",
+     "text": "5892",
+     "text_ratio": 0.65,
+     "plate_of": "P16",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      30.87,
+      125.48
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6340",
+     "text": "6340",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      25.77,
+      125.48
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6340",
+     "text": "6340",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": 8.44,
+     "y": 126.05,
+     "yaw_deg": 13.5,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": 8.44,
+     "y": 128.05,
+     "yaw_deg": 13.5,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 10.44,
+     "y": 126.05,
+     "yaw_deg": 13.5,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 10.44,
+     "y": 128.05,
+     "yaw_deg": 13.5,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 19.9,
+    "bearing_deg": 358.4,
+    "yaw_deg": 13.5,
+    "rel_bearing_deg": 15.1,
+    "target_label": "blue car",
+    "target_color": "blue",
+    "target_size": "medium",
+    "paint_texture": "blue",
+    "start_xy": [
+     8.44,
+     126.05
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "6340",
+    "decoy_plates": [
+     "8517",
+     "3218",
+     "5892"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-16",
+   "tier": 1,
+   "prompt": "Fly to the license plate 2365 on the magenta car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-16",
+    "asset": "Car_01",
+    "xy": [
+     89.69,
+     -128.1
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 270,
+    "heading_deg": 0,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "magenta",
+    "pivot": "base",
+    "label": "magenta car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P18",
+     "asset": "Car_01",
+     "xy": [
+      82.6,
+      -119.71
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "magenta",
+     "pivot": "base",
+     "label": "small magenta car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P19",
+     "asset": "Car_01",
+     "xy": [
+      79.46,
+      -110.27
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 0,
+     "paint": "magenta",
+     "pivot": "base",
+     "label": "small magenta car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P20",
+     "asset": "Car_01",
+     "xy": [
+      81.2937062937063,
+      -101.35489510489509
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "magenta",
+     "pivot": "base",
+     "label": "small magenta car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P18_PL1",
+     "asset": "Cube",
+     "xy": [
+      85.15,
+      -119.71
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7356",
+     "text": "7356",
+     "text_ratio": 0.65,
+     "plate_of": "P18",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P18_PL2",
+     "asset": "Cube",
+     "xy": [
+      80.05,
+      -119.71
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7356",
+     "text": "7356",
+     "text_ratio": 0.65,
+     "plate_of": "P18",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P19_PL1",
+     "asset": "Cube",
+     "xy": [
+      79.46,
+      -107.72
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 0.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3964",
+     "text": "3964",
+     "text_ratio": 0.65,
+     "plate_of": "P19",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P19_PL2",
+     "asset": "Cube",
+     "xy": [
+      79.46,
+      -112.82
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 0.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3964",
+     "text": "3964",
+     "text_ratio": 0.65,
+     "plate_of": "P19",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P20_PL1",
+     "asset": "Cube",
+     "xy": [
+      83.84,
+      -101.35
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 8471",
+     "text": "8471",
+     "text_ratio": 0.65,
+     "plate_of": "P20",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P20_PL2",
+     "asset": "Cube",
+     "xy": [
+      78.74,
+      -101.35
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 8471",
+     "text": "8471",
+     "text_ratio": 0.65,
+     "plate_of": "P20",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      92.24,
+      -128.1
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2365",
+     "text": "2365",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      87.14,
+      -128.1
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2365",
+     "text": "2365",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": 72.95,
+     "y": -131.46,
+     "yaw_deg": 37.9,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": 72.95,
+     "y": -129.46,
+     "yaw_deg": 37.9,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 74.95,
+     "y": -131.46,
+     "yaw_deg": 37.9,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 74.95,
+     "y": -129.46,
+     "yaw_deg": 37.9,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 17.1,
+    "bearing_deg": 11.4,
+    "yaw_deg": 37.9,
+    "rel_bearing_deg": 26.5,
+    "target_label": "magenta car",
+    "target_color": "magenta",
+    "target_size": "medium",
+    "paint_texture": "magenta",
+    "start_xy": [
+     72.95,
+     -131.46
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "2365",
+    "decoy_plates": [
+     "7356",
+     "3964",
+     "8471"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-17",
+   "tier": 1,
+   "prompt": "Fly to the license plate 8649 on the orange car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-17",
+    "asset": "Car_01",
+    "xy": [
+     -125.87,
+     9.83
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 354.4,
+    "heading_deg": 84.4,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "orange",
+    "pivot": "base",
+    "label": "orange car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P21",
+     "asset": "Car_01",
+     "xy": [
+      -115.38,
+      -4.85
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "orange",
+     "pivot": "base",
+     "label": "small orange car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P22",
+     "asset": "Car_01",
+     "xy": [
+      -114.86,
+      2.49
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "orange",
+     "pivot": "base",
+     "label": "small orange car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P23",
+     "asset": "Car_01",
+     "xy": [
+      -127.97,
+      -18.23
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 183.8,
+     "paint": "orange",
+     "pivot": "base",
+     "label": "small orange car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P21_PL1",
+     "asset": "Cube",
+     "xy": [
+      -112.83,
+      -4.85
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6125",
+     "text": "6125",
+     "text_ratio": 0.65,
+     "plate_of": "P21",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P21_PL2",
+     "asset": "Cube",
+     "xy": [
+      -117.93,
+      -4.85
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 6125",
+     "text": "6125",
+     "text_ratio": 0.65,
+     "plate_of": "P21",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P22_PL1",
+     "asset": "Cube",
+     "xy": [
+      -112.31,
+      2.49
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5161",
+     "text": "5161",
+     "text_ratio": 0.65,
+     "plate_of": "P22",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P22_PL2",
+     "asset": "Cube",
+     "xy": [
+      -117.41,
+      2.49
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5161",
+     "text": "5161",
+     "text_ratio": 0.65,
+     "plate_of": "P22",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P23_PL1",
+     "asset": "Cube",
+     "xy": [
+      -127.8,
+      -20.77
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 183.8,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5230",
+     "text": "5230",
+     "text_ratio": 0.65,
+     "plate_of": "P23",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P23_PL2",
+     "asset": "Cube",
+     "xy": [
+      -128.14,
+      -15.69
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 183.8,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5230",
+     "text": "5230",
+     "text_ratio": 0.65,
+     "plate_of": "P23",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      -125.62,
+      12.37
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 354.4,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 8649",
+     "text": "8649",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      -126.12,
+      7.29
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 354.4,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 8649",
+     "text": "8649",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": -129.23,
+     "y": -10.57,
+     "yaw_deg": 55.9,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": -129.23,
+     "y": -8.57,
+     "yaw_deg": 55.9,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": -127.23,
+     "y": -10.57,
+     "yaw_deg": 55.9,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": -127.23,
+     "y": -8.57,
+     "yaw_deg": 55.9,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 20.7,
+    "bearing_deg": 80.6,
+    "yaw_deg": 55.9,
+    "rel_bearing_deg": 24.7,
+    "target_label": "orange car",
+    "target_color": "orange",
+    "target_size": "medium",
+    "paint_texture": "orange",
+    "start_xy": [
+     -129.23,
+     -10.57
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "8649",
+    "decoy_plates": [
+     "6125",
+     "5161",
+     "5230"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-18",
+   "tier": 1,
+   "prompt": "Fly to the license plate 2620 on the purple car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-18",
+    "asset": "Car_01",
+    "xy": [
+     1.05,
+     -113.94
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 355.2,
+    "heading_deg": 85.2,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "purple",
+    "pivot": "base",
+    "label": "purple car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P24",
+     "asset": "Car_01",
+     "xy": [
+      10.49,
+      -131.51
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "purple",
+     "pivot": "base",
+     "label": "small purple car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P25",
+     "asset": "Car_01",
+     "xy": [
+      9.96503496503496,
+      -126.00524475524475
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "purple",
+     "pivot": "base",
+     "label": "small purple car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P26",
+     "asset": "Car_01",
+     "xy": [
+      1.31,
+      -132.82
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "purple",
+     "pivot": "base",
+     "label": "small purple car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P24_PL1",
+     "asset": "Cube",
+     "xy": [
+      13.04,
+      -131.51
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3115",
+     "text": "3115",
+     "text_ratio": 0.65,
+     "plate_of": "P24",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P24_PL2",
+     "asset": "Cube",
+     "xy": [
+      7.94,
+      -131.51
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3115",
+     "text": "3115",
+     "text_ratio": 0.65,
+     "plate_of": "P24",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P25_PL1",
+     "asset": "Cube",
+     "xy": [
+      12.52,
+      -126.01
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7885",
+     "text": "7885",
+     "text_ratio": 0.65,
+     "plate_of": "P25",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P25_PL2",
+     "asset": "Cube",
+     "xy": [
+      7.42,
+      -126.01
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7885",
+     "text": "7885",
+     "text_ratio": 0.65,
+     "plate_of": "P25",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P26_PL1",
+     "asset": "Cube",
+     "xy": [
+      3.86,
+      -132.82
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1335",
+     "text": "1335",
+     "text_ratio": 0.65,
+     "plate_of": "P26",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P26_PL2",
+     "asset": "Cube",
+     "xy": [
+      -1.24,
+      -132.82
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1335",
+     "text": "1335",
+     "text_ratio": 0.65,
+     "plate_of": "P26",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      1.26,
+      -111.4
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 355.2,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2620",
+     "text": "2620",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      0.84,
+      -116.48
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 355.2,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2620",
+     "text": "2620",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": -7.03,
+     "y": -133.3,
+     "yaw_deg": 37,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": -7.03,
+     "y": -131.3,
+     "yaw_deg": 37,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": -5.03,
+     "y": -133.3,
+     "yaw_deg": 37,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": -5.03,
+     "y": -131.3,
+     "yaw_deg": 37,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 21,
+    "bearing_deg": 67.3,
+    "yaw_deg": 37,
+    "rel_bearing_deg": 30.4,
+    "target_label": "purple car",
+    "target_color": "purple",
+    "target_size": "medium",
+    "paint_texture": "purple",
+    "start_xy": [
+     -7.03,
+     -133.3
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "2620",
+    "decoy_plates": [
+     "3115",
+     "7885",
+     "1335"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-19",
+   "tier": 1,
+   "prompt": "Fly to the license plate 7185 on the red car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-19",
+    "asset": "Car_01",
+    "xy": [
+     2.88,
+     94.01
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 184.9,
+    "heading_deg": 274.9,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "red",
+    "pivot": "base",
+    "label": "red car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P29",
+     "asset": "Car_01",
+     "xy": [
+      11.54,
+      102.4
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 181.8,
+     "paint": "red",
+     "pivot": "base",
+     "label": "small red car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P30",
+     "asset": "Car_01",
+     "xy": [
+      -3.15,
+      93.75
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 189.9,
+     "paint": "red",
+     "pivot": "base",
+     "label": "small red car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P31",
+     "asset": "Car_01",
+     "xy": [
+      -10.49,
+      95.59
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 100.9,
+     "paint": "red",
+     "pivot": "base",
+     "label": "small red car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P29_PL1",
+     "asset": "Cube",
+     "xy": [
+      11.62,
+      99.85
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 181.8,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4106",
+     "text": "4106",
+     "text_ratio": 0.65,
+     "plate_of": "P29",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P29_PL2",
+     "asset": "Cube",
+     "xy": [
+      11.46,
+      104.95
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 181.8,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 4106",
+     "text": "4106",
+     "text_ratio": 0.65,
+     "plate_of": "P29",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P30_PL1",
+     "asset": "Cube",
+     "xy": [
+      -2.71,
+      91.24
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 189.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2808",
+     "text": "2808",
+     "text_ratio": 0.65,
+     "plate_of": "P30",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P30_PL2",
+     "asset": "Cube",
+     "xy": [
+      -3.59,
+      96.26
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 189.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2808",
+     "text": "2808",
+     "text_ratio": 0.65,
+     "plate_of": "P30",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P31_PL1",
+     "asset": "Cube",
+     "xy": [
+      -12.99,
+      95.11
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 100.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5677",
+     "text": "5677",
+     "text_ratio": 0.65,
+     "plate_of": "P31",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P31_PL2",
+     "asset": "Cube",
+     "xy": [
+      -7.99,
+      96.07
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 100.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 5677",
+     "text": "5677",
+     "text_ratio": 0.65,
+     "plate_of": "P31",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      3.1,
+      91.47
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 184.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7185",
+     "text": "7185",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      2.66,
+      96.55
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 184.9,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 7185",
+     "text": "7185",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": 0.31,
+     "y": 113.99,
+     "yaw_deg": 276.3,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": 0.31,
+     "y": 115.99,
+     "yaw_deg": 276.3,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 2.31,
+     "y": 113.99,
+     "yaw_deg": 276.3,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 2.31,
+     "y": 115.99,
+     "yaw_deg": 276.3,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 20.1,
+    "bearing_deg": 277.3,
+    "yaw_deg": 276.3,
+    "rel_bearing_deg": 1.0,
+    "target_label": "red car",
+    "target_color": "red",
+    "target_size": "medium",
+    "paint_texture": "red",
+    "start_xy": [
+     0.31,
+     113.99
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "7185",
+    "decoy_plates": [
+     "4106",
+     "2808",
+     "5677"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  },
+  {
+   "id": "E-20",
+   "tier": 1,
+   "prompt": "Fly to the license plate 2165 on the white car.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-20",
+    "asset": "Car_01",
+    "xy": [
+     127.97,
+     -12.98
+    ],
+    "z_off_m": -0.1,
+    "alt_agl_m": 0,
+    "yaw_deg": 180,
+    "heading_deg": 270,
+    "scale": [
+     1,
+     1,
+     1
+    ],
+    "paint": "white",
+    "pivot": "base",
+    "label": "white car",
+    "yaw_offset_deg": -90,
+    "half_len_m": 2.3,
+    "z_ned": 0.3
+   },
+   "props": [
+    {
+     "name": "P33",
+     "asset": "Car_01",
+     "xy": [
+      131.64,
+      -6.69
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "white",
+     "pivot": "base",
+     "label": "small white car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P34",
+     "asset": "Car_01",
+     "xy": [
+      131.12,
+      1.18
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 270,
+     "paint": "white",
+     "pivot": "base",
+     "label": "small white car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P35",
+     "asset": "Car_01",
+     "xy": [
+      127.45,
+      9.83
+     ],
+     "z_off_m": -0.1,
+     "scale": [
+      1,
+      1,
+      1
+     ],
+     "yaw_deg": 325.7,
+     "paint": "white",
+     "pivot": "base",
+     "label": "small white car",
+     "z_ned": 0.3
+    },
+    {
+     "name": "P33_PL1",
+     "asset": "Cube",
+     "xy": [
+      134.19,
+      -6.69
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2524",
+     "text": "2524",
+     "text_ratio": 0.65,
+     "plate_of": "P33",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P33_PL2",
+     "asset": "Cube",
+     "xy": [
+      129.09,
+      -6.69
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2524",
+     "text": "2524",
+     "text_ratio": 0.65,
+     "plate_of": "P33",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P34_PL1",
+     "asset": "Cube",
+     "xy": [
+      133.67,
+      1.18
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1768",
+     "text": "1768",
+     "text_ratio": 0.65,
+     "plate_of": "P34",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P34_PL2",
+     "asset": "Cube",
+     "xy": [
+      128.57,
+      1.18
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 270.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 1768",
+     "text": "1768",
+     "text_ratio": 0.65,
+     "plate_of": "P34",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P35_PL1",
+     "asset": "Cube",
+     "xy": [
+      128.89,
+      11.94
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 325.7,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3739",
+     "text": "3739",
+     "text_ratio": 0.65,
+     "plate_of": "P35",
+     "z_ned": -0.25
+    },
+    {
+     "name": "P35_PL2",
+     "asset": "Cube",
+     "xy": [
+      126.01,
+      7.72
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 325.7,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 3739",
+     "text": "3739",
+     "text_ratio": 0.65,
+     "plate_of": "P35",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL1",
+     "asset": "Cube",
+     "xy": [
+      127.97,
+      -15.53
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 180.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2165",
+     "text": "2165",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    },
+    {
+     "name": "TARGET_PL2",
+     "asset": "Cube",
+     "xy": [
+      127.97,
+      -10.43
+     ],
+     "z_off_m": 0.45,
+     "scale": [
+      0.7,
+      0.05,
+      0.15
+     ],
+     "yaw_deg": 180.0,
+     "paint": "white",
+     "pivot": "ctr",
+     "label": "license plate 2165",
+     "text": "2165",
+     "text_ratio": 0.65,
+     "plate_of": "TARGET",
+     "z_ned": -0.25
+    }
+   ],
+   "walls": [],
+   "start_poses": {
+    "Drone1": {
+     "x": 114.91,
+     "y": -1.66,
+     "yaw_deg": 353.4,
+     "z": -1.3
+    },
+    "Drone2": {
+     "x": 114.91,
+     "y": 0.34,
+     "yaw_deg": 353.4,
+     "z": -1.3
+    },
+    "Drone3": {
+     "x": 116.91,
+     "y": -1.66,
+     "yaw_deg": 353.4,
+     "z": -1.3
+    },
+    "Drone4": {
+     "x": 116.91,
+     "y": 0.34,
+     "yaw_deg": 353.4,
+     "z": -1.3
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 17.3,
+    "bearing_deg": 319.1,
+    "yaw_deg": 353.4,
+    "rel_bearing_deg": 34.3,
+    "target_label": "white car",
+    "target_color": "white",
+    "target_size": "medium",
+    "paint_texture": "white",
+    "start_xy": [
+     114.91,
+     -1.66
+    ],
+    "authored": "editor",
+    "scene_center_shift": [
+     0,
+     0
+    ],
+    "axis": "plate_read",
+    "target_plate": "2165",
+    "decoy_plates": [
+     "2524",
+     "1768",
+     "3739"
+    ],
+    "n_candidates": 4,
+    "prompt_has_color": true
+   }
+  }
+ ]
+}

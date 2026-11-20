@@ -1,0 +1,55 @@
+# DJI Tello (real drone) + Gemini 3.8 Flash via OpenRouter — default config of `vlmpilot tello`
+#   Run (from vlmpilot/):  uv run python -m vlmpilot tello --config configs/real/tello_gemini38_or.yaml
+#   Requires OPENROUTER_API_KEY in the environment. The laptop joins the Tello's Wi-Fi, which has no internet,
+#   so it needs a second (wired or second Wi-Fi) connection to reach the model API.
+#   Model block: the same as single-drone/airsim_gemini38_or.yaml. The rest is the airframe and camera of the Tello,
+#   so this schema differs from the AirSim configs (no AirSim connection, wind or recording keys).
+
+# Model endpoint
+api_provider: "openai"            # OpenRouter is OpenAI-compatible
+model_name: "google/gemini-3.8-flash"
+openai_base_url: "https://openrouter.ai/api/v1"
+api_key_env: "OPENROUTER_API_KEY"
+vlm_timeout: 60                   # headroom for the OpenRouter round trip
+point_order: "yx"                 # coordinate order the model outputs (Gemini uses [y,x])
+structured_output: true
+extra_body:                       # lowest reasoning OpenRouter allows for this model (enabled: false is rejected)
+  reasoning:
+    effort: "minimal"
+
+# Camera: 960x720 stream. Checkerboard calibration of two Tellos: fx ~896 px, cx ~499, cy ~362, downward tilt 12.6 deg.
+#   The 82.6 deg in the DJI spec is for the photo sensor and does not fit the 720p stream.
+#   Recalibrate your own drone with tools/tello/tello_calib_capture.py + tello_calib_solve.py
+#   (FOV, principal point) and tello_pitch_facing.py / tello_camera_tilt.py (camera tilt).
+tello_frame_width: 960
+tello_frame_height: 720
+fov_horizontal: 56.4              # horizontal FOV (fx ~ 896 px at 960x720)
+camera_cx: 499                    # principal point x (px); omit for the image center
+camera_cy: 362                    # principal point y (px); omit for the image center
+tello_camera_pitch_deg: 12.6      # downward tilt of the front camera; 0 = no correction
+
+# Airframe
+tello_min_battery: 15             # refuse to take off below this battery %
+tello_takeoff_height_cm: 150      # climb to 1.5 m after takeoff (SDK default ~0.8 m); 0 = skip
+tello_speed_cms: 60               # step 1.5 m / 2.5 s; SDK limit 100
+
+# Movement (indoor scale: steps and approach bands are half of the AirSim outdoor values)
+max_step_distance_m: 1.5
+step_duration_s: 2.5
+yaw_deadband_deg: 8.0
+vertical_deadband: 0.15
+adaptive_depth: true
+adaptive_depth_bands:             # [[max depth (m), travel multiplier, precise stop], ...]
+  - [1.0, 0.0, true]
+  - [2.5, 0.6, false]
+
+command_loop_delay: 0
+arrival_frames: 1
+
+output_root: "outputs/tello"
+
+# Prompt/schema switches, as in the AirSim configs
+plan_schema: true
+mm_history: false
+mm_history_scale: 0.5
+think_action: true

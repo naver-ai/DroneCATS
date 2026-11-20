@@ -1,0 +1,258 @@
+{
+ "scene": "nh",
+ "scenario": "searching",
+ "scenario_spec": {
+  "moving_target": false,
+  "visible_at_start": false,
+  "start_yaw_offset_deg": 180.0
+ },
+ "note": "Uses the same verified placement as approaching (target, start coordinates, ground z) and only rotates the start yaw by +180° to make the target 'not visible at start' (at +90° the target can still fall within the FOV for episodes not placed head-on).",
+ "episodes": [
+  {
+   "target": "blacksuv",
+   "asset": "009_SUV_ISM_NewMat",
+   "color": "black",
+   "paint_texture": "black",
+   "target_xyz": [
+    11.5,
+    -125.5,
+    0.2
+   ],
+   "start": {
+    "x": -7.6,
+    "y": -131.95,
+    "z": -0.15,
+    "yaw_deg": 180.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 20.2,
+   "scenario": "searching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the black SUV",
+   "yaw_to_target_deg": -161.3
+  },
+  {
+   "target": "bicycleman",
+   "asset": "BicycleMan",
+   "color": "dark",
+   "target_xyz": [
+    130.66,
+    11.73,
+    0.2
+   ],
+   "target_yaw_deg": 96.0,
+   "start": {
+    "x": 134.68,
+    "y": -7.75,
+    "z": -0.15,
+    "yaw_deg": 308.5,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 19.9,
+   "scenario": "searching",
+   "weather": "rain",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the cyclist",
+   "yaw_to_target_deg": 153.2
+  },
+  {
+   "target": "drone",
+   "asset": "Quadrotor1",
+   "target_xyz": [
+    -127.1,
+    0.0,
+    -2.5
+   ],
+   "target_yaw_deg": 56.1,
+   "start": {
+    "x": -128.0,
+    "y": -16.0,
+    "z": -0.15,
+    "yaw_deg": 266.8,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.0,
+   "scenario": "searching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the drone",
+   "yaw_to_target_deg": 162.0
+  },
+  {
+   "target": "skateboard",
+   "asset": "Skateboard_01",
+   "target_xyz": [
+    -134.57,
+    -120.73,
+    0.103
+   ],
+   "target_yaw_deg": 38.0,
+   "start": {
+    "x": -134.74,
+    "y": -105.33,
+    "z": -0.14,
+    "yaw_deg": 116.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 15.4,
+   "scenario": "searching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the skateboard",
+   "yaw_to_target_deg": 154.6
+  },
+  {
+   "target": "bin",
+   "asset": "bin_02",
+   "target_xyz": [
+    -48.04,
+    144.21,
+    0.18
+   ],
+   "start": {
+    "x": -44.08,
+    "y": 115.66,
+    "z": -1.63,
+    "yaw_deg": 292.1,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 28.8,
+   "scenario": "searching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the trash bin",
+   "yaw_to_target_deg": 165.8
+  },
+  {
+   "target": "blacksofa",
+   "asset": "Sofa_01",
+   "color": "black",
+   "paint_texture": "black",
+   "target_xyz": [
+    -37.86,
+    30.9,
+    -1.29
+   ],
+   "target_yaw_deg": -94.0,
+   "start": {
+    "x": -29.01,
+    "y": 26.39,
+    "z": -1.64,
+    "yaw_deg": 302.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 9.9,
+   "scenario": "searching",
+   "indoor": true,
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the black sofa",
+   "yaw_to_target_deg": -149.0
+  },
+  {
+   "target": "blackchair",
+   "asset": "Chair_01",
+   "color": "black",
+   "paint_texture": "black",
+   "target_xyz": [
+    31.5,
+    39.1,
+    0.2
+   ],
+   "target_yaw_deg": 35.0,
+   "start": {
+    "x": 47.5,
+    "y": 36.1,
+    "z": -0.15,
+    "yaw_deg": 14.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 16.3,
+   "scenario": "searching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the black chair",
+   "yaw_to_target_deg": 155.4
+  },
+  {
+   "target": "paintcan",
+   "asset": "Paint_Can_01",
+   "target_xyz": [
+    -19.6,
+    61.7,
+    -1.32
+   ],
+   "start": {
+    "x": -19.93,
+    "y": 54.03,
+    "z": -1.55,
+    "yaw_deg": 306.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 7.7,
+   "scenario": "searching",
+   "indoor": true,
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the paint can",
+   "yaw_to_target_deg": 141.5,
+   "target_yaw_deg": 0.0
+  },
+  {
+   "target": "dufflebag",
+   "asset": "Dufflebag_01",
+   "target_xyz": [
+    41.03,
+    131.41,
+    -0.981
+   ],
+   "start": {
+    "x": 24.54,
+    "y": 127.45,
+    "z": -0.15,
+    "yaw_deg": 162.5,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 17.0,
+   "scenario": "searching",
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the bag on the car",
+   "yaw_to_target_deg": -149.0
+  },
+  {
+   "target": "lamp",
+   "asset": "Lamp_01",
+   "target_xyz": [
+    27.8,
+    -48.5,
+    0.2
+   ],
+   "start": {
+    "x": 25.53,
+    "y": -57.72,
+    "z": 0.05,
+    "yaw_deg": 295.0,
+    "pitch_deg": 0.0
+   },
+   "start_dist_m": 9.5,
+   "scenario": "searching",
+   "indoor": true,
+   "weather": "clear",
+   "moving": false,
+   "visible_at_start": false,
+   "instruction": "go to the lamp",
+   "yaw_to_target_deg": 141.2
+  }
+ ]
+}

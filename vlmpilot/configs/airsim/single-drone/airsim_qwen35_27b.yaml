@@ -1,0 +1,59 @@
+# AirSim + Qwen3.5-27B (OpenRouter, OpenAI-compatible)
+#   Requires OPENROUTER_API_KEY in .env.
+
+# Simulator connection
+camera_name: "0"
+airsim_rpc_port: 41451            # multi-user: change to your own slot port
+
+# Wind disturbance (NED, m/s)
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+
+# Model endpoint
+api_provider: "openai"
+model_name: "qwen/qwen3.5-27b"
+point_order: "yx"                   # same as default; set explicitly to match airsim_qwen35_9b
+openai_base_url: "https://openrouter.ai/api/v1"
+api_key_env: "OPENROUTER_API_KEY"
+extra_body:                       # OpenRouter: disable Qwen3.5 default reasoning
+  reasoning:                      # (same effect as enable_thinking:false on local 2B/4B — keeps the roster uniformly no-think)
+    enabled: false
+  provider:                       # pin DeepInfra: other providers are much slower per step
+    order: ["deepinfra"]
+    allow_fallbacks: false
+
+# Action space: explicit action space (go/rotate/pause/finished)
+arrival_frames: 1
+depth_source: model
+gt_depth_log: false               # GT depth capture off — logging only, no effect on flight/judging; saves sim RPCs per step
+vlm_timeout: 30                   # seconds. The default 8s cuts off think steps entirely (measured qwen4b 10.9s)
+adaptive_depth: true
+adaptive_depth_bands:
+  - [2.0, 0.0, true]
+  - [5.0, 0.6, false]
+
+# Motion limits
+max_step_distance_m: 3.0
+min_altitude_m: 1.5                 # minimum altitude clamp. Absent = 0 = OFF — set to 1.5 like the other indoor configs
+step_duration_s: 2.5
+base_yaw_rate: 60.0
+yaw_deadband_deg: 8.0
+
+# Step loop and depth
+command_loop_delay: 0
+
+fov_horizontal: 90
+
+vertical_deadband: 0.15
+
+auto_record: false               # for large-scale measurement — do not produce raw PNGs or mp4
+output_root: "outputs"
+
+plan_schema: true
+mm_history: false                # attach past-step views as images with action labels (off by default; ablation only)
+mm_history_scale: 0.5            # past view width = current sent width × scale (0.5 = half; only used when mm_history is on)
+think_action: true               # Include the THINK action in the action list (false = 3-action prompt; ablation only)
+# Schema enforcement always ON. Without the key it is `not think`, which only disables it for think steps, but the plan step's
+# PLAN_RESPONSE_SCHEMA must also be enforced for the 5 thought fields to be filled. Set explicitly in all 47 shipped configs.
+structured_output: true

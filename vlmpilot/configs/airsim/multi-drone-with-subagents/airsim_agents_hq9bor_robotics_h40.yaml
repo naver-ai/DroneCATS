@@ -1,0 +1,67 @@
+# closed-loop tier variant: differs from airsim_agents_hq9bor_robotics.yaml only in head.timeout_s and history_turns (reasoning off kept from base — on means 70~240s calls)
+# head model ablation — commander Qwen3.5-9B (via OpenRouter) + 4 drones on Gemini Robotics-ER 2
+#   Run:  uv run python -m vlmpilot airsim --config configs/airsim/multi-drone-with-subagents/airsim_agents_hq9bor_robotics_h40.yaml --port <slot>
+#   Requires OPENROUTER_API_KEY in .env.
+#   Delta (vs. airsim_agents_g37h_robotics_think_h40.yaml): head: block only — api_provider openai
+#   (OpenRouter is OpenAI-compatible) · model_name · client keys. Hosted counterpart of the arm that self-serves
+#   the same 9B; differs from airsim_agents_hq27b_robotics.yaml only in the model_name line.
+
+agent_mode: head_body
+
+drone_names: ["Drone1", "Drone2", "Drone3", "Drone4"]
+
+head:
+  api_provider: "openai"
+  model_name: "qwen/qwen3.5-9b"   # ⚠ OpenRouter model ID — vendor prefix required
+  poll_interval_s: 0        # 0 = continuous loop (min 2s). Commander turn rate is the control rate
+  max_calls: 200
+  timeout_s: 120
+  history_turns: 40         # At 5s/call, 4 turns ≈ 20s — head forgets values unless written back to state. 40 turns ≈ 200s
+  openai_base_url: "https://openrouter.ai/api/v1"
+  api_key_env: "OPENROUTER_API_KEY"
+  extra_body:                     # ⚠ Qwen3.5 has reasoning on by default — if not disabled, per-step
+    reasoning:                    #   thinking tokens explode and the closed-loop control cycle collapses
+      enabled: false
+  enable_thinking: false          # local vLLM path for the same switch (chat_template_kwargs)
+
+body:
+  api_provider: "gemini"
+  model_name: "gemini-robotics-er-2-preview"
+  vlm_timeout: 20               # ⚠ Gemini rejects deadlines under 10 s with 400 — minimum 10
+  point_order: "yx"             # Gemini's official pointing format is [y,x] 0-1000
+  history_len: 5
+  order_ttl_steps: 6            # max steps to keep drifting on a stale order. 0 = unlimited
+  wait_after_finished: true     # after declaring, stop until a new order arrives from the commander
+
+arrival_frames: 1                 # consecutive FINISHED count per drone to confirm arrival (1 = decisive)
+depth_source: model               # "model" (VLM estimate) | "oracle" (sim/sensor GT)
+command_loop_delay: 0
+camera_name: "0"
+airsim_rpc_port: 41451
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+fov_horizontal: 90                # actual AirSim camera horizontal FOV (used for pinhole back-projection)
+point_order: "yx"                 # default — body.point_order takes precedence
+vertical_deadband: 0.15
+auto_record: false
+output_root: "outputs"
+
+# Motion model — must match airsim_multi_geminirobotics.yaml (otherwise we measure the motion model instead of command structure)
+adaptive_depth: true
+adaptive_depth_bands:             # [[max depth (m), travel multiplier, precise stop], ...]
+  - [2.0, 0.0, true]
+  - [5.0, 0.6, false]
+max_step_distance_m: 3.0
+step_duration_s: 2.5
+base_yaw_rate: 60.0
+yaw_deadband_deg: 8.0
+min_altitude_m: 1.5
+max_vertical_step_m: 3.0
+
+# Receives the thought for the step after THINK as a response schema field. Same value as the centralized robotics
+# config — if this key diverges, body conditions differ and we end up measuring thought format instead of command structure.
+plan_schema: true
+mm_history: false                # attach past-step views as images with action labels (off by default; ablation only)
+mm_history_scale: 0.5            # past view width = current sent width × scale (0.5 = half; only used when mm_history is on)
+think_action: true               # Include the THINK action in the action list (false = 3-action prompt; ablation only)

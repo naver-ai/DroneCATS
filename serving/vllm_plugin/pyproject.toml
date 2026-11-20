@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drone-vlm-vllm-plugin"
+version = "0.2.0"
+description = "vLLM 0.25.1 out-of-tree plugin for DroneCATS-Cosmos3-Edge-2B (EXIF camera aux)"
+requires-python = ">=3.10"
+# License: see "License" in the root README.md; the vendored vLLM and Qwen files keep their Apache-2.0 notices.
+authors = [{ name = "NAVER Cloud Corp." }]
+# Validated on GPU with transformers 5.18.0 (PyPI) and 5.18.0.dev0 (git a5d98c34).
+# vllm 0.25.1+cu129 also satisfies ==0.25.1.
+dependencies = [
+    "vllm==0.25.1",
+    "transformers>=5.18.0.dev0,<=5.18.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.entry-points."vllm.general_plugins"]
+drone_vlm = "drone_vlm_vllm_plugin:register"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

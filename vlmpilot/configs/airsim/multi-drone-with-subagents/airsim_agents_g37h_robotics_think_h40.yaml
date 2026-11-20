@@ -1,0 +1,61 @@
+# Head/body multi-agent — commander Gemini 3.7 Flash + 4 drones on Gemini Robotics-ER 2.
+# Head: dynamic thinking budget, timeout_s 120, history_turns 40. The commander keeps re-issuing orders.
+# The other robotics configs in this folder share this file's body block and top-level keys and change only head:.
+#   Run:  uv run python -m vlmpilot airsim --config configs/airsim/multi-drone-with-subagents/airsim_agents_g37h_robotics_think_h40.yaml --port <port>
+#   Requires GEMINI_API_KEY in .env. body is a hosted model, so no base_urls — per-drone independence comes from
+#   backend instances (agent_mission._body_backends creates one per drone).
+
+agent_mode: head_body
+
+drone_names: ["Drone1", "Drone2", "Drone3", "Drone4"]
+
+head:
+  api_provider: "gemini"
+  model_name: "gemini-3.7-flash"
+  poll_interval_s: 0        # 0 = continuous loop (min 2s). Commander turn rate is the control rate
+  max_calls: 200
+  gemini_thinking_budget: dynamic   # think-on variant (sum scenario): budget omitted → model decides. No key = 0 (off)
+  timeout_s: 120             # ⚠ backend default of 8 s is too short (Gemini rejects any deadline under 10 s)
+  history_turns: 40         # At 5s/call, 4 turns ≈ 20s — head forgets values unless written back to state (v6: 13→11). 40 turns ≈ 200s, tokens 7.7k→12.6k, latency unchanged
+
+body:
+  api_provider: "gemini"
+  model_name: "gemini-robotics-er-2-preview"
+  vlm_timeout: 20               # ⚠ Gemini rejects deadlines under 10 s with 400 — minimum 10
+  point_order: "yx"             # Gemini's official pointing format is [y,x] 0-1000
+  history_len: 5
+  order_ttl_steps: 6            # max steps to keep drifting on a stale order. 0 = unlimited
+  wait_after_finished: true     # after declaring, stop until a new order arrives from the commander
+
+arrival_frames: 1                 # consecutive FINISHED count per drone to confirm arrival (1 = decisive)
+depth_source: model               # "model" (VLM estimate) | "oracle" (sim/sensor GT)
+command_loop_delay: 0
+camera_name: "0"
+airsim_rpc_port: 41451
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+fov_horizontal: 90                # actual AirSim camera horizontal FOV (used for pinhole back-projection)
+point_order: "yx"                 # default — body.point_order takes precedence
+vertical_deadband: 0.15
+auto_record: false
+output_root: "outputs"
+
+# Motion model — must match airsim_multi_geminirobotics.yaml (otherwise we measure the motion model instead of command structure)
+adaptive_depth: true
+adaptive_depth_bands:             # [[max depth (m), travel multiplier, precise stop], ...]
+  - [2.0, 0.0, true]
+  - [5.0, 0.6, false]
+max_step_distance_m: 3.0
+step_duration_s: 2.5
+base_yaw_rate: 60.0
+yaw_deadband_deg: 8.0
+min_altitude_m: 1.5
+max_vertical_step_m: 3.0
+
+# Receives the thought for the step after THINK as a response schema field. Same value as the centralized robotics
+# config — if this key diverges, body conditions differ and we end up measuring thought format instead of command structure.
+plan_schema: true
+mm_history: false                # attach past-step views as images with action labels (off by default; ablation only)
+mm_history_scale: 0.5            # past view width = current sent width × scale (0.5 = half; only used when mm_history is on)
+think_action: true               # Include the THINK action in the action list (false = 3-action prompt; ablation only)

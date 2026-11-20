@@ -1,0 +1,93 @@
+# AirSim multi-drone + Gemini 3.5 Flash
+#   Run:  uv run python -m vlmpilot airsim --config configs/airsim/multi-drone/airsim_multi_gemini35flash.yaml
+#   Requires GEMINI_API_KEY in .env (same key as 2.5-flash — confirmed 3.5-flash is listed in models.list)
+#   For AirSim settings.json, see vlmpilot/settings.multidrone.json.example
+#   (drone_names below must exactly match the Vehicles keys in settings.json)
+#
+# One of 6 configs for the model comparison benchmark. Differs from gemini_25flash only in model_name.
+
+# Simulator connection
+camera_name: "0"
+airsim_rpc_port: 41451            # AirSim RPC port this config connects to
+
+# Wind disturbance (NED, m/s)
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+
+# Model endpoint
+api_provider: "gemini"
+model_name: "gemini-3.5-flash"
+
+# Fleet
+drone_names: ["Drone1", "Drone2", "Drone3", "Drone4"]
+# ★ This is **not the success criterion** — it only decides when a standalone run stops.
+#   Success is decided by the runner: a drone declares FINISHED and **that declaring drone**
+#   is inside the radius. One drone is enough; not every drone needs to declare.
+#   ⚠ If A declares but B is the one inside the radius, it is not a success — so the arrival
+#   line carries `drone=<name>` and the runner measures **that drone**.
+#   all = stop when every drone has declared / any = stop when any one drone declares
+end_on: "all"
+# (episodes are cut by **time** — the runner's EP_TIMEOUT. There is no step-cap key)
+
+# Action space
+arrival_frames: 1                 # consecutive FINISHED count per drone to confirm arrival (1 = decisive)
+depth_source: model               # depth used for Go moves: "model" (VLM estimate) | "oracle" (sim/sensor GT)
+gt_depth_log: false               # GT depth capture off — it is **logging only**, so flight and judging are unaffected.
+                                  # Alternating RGB (1280x720) and depth (856x640) requests makes UE
+                                  # reallocate render targets every time until it crashes (SIGABRT with 4 drones in Blocks,
+                                  # losing 3 sims, 89 s per step). Round trips grow with the number of drones.
+
+# Motion limits
+
+# ── Fixed travel distance per step ────────────────────────────────────
+base_yaw_rate: 60.0               # deg/s
+
+# Step loop and depth
+command_loop_delay: 0
+
+# actual AirSim camera horizontal FOV (used for pinhole back-projection)
+fov_horizontal: 90
+
+# Point coordinate order: gemini models use the [y,x] convention
+point_order: "yx"
+
+# Vertical deadband: ignore vertical movement if the target is within ± this ratio of the vertical center.
+vertical_deadband: 0.15
+
+# Continuous control
+
+# Auto recording
+auto_record: false   # frame PNGs + mp4 eat disk (measured 930 GB). The results page uses decision_*.jpg, so it is unaffected
+
+# Run output root
+output_root: "outputs"
+
+# Arrival judging (oracle) is not in the executor — the runner (verifier/airsim/judge.py) does it.
+
+# Per-model endpoint/timeout (code reads these from config; falls back to environment variables)
+
+# ── Motion model: **same values** as single-drone (configs/airsim/single-drone/airsim_gemini*.yaml) ──────────
+#   Multi uses the same AirSimDroneActionSpace as single-drone. These currently equal
+#   the code defaults, so omitting them behaves the same, but if defaults change only single-drone stays pinned and multi
+#   would drift with them. That would silently skew the comparison, so they are pinned here.
+adaptive_depth: true              # shorten per-step travel as the target gets closer
+adaptive_depth_bands:             # [[max depth (m), travel multiplier, precise stop], ...]
+  - [2.0, 0.0, true]              # right in front — stop
+  - [5.0, 0.6, false]             # near — 60%
+max_step_distance_m: 3.0          # max travel per step (m). If exceeded, keep direction and shorten distance
+step_duration_s: 2.5              # duration of one move command (s). speed = distance / this value
+yaw_deadband_deg: 8.0             # skip rotation at or below this angle (VLM point noise is about ±9°)
+
+plan_schema: true
+mm_history: false                # attach past-step views as images with action labels (off by default; ablation only)
+mm_history_scale: 0.5            # past view width = current sent width × scale (0.5 = half; only used when mm_history is on)
+think_action: true               # Include the THINK action in the action list (false = 3-action prompt; ablation only)
+# Schema enforcement always ON. Without the key it is `not think`, which only disables it for think steps, but the plan step's
+# PLAN_RESPONSE_SCHEMA must also be enforced for the 5 thought fields to be filled. Set explicitly in all 47 shipped configs.
+structured_output: true
+
+# Never descend below this altitude (m) — prevents scraping the ground in open areas.
+min_altitude_m: 1.5
+# Max vertical move per step (m) — prevents shooting up tens of meters when pointing at the sky.
+max_vertical_step_m: 3.0

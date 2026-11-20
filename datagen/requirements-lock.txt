@@ -1,0 +1,7 @@
+# Exact environment in which byte-identical reconstruction was verified.
+# Python 3.10 (CPython 3.10.20), Linux x86_64, wheels from PyPI.
+#   pip install -r requirements-lock.txt && pip install -e . --no-deps
+numpy==2.2.6
+pillow==11.3.0
+opencv-python==5.0.0.93
+h5py==3.16.0

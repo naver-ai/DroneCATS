@@ -1,0 +1,43 @@
+The code in datagen/ is covered by the license of the DroneCATS repository
+(see "License" in the root README.md). The annotation data
+(rows, ledger) is licensed separately under CC BY-NC 4.0; see
+LICENSES/ANNOTATIONS.md. Images of NYU Depth v2, SUN RGB-D and TartanAir v2 are
+not redistributed (see LICENSES/THIRD_PARTY_DATA.md).
+
+--------------------------------------------------------------------------------------
+
+This project depends on third-party packages with separate copyright notices and
+license terms. They are not included in this repository; they are installed from
+PyPI at the versions pinned in requirements-lock.txt. Your use of these packages is
+subject to the terms and conditions of their licenses, listed below as declared in
+each package's metadata (checked against the installed wheels of the pinned
+versions). Binary wheels may bundle further libraries under their own licenses;
+see the license files shipped inside each wheel.
+
+=====
+
+Runtime dependencies
+
+numpy 2.2.6
+https://github.com/numpy/numpy
+Copyright (c) 2005-2024, NumPy Developers.
+License: BSD-3-Clause
+
+pillow 11.3.0
+https://github.com/python-pillow/Pillow
+Copyright (c) 1997-2011 by Secret Labs AB; Copyright (c) 1995-2011 by Fredrik Lundh
+and contributors; Copyright (c) 2010 by Jeffrey A. Clark and contributors.
+License: MIT-CMU (Historical Permission Notice and Disclaimer)
+
+opencv-python 5.0.0.93
+https://github.com/opencv/opencv-python
+OpenCV library: License: Apache-2.0 (as declared in the package metadata)
+opencv-python packaging: Copyright (c) Olli-Pekka Heinisuo. License: MIT
+(the wheel bundles further third-party libraries; see its LICENSE-3RD-PARTY.txt)
+
+h5py 3.16.0
+https://github.com/h5py/h5py
+Copyright (c) 2008 Andrew Collette and contributors.
+License: BSD-3-Clause
+
+=====

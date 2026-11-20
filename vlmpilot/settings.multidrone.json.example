@@ -1,0 +1,63 @@
+{
+    "_comment": "Example AirSim settings.json for multi-drone (4 vehicles). RGB resolution matches the single-drone setup (so resolution differences do not enter comparisons). No CaptureSettings for depth (ImageType 1) — float transfer cost scales with resolution, and at 1280x720 a single call takes 24.5 s (keep the default 256x144). Vehicles keys must exactly match drone_names in the config. X/Y/Z are vehicle start positions (m, NED) — spaced apart because overlapping ones collide on spawn.",
+    "SettingsVersion": 1.2,
+    "SimMode": "Multirotor",
+    "Vehicles": {
+        "Drone1": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "X": 0.0, "Y": 0.0, "Z": 0.0,
+            "Cameras": {
+                "0": {
+                    "CaptureSettings": [
+                        { "ImageType": 0, "Width": 1280, "Height": 720 }
+                    ],
+                    "X": 0.50, "Y": 0.0, "Z": 0.10,
+                    "Pitch": 0.0, "Roll": 0.0, "Yaw": 0.0
+                }
+            }
+        },
+        "Drone2": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "X": 0.0, "Y": 8.0, "Z": 0.0,
+            "Cameras": {
+                "0": {
+                    "CaptureSettings": [
+                        { "ImageType": 0, "Width": 1280, "Height": 720 }
+                    ],
+                    "X": 0.50, "Y": 0.0, "Z": 0.10,
+                    "Pitch": 0.0, "Roll": 0.0, "Yaw": 0.0
+                }
+            }
+        },
+        "Drone3": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "X": 8.0, "Y": 0.0, "Z": 0.0,
+            "Cameras": {
+                "0": {
+                    "CaptureSettings": [
+                        { "ImageType": 0, "Width": 1280, "Height": 720 }
+                    ],
+                    "X": 0.50, "Y": 0.0, "Z": 0.10,
+                    "Pitch": 0.0, "Roll": 0.0, "Yaw": 0.0
+                }
+            }
+        },
+        "Drone4": {
+            "VehicleType": "SimpleFlight",
+            "AutoCreate": true,
+            "X": 8.0, "Y": 8.0, "Z": 0.0,
+            "Cameras": {
+                "0": {
+                    "CaptureSettings": [
+                        { "ImageType": 0, "Width": 1280, "Height": 720 }
+                    ],
+                    "X": 0.50, "Y": 0.0, "Z": 0.10,
+                    "Pitch": 0.0, "Roll": 0.0, "Yaw": 0.0
+                }
+            }
+        }
+    }
+}

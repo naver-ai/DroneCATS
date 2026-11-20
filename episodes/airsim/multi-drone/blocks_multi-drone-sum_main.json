@@ -1,0 +1,9016 @@
+{
+ "version": "editor-v2",
+ "map": "blocks",
+ "authored_by": "make_sum_v2.py",
+ "defaults": {
+  "arrival_radius_m": 5,
+  "max_steps": 60,
+  "end_on": "any",
+  "oracle_arrival": true,
+  "spawn_yaw_deg": 90,
+  "drones": 4,
+  "ground_z_ned": 1.02
+ },
+ "tasks": [
+  {
+   "id": "E-S11",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S11",
+    "xy": [
+     28.0,
+     312.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "54",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "27",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "27",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "40",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "40",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "41",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "41",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "44",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "44",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "51",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "51",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "54",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "61",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "61",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "69",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "69",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "14",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "27",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "13",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 59.8,
+    "bearing_deg": 14.0,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 14.0,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 14,
+      "R2": 27,
+      "R3": 13
+     },
+     "blue": {
+      "B1": 27,
+      "B2": 40,
+      "B3": 41,
+      "B4": 44,
+      "B5": 51,
+      "B6": 54,
+      "B7": 61,
+      "B8": 69
+     },
+     "correct": 54,
+     "partials": [
+      41,
+      40,
+      27
+     ],
+     "corridor": 6
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "54",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S21",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S21",
+    "xy": [
+     28.0,
+     296.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "42",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "24",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "24",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "29",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "29",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "31",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "31",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "42",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "45",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "45",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "49",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "49",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "52",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "52",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "57",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "57",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "18",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "11",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "13",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 58.0,
+    "bearing_deg": 358.5,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": -1.5,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 18,
+      "R2": 11,
+      "R3": 13
+     },
+     "blue": {
+      "B1": 24,
+      "B2": 29,
+      "B3": 31,
+      "B4": 42,
+      "B5": 45,
+      "B6": 49,
+      "B7": 52,
+      "B8": 57
+     },
+     "correct": 42,
+     "partials": [
+      29,
+      24,
+      31
+     ],
+     "corridor": 4
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "42",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S31",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S31",
+    "xy": [
+     28.0,
+     328.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "72",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "42",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "42",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "46",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "46",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "56",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "56",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "62",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "62",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "65",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "65",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "67",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "67",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "30",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "16",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 65.5,
+    "bearing_deg": 27.7,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 27.7,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 26,
+      "R2": 30,
+      "R3": 16
+     },
+     "blue": {
+      "B1": 26,
+      "B2": 42,
+      "B3": 46,
+      "B4": 56,
+      "B5": 62,
+      "B6": 65,
+      "B7": 67,
+      "B8": 72
+     },
+     "correct": 72,
+     "partials": [
+      56,
+      46,
+      42
+     ],
+     "corridor": 8
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "72",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S41",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S41",
+    "xy": [
+     28.0,
+     304.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "69",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "37",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "37",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "58",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "58",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "59",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "59",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "69",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "70",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "70",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "71",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "71",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "11",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "32",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 58.4,
+    "bearing_deg": 6.4,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 6.4,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 11,
+      "R2": 32,
+      "R3": 26
+     },
+     "blue": {
+      "B1": 37,
+      "B2": 43,
+      "B3": 58,
+      "B4": 59,
+      "B5": 69,
+      "B6": 70,
+      "B7": 71,
+      "B8": 72
+     },
+     "correct": 69,
+     "partials": [
+      43,
+      58,
+      37
+     ],
+     "corridor": 5
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "69",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S51",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S51",
+    "xy": [
+     28.0,
+     320.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "69",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "38",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "38",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "57",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "57",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "62",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "62",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "67",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "67",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "68",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "68",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "69",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "31",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "12",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 62.2,
+    "bearing_deg": 21.2,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 21.2,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 31,
+      "R2": 26,
+      "R3": 12
+     },
+     "blue": {
+      "B1": 38,
+      "B2": 43,
+      "B3": 57,
+      "B4": 62,
+      "B5": 67,
+      "B6": 68,
+      "B7": 69,
+      "B8": 72
+     },
+     "correct": 69,
+     "partials": [
+      57,
+      38,
+      43
+     ],
+     "corridor": 7
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "69",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S61",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S61",
+    "xy": [
+     28.0,
+     296.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "58",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "37",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "37",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "39",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "39",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "40",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "40",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "58",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "60",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "60",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "63",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "63",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "65",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "65",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "73",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "73",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "19",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "18",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "21",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 58.0,
+    "bearing_deg": 358.5,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": -1.5,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 19,
+      "R2": 18,
+      "R3": 21
+     },
+     "blue": {
+      "B1": 37,
+      "B2": 39,
+      "B3": 40,
+      "B4": 58,
+      "B5": 60,
+      "B6": 63,
+      "B7": 65,
+      "B8": 73
+     },
+     "correct": 58,
+     "partials": [
+      37,
+      39,
+      40
+     ],
+     "corridor": 4
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "58",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S71",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S71",
+    "xy": [
+     28.0,
+     328.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "45",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "19",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "19",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "29",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "29",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "35",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "35",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "38",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "38",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "44",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "44",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "45",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "16",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "10",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "19",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 65.5,
+    "bearing_deg": 27.7,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 27.7,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 16,
+      "R2": 10,
+      "R3": 19
+     },
+     "blue": {
+      "B1": 19,
+      "B2": 26,
+      "B3": 29,
+      "B4": 35,
+      "B5": 38,
+      "B6": 43,
+      "B7": 44,
+      "B8": 45
+     },
+     "correct": 45,
+     "partials": [
+      26,
+      29,
+      35
+     ],
+     "corridor": 8
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "45",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S81",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S81",
+    "xy": [
+     28.0,
+     312.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "58",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "26",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "43",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "47",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "47",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "51",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "51",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "57",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "57",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "58",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "60",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "60",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "63",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "63",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "32",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "11",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "15",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 59.8,
+    "bearing_deg": 14.0,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 14.0,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 32,
+      "R2": 11,
+      "R3": 15
+     },
+     "blue": {
+      "B1": 26,
+      "B2": 43,
+      "B3": 47,
+      "B4": 51,
+      "B5": 57,
+      "B6": 58,
+      "B7": 60,
+      "B8": 63
+     },
+     "correct": 58,
+     "partials": [
+      43,
+      26,
+      47
+     ],
+     "corridor": 6
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "58",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S91",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S91",
+    "xy": [
+     28.0,
+     304.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "69",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "39",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "39",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "47",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "47",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "52",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "52",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "62",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "62",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "69",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "72",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "74",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M7",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "74",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "84",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "84",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "17",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "30",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "22",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 58.4,
+    "bearing_deg": 6.4,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 6.4,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 17,
+      "R2": 30,
+      "R3": 22
+     },
+     "blue": {
+      "B1": 39,
+      "B2": 47,
+      "B3": 52,
+      "B4": 62,
+      "B5": 69,
+      "B6": 72,
+      "B7": 74,
+      "B8": 84
+     },
+     "correct": 69,
+     "partials": [
+      47,
+      52,
+      39
+     ],
+     "corridor": 5
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "69",
+    "n_candidates": 8
+   }
+  },
+  {
+   "id": "E-S101",
+   "tier": 1,
+   "prompt": "Three red signs each show a number. Fly to the small blue sign at the end of the corridor whose large blue entrance sign shows the sum of the three numbers. The eight entrance signs are sorted in ascending order from left to right.",
+   "hint": "",
+   "arrival_radius_m": 5,
+   "target": {
+    "spawn": "BM_E-S101",
+    "xy": [
+     28.0,
+     320.0
+    ],
+    "alt_agl_m": 0,
+    "heading_deg": 0,
+    "paint": "blue",
+    "label": "blue end sign",
+    "text": "54",
+    "yaw_offset_deg": 0,
+    "half_len_m": null,
+    "asset": "Cube",
+    "z_off_m": 1.91,
+    "scale": [
+     0.2,
+     0.7,
+     0.22
+    ],
+    "yaw_deg": 0,
+    "pivot": "ctr",
+    "text_ratio": 0.62,
+    "z_ned": -0.89
+   },
+   "props": [
+    {
+     "name": "B1",
+     "xy": [
+      -1.5,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "29",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M1_POST",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M1",
+     "xy": [
+      28.0,
+      272.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "29",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B2",
+     "xy": [
+      -1.5,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "39",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M2_POST",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M2",
+     "xy": [
+      28.0,
+      280.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "39",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B3",
+     "xy": [
+      -1.5,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "40",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M3_POST",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M3",
+     "xy": [
+      28.0,
+      288.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "40",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B4",
+     "xy": [
+      -1.5,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "44",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M4_POST",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M4",
+     "xy": [
+      28.0,
+      296.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "44",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B5",
+     "xy": [
+      -1.5,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "47",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M5_POST",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M5",
+     "xy": [
+      28.0,
+      304.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "47",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B6",
+     "xy": [
+      -1.5,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "53",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M6_POST",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M6",
+     "xy": [
+      28.0,
+      312.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "53",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "B7",
+     "xy": [
+      -1.5,
+      320.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "54",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M7_POST",
+     "xy": [
+      28.0,
+      320.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "B8",
+     "xy": [
+      -1.5,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue entrance sign",
+     "text": "55",
+     "asset": "Cube",
+     "z_off_m": 4.6,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -3.58
+    },
+    {
+     "name": "M8_POST",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.14,
+      0.14,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "M8",
+     "xy": [
+      28.0,
+      328.0
+     ],
+     "paint": "blue",
+     "label": "blue end sign",
+     "text": "55",
+     "asset": "Cube",
+     "z_off_m": 1.91,
+     "scale": [
+      0.2,
+      0.7,
+      0.22
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -0.89
+    },
+    {
+     "name": "PASS",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "paint": "white",
+     "label": "white sign",
+     "text": "PASS WHEN YOU KNOW THE SUM",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      5.0,
+      1.0
+     ],
+     "yaw_deg": 0,
+     "pivot": "ctr",
+     "text_ratio": 0.62,
+     "z_ned": -1.28
+    },
+    {
+     "name": "PASS_POST",
+     "xy": [
+      -10.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R1",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "25",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 270.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R1_POST",
+     "xy": [
+      -30.0,
+      265.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R2",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "14",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 90.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R2_POST",
+     "xy": [
+      -30.0,
+      335.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    },
+    {
+     "name": "R3",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "paint": "red",
+     "label": "red signboard",
+     "text": "15",
+     "asset": "Cube",
+     "z_off_m": 2.3,
+     "scale": [
+      0.2,
+      3.0,
+      1.0
+     ],
+     "yaw_deg": 180.0,
+     "pivot": "ctr",
+     "text_ratio": 0.15,
+     "z_ned": -1.28
+    },
+    {
+     "name": "R3_POST",
+     "xy": [
+      -65.0,
+      300.0
+     ],
+     "asset": "Cube",
+     "z_off_m": 0.9,
+     "scale": [
+      0.2,
+      0.2,
+      1.8
+     ],
+     "yaw_deg": 0,
+     "paint": "grey",
+     "pivot": "ctr",
+     "label": "sign post",
+     "z_ned": 0.12
+    }
+   ],
+   "walls": [
+    {
+     "name": "W0",
+     "from": [
+      0.0,
+      268.0
+     ],
+     "to": [
+      30.0,
+      268.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W1",
+     "from": [
+      0.0,
+      276.0
+     ],
+     "to": [
+      30.0,
+      276.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W2",
+     "from": [
+      0.0,
+      284.0
+     ],
+     "to": [
+      30.0,
+      284.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W3",
+     "from": [
+      0.0,
+      292.0
+     ],
+     "to": [
+      30.0,
+      292.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W4",
+     "from": [
+      0.0,
+      300.0
+     ],
+     "to": [
+      30.0,
+      300.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W5",
+     "from": [
+      0.0,
+      308.0
+     ],
+     "to": [
+      30.0,
+      308.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W6",
+     "from": [
+      0.0,
+      316.0
+     ],
+     "to": [
+      30.0,
+      316.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W7",
+     "from": [
+      0.0,
+      324.0
+     ],
+     "to": [
+      30.0,
+      324.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    },
+    {
+     "name": "W8",
+     "from": [
+      0.0,
+      332.0
+     ],
+     "to": [
+      30.0,
+      332.0
+     ],
+     "height_m": 20,
+     "thickness_m": 0.6,
+     "paint": "grey",
+     "z_off_m": 10,
+     "z_ned": -8.98
+    }
+   ],
+   "start_poses": {
+    "Drone1": {
+     "x": -30.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone2": {
+     "x": -30.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone3": {
+     "x": -25.0,
+     "y": 297.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    },
+    "Drone4": {
+     "x": -25.0,
+     "y": 302.5,
+     "yaw_deg": 0.0,
+     "z": -0.48
+    }
+   },
+   "meta": {
+    "n_drones": 4,
+    "dist_m": 62.2,
+    "bearing_deg": 21.2,
+    "yaw_deg": 0.0,
+    "rel_bearing_deg": 21.2,
+    "target_label": "blue box",
+    "target_color": "blue",
+    "target_size": null,
+    "paint_texture": "blue",
+    "start_xy": [
+     -30.0,
+     297.5
+    ],
+    "authored": "make_sum_v2.py",
+    "scene_center_shift": [
+     0,
+     300
+    ],
+    "version": "sum_main",
+    "sum_key": {
+     "red": {
+      "R1": 25,
+      "R2": 14,
+      "R3": 15
+     },
+     "blue": {
+      "B1": 29,
+      "B2": 39,
+      "B3": 40,
+      "B4": 44,
+      "B5": 47,
+      "B6": 53,
+      "B7": 54,
+      "B8": 55
+     },
+     "correct": 54,
+     "partials": [
+      39,
+      29,
+      40
+     ],
+     "corridor": 7
+    },
+    "red_xy": {
+     "R1": [
+      -30.0,
+      265.0
+     ],
+     "R2": [
+      -30.0,
+      335.0
+     ],
+     "R3": [
+      -65.0,
+      300.0
+     ]
+    },
+    "corridor_len_m": 30.0,
+    "corridor_gap_m": 8.0,
+    "pass_xy": [
+     -10.0,
+     300.0
+    ],
+    "target_text": "54",
+    "n_candidates": 8
+   }
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+# DroneCATS-Cosmos3-Edge-2B (huggingface.co/naver-ai/DroneCATS-Cosmos3-Edge-2B) behind a local OpenAI-compatible server.
+#   Run:  PORT=<slot> MODELS=dronecats-2b vlmpilot/.venv/bin/python -m verifier.airsim.run_testset episodes/airsim/single-drone/<episode>.json
+#   The server is expected at openai_base_url with --served-model-name = model_name. Serve the model with vLLM as
+#   described in serving/README.md (plugin, versions, launch flags); see also scripts/runpod/airsim/README.md, "Local model".
+#   No API key: a local base_url (127.0.0.1 / localhost) uses a dummy key.
+# The request matches the model card: split system/user prompt, json_schema, temperature 0.4,
+# chat_template_kwargs enable_thinking false / skip_reasoning true, camera EXIF (on via canonical_depth).
+# Flight parameters are the same as airsim_gpt6luna_or.yaml; only the model keys at the top differ.
+api_provider: "openai"
+model_name: "drone-vlm-2b-cosmos3edge"     # = vllm --served-model-name
+openai_base_url: "http://127.0.0.1:18000/v1"
+gt_depth_log: false
+structured_output: true
+strict_schema: false
+sampling: true                    # temperature 0.4 (_OPENAI_TEMPERATURE)
+enable_thinking: false            # -> chat_template_kwargs {enable_thinking: false, skip_reasoning: true}
+canonical_depth: true             # canonical-depth prompt + EXIF camera aux + canonical->metric conversion (training condition)
+vlm_timeout: 30
+point_order: "xy"                 # the model answers [x, y]; the default "yx" mirrors every point
+command_loop_delay: 0
+arrival_frames: 1
+depth_source: model
+adaptive_depth: true
+adaptive_depth_bands:
+  - [2.0, 0.0, true]
+  - [5.0, 0.6, false]
+max_step_distance_m: 3.0
+step_duration_s: 2.5
+base_yaw_rate: 60.0
+yaw_deadband_deg: 8.0
+camera_name: "0"
+airsim_rpc_port: 41451
+wind_x: 0.0
+wind_y: 0.0
+wind_z: 0.0
+fov_horizontal: 90                # EXIF focal length k = fx / W comes from this
+vertical_deadband: 0.15
+min_altitude_m: 1.5
+auto_record: false
+output_root: "outputs"
+plan_schema: true
+mm_history: false
+mm_history_scale: 0.5
+think_action: true
